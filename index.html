@@ -10,315 +10,371 @@
 
     
     <style>
-        /* --- New Global Fonts (Recommended for modern design) --- */
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
+    /* --- New Global Fonts (Recommended for modern design) --- */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
 
-        /* Define your custom purple color variable from the image */
-        :root {
-            --primary-purple: #8a2be2;
-            --purple-light: #9f48f4;
-            
-            /* --- FIXED: Manually Calculated Radial Positions for EQUAL 51.43° SPACING --- */
-            /* Radius: 200px. Calculated for 7 points (360/7) for perfect symmetry. */
-            --pos-s1-x: 200px; /* 0 degrees */    --pos-s1-y: 0px; 
-            --pos-s2-x: 125px; /* 51.43 degrees */  --pos-s2-y: 156px; 
-            --pos-s3-x: -44px; /* 102.86 degrees */ --pos-s3-y: 195px; 
-            --pos-s4-x: -180px;/* 154.29 degrees */ --pos-s4-y: 82px; 
-            --pos-s5-x: -175px;/* 205.71 degrees */ --pos-s5-y: -87px; 
-            --pos-s6-x: -44px; /* 257.14 degrees */ --pos-s6-y: -195px; 
-            --pos-s7-x: 125px; /* 308.57 degrees */ --pos-s7-y: -156px; 
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            min-height: 200vh; 
-        }
-        .hero-title, .mega-menu h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* --- 1. Announcement Bar Style --- */
-        .announcement-bar {
-            background-color: var(--primary-purple);
-            color: white;
-            padding: 8px 0;
-            font-size: 0.9rem;
-            text-align: center;
-        }
+    /* Define your custom purple color variable from the image */
+    :root {
+        --primary-purple: #8a2be2;
+        --purple-light: #9f48f4;
         
-        /* Customizing Bootstrap elements with the purple color */
-        .btn-purple {
-            color: #fff;
-            background-color: var(--primary-purple);
-            border-color: var(--primary-purple);
-        }
-        .btn-purple:hover {
-            background-color: var(--purple-light);
-            border-color: var(--purple-light);
-        }
-        .text-purple {
-            color: var(--primary-purple) !important;
-        }
+        /* --- FIXED: Manually Calculated Radial Positions for EQUAL 51.43° SPACING --- */
+        /* Radius: 200px. Calculated for 7 points (360/7) for perfect symmetry. */
+        --pos-s1-x: 200px; /* 0 degrees */    --pos-s1-y: 0px; 
+        --pos-s2-x: 125px; /* 51.43 degrees */  --pos-s2-y: 156px; 
+        --pos-s3-x: -44px; /* 102.86 degrees */ --pos-s3-y: 195px; 
+        --pos-s4-x: -180px;/* 154.29 degrees */ --pos-s4-y: 82px; 
+        --pos-s5-x: -175px;/* 205.71 degrees */ --pos-s5-y: -87px; 
+        --pos-s6-x: -44px; /* 257.14 degrees */ --pos-s6-y: -195px; 
+        --pos-s7-x: 125px; /* 308.57 degrees */ --pos-s7-y: -156px; 
+    }
 
-        /* --- 2. Navbar Theme Adjustments --- */
-        /* Custom CSS to size the logo image */
-        .navbar-brand img {
-            height: 40px; /* Adjust size as needed */
-            width: auto;
-        }
-        
-        .navbar-light .navbar-nav .nav-link {
-             color: #343a40; /* Darker text for light navbar */
-        }
-        .navbar-light .navbar-nav .nav-link:hover {
-             color: var(--primary-purple); /* Purple on hover */
-        }
-        .navbar-light .dropdown-toggle.text-warning {
-            color: var(--primary-purple) !important;
-            font-weight: bold;
-        }
+    body {
+        font-family: 'Open Sans', sans-serif;
+        min-height: 200vh; 
+    }
+    .hero-title, .mega-menu h6 {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* --- 1. Announcement Bar Style --- */
+    .announcement-bar {
+        background-color: var(--primary-purple);
+        color: white;
+        padding: 8px 0;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    /* Customizing Bootstrap elements with the purple color */
+    .btn-purple {
+        color: #fff;
+        background-color: var(--primary-purple);
+        border-color: var(--primary-purple);
+    }
+    .btn-purple:hover {
+        background-color: var(--purple-light);
+        border-color: var(--purple-light);
+    }
+    .text-purple {
+        color: var(--primary-purple) !important;
+    }
+
+    /* --- 2. Navbar Theme Adjustments --- */
+    /* Custom CSS to size the logo image */
+    .navbar-brand img {
+        height: 40px; /* Adjust size as needed */
+        width: auto;
+    }
+    
+    .navbar-light .navbar-nav .nav-link {
+         color: #343a40; /* Darker text for light navbar */
+    }
+    .navbar-light .navbar-nav .nav-link:hover {
+         color: var(--primary-purple); /* Purple on hover */
+    }
+    .navbar-light .dropdown-toggle.text-warning {
+        color: var(--primary-purple) !important;
+        font-weight: bold;
+    }
 
 
-        /* --- Mega Menu Styles --- */
-        @media (min-width: 992px) {
-            .navbar .dropdown:hover .dropdown-menu {
-                display: block;
-                margin-top: 0;
-            }
-            .navbar .dropdown-menu {
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-                border: 1px solid rgba(0, 0, 0, 0.1);
-            }
-            .mega-menu {
-                width: 1000px;
-                /* Center the mega menu horizontally relative to the viewport/page */
-                left: 50%; 
-                transform: translateX(-50%); 
-                margin: auto;
-            }
-        }
-        
-        .mega-menu {
-            padding: 2rem;
-            background-color: #ffffff;
-        }
-        
-        .mega-menu h6 {
-            font-weight: 700;
-            margin-bottom: 1rem; 
-            color: #212529; 
-            border-bottom: 2px solid var(--primary-purple);
-            padding-bottom: 0.5rem;
-        }
-
-        .mega-menu a {
+    /* --- Mega Menu Styles --- */
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
             display: block;
-            padding: 6px 0;
-            text-decoration: none;
-            color: #495057;
-            transition: color 0.2s ease-in-out;
-            font-size: 0.95rem;
+            margin-top: 0;
         }
-        
-        /* Set icons inside the mega menu to purple */
-        .mega-menu a i {
-            color: var(--primary-purple);
-            transition: color 0.2s ease-in-out;
+        .navbar .dropdown-menu {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
+        .mega-menu {
+            width: 1000px;
+            /* Center the mega menu horizontally relative to the viewport/page */
+            left: 50%; 
+            transform: translateX(-50%); 
+            margin: auto;
+        }
+    }
+    
+    .mega-menu {
+        padding: 2rem;
+        background-color: #ffffff;
+    }
+    
+    .mega-menu h6 {
+        font-weight: 700;
+        margin-bottom: 1rem; 
+        color: #212529; 
+        border-bottom: 2px solid var(--primary-purple);
+        padding-bottom: 0.5rem;
+    }
 
-        .mega-menu a:hover {
-            color: var(--primary-purple);
-            text-decoration: none;
-        }
-        
-        /* Flag style for Flag Icon CSS library */
-        .fi {
-            font-size: 1.1em;
-            margin-right: 0.5rem;
-            line-height: 1; /* Helps with vertical alignment */
-            display: inline-block;
-        }
+    .mega-menu a {
+        display: block;
+        padding: 6px 0;
+        text-decoration: none;
+        color: #495057;
+        transition: color 0.2s ease-in-out;
+        font-size: 0.95rem;
+    }
+    
+    /* Set icons inside the mega menu to purple */
+    .mega-menu a i {
+        color: var(--primary-purple);
+        transition: color 0.2s ease-in-out;
+    }
 
-        /* -------------------------------------- */
-        /* --- HERO SECTION ANIMATION STYLES --- */
-        /* -------------------------------------- */
+    .mega-menu a:hover {
+        color: var(--primary-purple);
+        text-decoration: none;
+    }
+    
+    /* Flag style for Flag Icon CSS library */
+    .fi {
+        font-size: 1.1em;
+        margin-right: 0.5rem;
+        line-height: 1; /* Helps with vertical alignment */
+        display: inline-block;
+    }
 
+    /* -------------------------------------- */
+    /* --- HERO SECTION ANIMATION STYLES --- */
+    /* -------------------------------------- */
+    
+    /* ADDED: Flexbox to center the viz-container on all screen sizes, including mobile */
+    .hero-section .container-xl {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+    }
+
+    .hero-section {
+        background: #0d1a26; 
+        color: white;
+        padding: 6rem 0 10rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden; 
+    }
+    .hero-section h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero-subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 3rem; color: #b0c4de; }
+
+    /* AI & Service Visualization Container */
+    .viz-container {
+        position: relative;
+        width: 600px; 
+        height: 400px; 
+        margin: 4rem auto 0;
+        /* CONTINUOUS SUBTLE ROTATION */
+        animation: slow-rotate 60s linear infinite;
+    }
+    .ai-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        filter: drop-shadow(0 0 10px var(--primary-purple));
+    }
+    .ai-center i {
+        font-size: 6rem;
+        color: var(--primary-purple);
+        border: 5px solid var(--primary-purple);
+        border-radius: 50%;
+        padding: 20px;
+        background-color: #1a2936;
+        animation: pulse-animation 2s infinite ease-in-out;
+    }
+    
+    /* Service icon container positioning - START POSITION (Hidden Inside AI) */
+    .service-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Start centered exactly over the AI icon */
+        opacity: 0;
+        transition: 
+            transform 1.5s cubic-bezier(0.23, 1, 0.32, 1), 
+            opacity 1.5s ease-out;
+        z-index: 9;
+    }
+    
+    .service-icon {
+        font-size: 2rem;
+        color: white;
+        padding: 10px;
+        border: 1px solid #364f6b;
+        border-radius: 50%;
+        background-color: #1a2936;
+        cursor: pointer;
+        position: relative; /* Needed for the hover effect pseudo-element */
+        /* Counter-rotate the icon to keep it upright */
+        animation: slow-rotate-reverse 60s linear infinite; 
+    }
+
+    /* --- HOVER LABEL EFFECT --- */
+    .service-wrapper:hover .service-icon::after {
+        content: attr(data-name);
+        position: absolute;
+        bottom: -35px; /* Position below the icon */
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        background-color: var(--primary-purple);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 20;
+    }
+    .service-wrapper .service-icon::after {
+        content: '';
+        opacity: 0;
+        pointer-events: none; /* Don't interfere with mouse events */
+    }
+
+    /* ---------------------------------------------------- */
+    /* --- FINAL/REVEAL STATE (Triggered by JavaScript) --- */
+    /* ---------------------------------------------------- */
+    .viz-container.reveal .service-wrapper {
+        opacity: 1;
+    }
+
+    /* FIX: Apply FIXED (x, y) coordinates for a smooth circular reveal with EQUAL spacing */
+    /* We use calc() only to adjust for the initial -50% translation of the icon wrapper */
+    .viz-container.reveal .service-wrapper.s1 { 
+        transform: translate(calc(var(--pos-s1-x) - 50%), calc(var(--pos-s1-y) - 50%)); 
+        transition-delay: 0.1s; 
+    }
+    .viz-container.reveal .service-wrapper.s2 { 
+        transform: translate(calc(var(--pos-s2-x) - 50%), calc(var(--pos-s2-y) - 50%)); 
+        transition-delay: 0.2s; 
+    }
+    .viz-container.reveal .service-wrapper.s3 { 
+        transform: translate(calc(var(--pos-s3-x) - 50%), calc(var(--pos-s3-y) - 50%)); 
+        transition-delay: 0.3s; 
+    }
+    .viz-container.reveal .service-wrapper.s4 { 
+        transform: translate(calc(var(--pos-s4-x) - 50%), calc(var(--pos-s4-y) - 50%)); 
+        transition-delay: 0.4s; 
+    }
+    .viz-container.reveal .service-wrapper.s5 { 
+        transform: translate(calc(var(--pos-s5-x) - 50%), calc(var(--pos-s5-y) - 50%)); 
+        transition-delay: 0.5s; 
+    }
+    .viz-container.reveal .service-wrapper.s6 { 
+        transform: translate(calc(var(--pos-s6-x) - 50%), calc(var(--pos-s6-y) - 50%)); 
+        transition-delay: 0.6s; 
+    }
+    .viz-container.reveal .service-wrapper.s7 { 
+        transform: translate(calc(var(--pos-s7-x) - 50%), calc(var(--pos-s7-y) - 50%)); 
+        transition-delay: 0.7s; 
+    }
+
+
+    /* Radial Gradient Effect (The "energy flow") - Kept for visual appeal */
+    .viz-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, rgba(138, 43, 226, 0.3) 0%, transparent 60%);
+        animation: radial-pulse 4s infinite;
+        z-index: 5;
+    }
+
+    /* --- Keyframe Animations --- */
+    @keyframes pulse-animation {
+        0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.7); }
+        70% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 0 15px rgba(138, 43, 226, 0); }
+        100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+    }
+    @keyframes radial-pulse {
+        0% { opacity: 0.5; }
+        50% { opacity: 0.9; }
+        100% { opacity: 0.5; }
+    }
+    @keyframes slow-rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    @keyframes slow-rotate-reverse {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+    }
+
+
+    /* Custom button style for outline-purple */
+    .btn-outline-purple {
+        color: var(--primary-purple);
+        border-color: var(--primary-purple);
+    }
+    .btn-outline-purple:hover {
+        background-color: var(--primary-purple);
+        color: white;
+    }
+
+    /* Adjust line for rating section if needed */
+    .partners-reviews-section .d-flex > img {
+        vertical-align: middle;
+    }
+
+    /* Original desktop viz-container styles */
+    .viz-container {
+        position: relative;
+        width: 600px; 
+        height: 400px; 
+        /* Kept 'margin: 4rem auto 0;' for desktop only */
+    }
+
+    /* --- FIX: Updated Mobile Centering (<= 768px) --- */
+    @media (max-width: 768px) { 
+        /* Adjust hero text and padding for better mobile fit */
         .hero-section {
-            background: #0d1a26; 
-            color: white;
-            padding: 6rem 0 10rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden; 
+            padding: 4rem 0 6rem;
         }
-        .hero-section h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .hero-subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 3rem; color: #b0c4de; }
+        .hero-section h1 { font-size: 2.5rem; }
+        .hero-subtitle { font-size: 1.2rem; }
 
-        /* AI & Service Visualization Container */
         .viz-container {
-            position: relative;
-            width: 600px; 
+            /* 1. Make the container fluid to accept centering */
+            width: 100%; 
+            max-width: 600px; /* Still prevent it from growing too large */
             height: 400px; 
-            margin: 4rem auto 0;
-            /* CONTINUOUS SUBTLE ROTATION */
-            animation: slow-rotate 60s linear infinite;
+            margin-top: 1rem; 
+            margin-left: 0;
+            margin-right: 0;
+            
+            /* 2. Set the transform origin to the center before scaling */
+            transform-origin: center center;
+            
+            /* 3. Scale down the entire graphic for small screens and apply center-based scale */
+            transform: scale(0.65); 
+            
+            /* Keep rotation on the container */
+            animation: slow-rotate 60s linear infinite; 
         }
+        
         .ai-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            filter: drop-shadow(0 0 10px var(--primary-purple));
+            /* Make the central icon a bit smaller on mobile */
+            transform: translate(-50%, -50%); /* Re-apply base translate for accurate centering */
+            /* Scale the icon contents back up to look proportional after the viz-container was scaled down */
+            /* Note: We removed the inner scale(1.53) for simplicity, relying on the overall container scale and font-size change */
+            animation: none; /* Turn off core pulse animation when scaled if it looks bad */
         }
         .ai-center i {
-            font-size: 6rem;
-            color: var(--primary-purple);
-            border: 5px solid var(--primary-purple);
-            border-radius: 50%;
-            padding: 20px;
-            background-color: #1a2936;
-            animation: pulse-animation 2s infinite ease-in-out;
+            font-size: 4rem; /* Smaller central icon */
+            padding: 15px;
         }
-        
-        /* Service icon container positioning - START POSITION (Hidden Inside AI) */
-        .service-wrapper {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Start centered exactly over the AI icon */
-            opacity: 0;
-            transition: 
-                transform 1.5s cubic-bezier(0.23, 1, 0.32, 1), 
-                opacity 1.5s ease-out;
-            z-index: 9;
-        }
-        
-        .service-icon {
-            font-size: 2rem;
-            color: white;
-            padding: 10px;
-            border: 1px solid #364f6b;
-            border-radius: 50%;
-            background-color: #1a2936;
-            cursor: pointer;
-            position: relative; /* Needed for the hover effect pseudo-element */
-            /* Counter-rotate the icon to keep it upright */
-            animation: slow-rotate-reverse 60s linear infinite; 
-        }
-
-        /* --- HOVER LABEL EFFECT --- */
-        .service-wrapper:hover .service-icon::after {
-            content: attr(data-name);
-            position: absolute;
-            bottom: -35px; /* Position below the icon */
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-            background-color: var(--primary-purple);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-            z-index: 20;
-        }
-        .service-wrapper .service-icon::after {
-            content: '';
-            opacity: 0;
-            pointer-events: none; /* Don't interfere with mouse events */
-        }
-
-        /* ---------------------------------------------------- */
-        /* --- FINAL/REVEAL STATE (Triggered by JavaScript) --- */
-        /* ---------------------------------------------------- */
-        .viz-container.reveal .service-wrapper {
-            opacity: 1;
-        }
-
-        /* FIX: Apply FIXED (x, y) coordinates for a smooth circular reveal with EQUAL spacing */
-        /* We use calc() only to adjust for the initial -50% translation of the icon wrapper */
-        .viz-container.reveal .service-wrapper.s1 { 
-            transform: translate(calc(var(--pos-s1-x) - 50%), calc(var(--pos-s1-y) - 50%)); 
-            transition-delay: 0.1s; 
-        }
-        .viz-container.reveal .service-wrapper.s2 { 
-            transform: translate(calc(var(--pos-s2-x) - 50%), calc(var(--pos-s2-y) - 50%)); 
-            transition-delay: 0.2s; 
-        }
-        .viz-container.reveal .service-wrapper.s3 { 
-            transform: translate(calc(var(--pos-s3-x) - 50%), calc(var(--pos-s3-y) - 50%)); 
-            transition-delay: 0.3s; 
-        }
-        .viz-container.reveal .service-wrapper.s4 { 
-            transform: translate(calc(var(--pos-s4-x) - 50%), calc(var(--pos-s4-y) - 50%)); 
-            transition-delay: 0.4s; 
-        }
-        .viz-container.reveal .service-wrapper.s5 { 
-            transform: translate(calc(var(--pos-s5-x) - 50%), calc(var(--pos-s5-y) - 50%)); 
-            transition-delay: 0.5s; 
-        }
-        .viz-container.reveal .service-wrapper.s6 { 
-            transform: translate(calc(var(--pos-s6-x) - 50%), calc(var(--pos-s6-y) - 50%)); 
-            transition-delay: 0.6s; 
-        }
-        .viz-container.reveal .service-wrapper.s7 { 
-            transform: translate(calc(var(--pos-s7-x) - 50%), calc(var(--pos-s7-y) - 50%)); 
-            transition-delay: 0.7s; 
-        }
-
-
-        /* Radial Gradient Effect (The "energy flow") - Kept for visual appeal */
-        .viz-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.3) 0%, transparent 60%);
-            animation: radial-pulse 4s infinite;
-            z-index: 5;
-        }
-
-        /* --- Keyframe Animations --- */
-        @keyframes pulse-animation {
-            0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.7); }
-            70% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 0 15px rgba(138, 43, 226, 0); }
-            100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
-        }
-        @keyframes radial-pulse {
-            0% { opacity: 0.5; }
-            50% { opacity: 0.9; }
-            100% { opacity: 0.5; }
-        }
-        @keyframes slow-rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes slow-rotate-reverse {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
-        }
-
-
-        /* Custom button style for outline-purple */
-.btn-outline-purple {
-    color: var(--primary-purple);
-    border-color: var(--primary-purple);
-}
-.btn-outline-purple:hover {
-    background-color: var(--primary-purple);
-    color: white;
-}
-
-/* Adjust line for rating section if needed */
-.partners-reviews-section .d-flex > img {
-    vertical-align: middle;
-}
-    </style>
+    }
+</style>
 </head>
 <body>
 
@@ -426,9 +482,10 @@
         <h1 class="hero-title">Driving Growth with <span class="text-purple">AI-Powered Creativity</span></h1>
         <p class="hero-subtitle">Our unified intelligence system connects design, marketing, and development to deliver integrated results.</p>
         
-       
+        <a href="#" class="btn btn-purple btn-lg mt-3 me-3">See Our AI in Action</a>
+        <a href="#" class="btn btn-outline-light btn-lg mt-3">View All Services</a>
 
-        <div class="viz-container d-none d-lg-block"> 
+        <div class="viz-container"> 
             <div class="ai-center">
                 <i class="bi bi-cpu-fill"></i> 
             </div>
