@@ -3,578 +3,632 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Centered Mega Menu - Final Layout</title>
+    <title>AbcdMedia Ltd</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     
     <style>
-    /* --- New Global Fonts (Recommended for modern design) --- */
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
-
-    /* Define your custom purple color variable from the image */
-    :root {
-        --primary-purple: #8a2be2;
-        --purple-light: #9f48f4;
-        
-        /* --- FIXED: Manually Calculated Radial Positions for EQUAL 51.43° SPACING --- */
-        /* Radius: 200px. Calculated for 7 points (360/7) for perfect symmetry. */
-        --pos-s1-x: 200px; /* 0 degrees */    --pos-s1-y: 0px; 
-        --pos-s2-x: 125px; /* 51.43 degrees */  --pos-s2-y: 156px; 
-        --pos-s3-x: -44px; /* 102.86 degrees */ --pos-s3-y: 195px; 
-        --pos-s4-x: -180px;/* 154.29 degrees */ --pos-s4-y: 82px; 
-        --pos-s5-x: -175px;/* 205.71 degrees */ --pos-s5-y: -87px; 
-        --pos-s6-x: -44px; /* 257.14 degrees */ --pos-s6-y: -195px; 
-        --pos-s7-x: 125px; /* 308.57 degrees */ --pos-s7-y: -156px; 
-    }
-
-    body {
-        font-family: 'Open Sans', sans-serif;
-        min-height: 200vh; 
-    }
-    .hero-title, .mega-menu h6 {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    /* --- 1. Announcement Bar Style --- */
-    .announcement-bar {
-        background-color: var(--primary-purple);
-        color: white;
-        padding: 8px 0;
-        font-size: 0.9rem;
-        text-align: center;
-    }
-    
-    /* Customizing Bootstrap elements with the purple color */
-    .btn-purple {
-        color: #fff;
-        background-color: var(--primary-purple);
-        border-color: var(--primary-purple);
-    }
-    .btn-purple:hover {
-        background-color: var(--purple-light);
-        border-color: var(--purple-light);
-    }
-    .text-purple {
-        color: var(--primary-purple) !important;
-    }
-
-    /* --- 2. Navbar Theme Adjustments --- */
-    /* Custom CSS to size the logo image */
-    .navbar-brand img {
-        height: 40px; /* Adjust size as needed */
-        width: auto;
-    }
-    
-    .navbar-light .navbar-nav .nav-link {
-         color: #343a40; /* Darker text for light navbar */
-    }
-    .navbar-light .navbar-nav .nav-link:hover {
-         color: var(--primary-purple); /* Purple on hover */
-    }
-    .navbar-light .dropdown-toggle.text-warning {
-        color: var(--primary-purple) !important;
-        font-weight: bold;
-    }
-
-
-    /* --- Mega Menu Styles --- */
-    @media (min-width: 992px) {
-        .navbar .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
+        /* --- Colors & Fonts (Kept Consistent) --- */
+        :root {
+            --primary-font: 'Poppins', sans-serif;
+            --primary-purple: #3a0b76; 
+            --purple-accent: #8b3cff; 
+            --purple-light: #f5f0ff; 
+            --text-dark: #1f1f1f;
+            --text-muted: #555;
+            --bg-body: #ffffff; 
         }
-        .navbar .dropdown-menu {
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        .mega-menu {
-            width: 1000px;
-            /* Center the mega menu horizontally relative to the viewport/page */
-            left: 50%; 
-            transform: translateX(-50%); 
-            margin: auto;
-        }
-    }
-    
-    .mega-menu {
-        padding: 2rem;
-        background-color: #ffffff;
-    }
-    
-    .mega-menu h6 {
-        font-weight: 700;
-        margin-bottom: 1rem; 
-        color: #212529; 
-        border-bottom: 2px solid var(--primary-purple);
-        padding-bottom: 0.5rem;
-    }
 
-    .mega-menu a {
-        display: block;
-        padding: 6px 0;
-        text-decoration: none;
-        color: #495057;
-        transition: color 0.2s ease-in-out;
-        font-size: 0.95rem;
-    }
-    
-    /* Set icons inside the mega menu to purple */
-    .mega-menu a i {
-        color: var(--primary-purple);
-        transition: color 0.2s ease-in-out;
-    }
-
-    .mega-menu a:hover {
-        color: var(--primary-purple);
-        text-decoration: none;
-    }
-    
-    /* Flag style for Flag Icon CSS library */
-    .fi {
-        font-size: 1.1em;
-        margin-right: 0.5rem;
-        line-height: 1; /* Helps with vertical alignment */
-        display: inline-block;
-    }
-
-    /* -------------------------------------- */
-    /* --- HERO SECTION ANIMATION STYLES --- */
-    /* -------------------------------------- */
-    
-    /* ADDED: Flexbox to center the viz-container on all screen sizes, including mobile */
-    .hero-section .container-xl {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center horizontally */
-    }
-
-    .hero-section {
-        background: #0d1a26; 
-        color: white;
-        padding: 6rem 0 10rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden; 
-    }
-    .hero-section h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .hero-subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 3rem; color: #b0c4de; }
-
-    /* AI & Service Visualization Container */
-    .viz-container {
-        position: relative;
-        width: 600px; 
-        height: 400px; 
-        margin: 4rem auto 0;
-        /* CONTINUOUS SUBTLE ROTATION */
-        animation: slow-rotate 60s linear infinite;
-    }
-    .ai-center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        filter: drop-shadow(0 0 10px var(--primary-purple));
-    }
-    .ai-center i {
-        font-size: 6rem;
-        color: var(--primary-purple);
-        border: 5px solid var(--primary-purple);
-        border-radius: 50%;
-        padding: 20px;
-        background-color: #1a2936;
-        animation: pulse-animation 2s infinite ease-in-out;
-    }
-    
-    /* Service icon container positioning - START POSITION (Hidden Inside AI) */
-    .service-wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); /* Start centered exactly over the AI icon */
-        opacity: 0;
-        transition: 
-            transform 1.5s cubic-bezier(0.23, 1, 0.32, 1), 
-            opacity 1.5s ease-out;
-        z-index: 9;
-    }
-    
-    .service-icon {
-        font-size: 2rem;
-        color: white;
-        padding: 10px;
-        border: 1px solid #364f6b;
-        border-radius: 50%;
-        background-color: #1a2936;
-        cursor: pointer;
-        position: relative; /* Needed for the hover effect pseudo-element */
-        /* Counter-rotate the icon to keep it upright */
-        animation: slow-rotate-reverse 60s linear infinite; 
-    }
-
-    /* --- HOVER LABEL EFFECT --- */
-    .service-wrapper:hover .service-icon::after {
-        content: attr(data-name);
-        position: absolute;
-        bottom: -35px; /* Position below the icon */
-        left: 50%;
-        transform: translateX(-50%);
-        white-space: nowrap;
-        background-color: var(--primary-purple);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 4px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        opacity: 1;
-        transition: opacity 0.3s ease-in-out;
-        z-index: 20;
-    }
-    .service-wrapper .service-icon::after {
-        content: '';
-        opacity: 0;
-        pointer-events: none; /* Don't interfere with mouse events */
-    }
-
-    /* ---------------------------------------------------- */
-    /* --- FINAL/REVEAL STATE (Triggered by JavaScript) --- */
-    /* ---------------------------------------------------- */
-    .viz-container.reveal .service-wrapper {
-        opacity: 1;
-    }
-
-    /* FIX: Apply FIXED (x, y) coordinates for a smooth circular reveal with EQUAL spacing */
-    /* We use calc() only to adjust for the initial -50% translation of the icon wrapper */
-    .viz-container.reveal .service-wrapper.s1 { 
-        transform: translate(calc(var(--pos-s1-x) - 50%), calc(var(--pos-s1-y) - 50%)); 
-        transition-delay: 0.1s; 
-    }
-    .viz-container.reveal .service-wrapper.s2 { 
-        transform: translate(calc(var(--pos-s2-x) - 50%), calc(var(--pos-s2-y) - 50%)); 
-        transition-delay: 0.2s; 
-    }
-    .viz-container.reveal .service-wrapper.s3 { 
-        transform: translate(calc(var(--pos-s3-x) - 50%), calc(var(--pos-s3-y) - 50%)); 
-        transition-delay: 0.3s; 
-    }
-    .viz-container.reveal .service-wrapper.s4 { 
-        transform: translate(calc(var(--pos-s4-x) - 50%), calc(var(--pos-s4-y) - 50%)); 
-        transition-delay: 0.4s; 
-    }
-    .viz-container.reveal .service-wrapper.s5 { 
-        transform: translate(calc(var(--pos-s5-x) - 50%), calc(var(--pos-s5-y) - 50%)); 
-        transition-delay: 0.5s; 
-    }
-    .viz-container.reveal .service-wrapper.s6 { 
-        transform: translate(calc(var(--pos-s6-x) - 50%), calc(var(--pos-s6-y) - 50%)); 
-        transition-delay: 0.6s; 
-    }
-    .viz-container.reveal .service-wrapper.s7 { 
-        transform: translate(calc(var(--pos-s7-x) - 50%), calc(var(--pos-s7-y) - 50%)); 
-        transition-delay: 0.7s; 
-    }
-
-
-    /* Radial Gradient Effect (The "energy flow") - Kept for visual appeal */
-    .viz-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at center, rgba(138, 43, 226, 0.3) 0%, transparent 60%);
-        animation: radial-pulse 4s infinite;
-        z-index: 5;
-    }
-
-    /* --- Keyframe Animations --- */
-    @keyframes pulse-animation {
-        0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.7); }
-        70% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 0 15px rgba(138, 43, 226, 0); }
-        100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
-    }
-    @keyframes radial-pulse {
-        0% { opacity: 0.5; }
-        50% { opacity: 0.9; }
-        100% { opacity: 0.5; }
-    }
-    @keyframes slow-rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    @keyframes slow-rotate-reverse {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(-360deg); }
-    }
-
-
-    /* Custom button style for outline-purple */
-    .btn-outline-purple {
-        color: var(--primary-purple);
-        border-color: var(--primary-purple);
-    }
-    .btn-outline-purple:hover {
-        background-color: var(--primary-purple);
-        color: white;
-    }
-
-    /* Adjust line for rating section if needed */
-    .partners-reviews-section .d-flex > img {
-        vertical-align: middle;
-    }
-
-    /* Original desktop viz-container styles */
-    .viz-container {
-        position: relative;
-        width: 600px; 
-        height: 400px; 
-        /* Kept 'margin: 4rem auto 0;' for desktop only */
-    }
-
-    /* --- FIX: Updated Mobile Centering (<= 768px) --- */
-    @media (max-width: 768px) { 
-        /* Adjust hero text and padding for better mobile fit */
-        .hero-section {
-            padding: 4rem 0 6rem;
-        }
-        .hero-section h1 { font-size: 2.5rem; }
-        .hero-subtitle { font-size: 1.2rem; }
-
-        .viz-container {
-            /* 1. Make the container fluid to accept centering */
-            width: 100%; 
-            max-width: 600px; /* Still prevent it from growing too large */
-            height: 400px; 
-            margin-top: 1rem; 
-            margin-left: 0;
-            margin-right: 0;
-            
-            /* 2. Set the transform origin to the center before scaling */
-            transform-origin: center center;
-            
-            /* 3. Scale down the entire graphic for small screens and apply center-based scale */
-            transform: scale(0.65); 
-            
-            /* Keep rotation on the container */
-            animation: slow-rotate 60s linear infinite; 
+        body {
+            font-family: var(--primary-font);
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
         
-        .ai-center {
-            /* Make the central icon a bit smaller on mobile */
-            transform: translate(-50%, -50%); /* Re-apply base translate for accurate centering */
-            /* Scale the icon contents back up to look proportional after the viz-container was scaled down */
-            /* Note: We removed the inner scale(1.53) for simplicity, relying on the overall container scale and font-size change */
-            animation: none; /* Turn off core pulse animation when scaled if it looks bad */
+        /* Global Button Style */
+        .btn-purple {
+            color: #fff;
+            background: linear-gradient(90deg, var(--purple-accent), var(--primary-purple));
+            border: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px; 
+            box-shadow: 0 10px 30px rgba(58, 11, 118, 0.4);
         }
-        .ai-center i {
-            font-size: 4rem; /* Smaller central icon */
-            padding: 15px;
+        .btn-purple:hover {
+            background: linear-gradient(90deg, var(--primary-purple), var(--purple-accent));
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(58, 11, 118, 0.6);
         }
-    }
-</style>
+        
+        /* --- 1. Announcement Bar (Themed and Centered) --- */
+        .announcement-bar {
+            background-color: var(--primary-purple); 
+            color: var(--purple-light);
+            padding: 10px 0;
+            font-size: 0.8rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* --- Logo Styling --- */
+.custom-logo {
+    /* Set the desired height for your logo */
+    height: 40px; 
+    width: auto;
+    transition: all 0.3s ease;
+}
+/* You can add a hover effect if you like */
+.custom-logo:hover {
+    opacity: 0.8;
+}
+
+        /* --- 2. Dynamic Services Container (The Insider Wrapper - ON PAGE) --- */
+        .dynamic-services-container {
+            padding: 50px 0; 
+            position: relative;
+            z-index: 100; 
+        }
+        
+        /* WRAPPER FOR HOVER EXIT LOGIC */
+        #service-nav-wrapper {
+            position: relative; /* Needed to contain the content display */
+        }
+
+        .service-nav-bar {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            z-index: 10; /* Keep buttons above the content panel */
+            position: relative;
+        }
+        
+        /* Level 1 Category Buttons (Purple Theming) */
+        .service-category-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .service-category-btn:hover, .service-category-btn.active {
+            color: var(--primary-purple);
+            background-color: var(--purple-light);
+            box-shadow: 0 4px 15px rgba(58, 11, 118, 0.1);
+        }
+        
+        /* --- 3. Content Display Area (Main Container) --- */
+        /* KEY CSS CHANGE: Start hidden, not just transparent. */
+        #service-content-display {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            min-height: 380px;
+            border: 1px solid var(--purple-light);
+            
+            /* Initial State (Hidden) */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s;
+            visibility: hidden; /* New: Hides it completely from the layout/mouse events */
+            
+            /* Positioning it to look like it drops down from the nav bar */
+            position: absolute;
+            width: 100%;
+            top: 100px; /* Adjust to sit right under the nav bar */
+            left: 0;
+            z-index: 5;
+        }
+
+        /* Active State (Shown) */
+        #service-content-display.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+            transition-delay: 0s; /* No delay when showing */
+        }
+
+        .content-header {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--purple-accent);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* --- Level 1: Service Grid (Left Panel) --- */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        
+        .service-item-block {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            background-color: #fcfcfc;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* NEW: Style for the Service Item Icons (Purplish Color) */
+        .service-item-block i, .service-item-block span.fi {
+            font-size: 1.5rem;
+            color: var(--purple-accent); /* Purplish color */
+            margin-right: 10px;
+            width: 30px; /* Ensure alignment */
+            text-align: center;
+        }
+
+        /* Icon color change on hover/active */
+        .service-item-block:hover i, .service-item-block.active-service i,
+        .service-item-block:hover span.fi, .service-item-block.active-service span.fi {
+            color: white; /* Icons turn white on hover */
+        }
+        
+        .service-item-block:hover, .service-item-block.active-service {
+            color: white;
+            background: linear-gradient(90deg, var(--purple-accent), var(--primary-purple));
+            border-color: var(--purple-accent);
+            transform: scale(1.02); 
+            box-shadow: 0 6px 15px rgba(58, 11, 118, 0.2);
+        }
+
+        /* --- Level 2: Sub-Service Detail Panel (Right Panel) --- */
+        .sub-service-panel {
+            padding-left: 30px;
+            border-left: 2px dashed var(--purple-light);
+        }
+        .sub-service-panel h4 {
+            font-weight: 700;
+            color: var(--purple-accent);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .sub-service-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sub-service-list li {
+            padding: 5px 0;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        .sub-service-list li i {
+            color: var(--primary-purple);
+            margin-right: 10px;
+        }
+        .sub-service-cta {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--purple-light);
+            border-radius: 10px;
+            text-align: center;
+        }
+        /* Add styles for hero section and feature cards to look better */
+        .hero-section { padding: 80px 0; }
+        .hero-section h1 { font-size: 3rem; font-weight: 800; }
+        .text-purple { color: var(--purple-accent) !important; }
+        .feature-card-body { padding: 30px; background-color: var(--purple-light); border-radius: 10px; }
+        .feature-card-body i { font-size: 2rem; color: var(--primary-purple); margin-bottom: 15px; }
+
+        /* Service Navigation Bar - Hidden by default */
+        .service-nav-bar {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            z-index: 10;
+            position: relative;
+            /* Remove display: none from here and control via JS */
+        }
+    </style>
 </head>
 <body>
 
 <div class="announcement-bar">
-    <div class="container-fluid container-xl">
-        <i class="bi bi-info-circle-fill me-2"></i>This site is used for **Global** operations (excluding the UK).
+    <div class="container-fluid container-xl text-center">
+        <i class="bi bi-info-circle-fill me-2"></i>**Attention:** Global operations (excluding the UK) are managed through this portal.
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container-fluid container-xl">
-        
         <a class="navbar-brand fw-bold" href="#">
-            <img src="abcd-1024x260.png" alt="Company Logo">
-        </a>
+    <img src="abcd-1024x260.png" alt="Company Logo" class="custom-logo">
+</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                
-                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-circle me-1"></i>Clients</a></li>
-
-                <li class="nav-item dropdown mx-3">
-                    <a class="nav-link dropdown-toggle text-warning" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-rocket-takeoff-fill me-1"></i>Services 
-                    </a>
-                    <div class="dropdown-menu mega-menu" aria-labelledby="servicesDropdown">
-                        
-                        <div class="container-fluid">
-                            <div class="row g-4">
-
-                                <div class="col-lg-3 col-md-6">
-                                    <h6>Digital Marketing</h6>
-                                    <a href="#"><i class="bi bi-megaphone-fill me-2"></i>Commercial Prod</a>
-                                    <a href="#"><i class="bi bi-geo-alt-fill me-2"></i>Geofencing Ads</a>
-                                    <a href="#"><i class="bi bi-browser-safari me-2"></i>Web Dev / Company Profile</a>
-                                    <a href="#"><i class="bi bi-robot me-2"></i>AI Automation</a>
-                                    <h6 class="mt-4">Media Buying</h6>
-                                    <a href="#"><i class="bi bi-currency-dollar me-2"></i>Media Buying</a>
-                                    <a href="#"><i class="bi bi-search me-2"></i>SEO</a>
-                                    <a href="#"><i class="bi bi-hash me-2"></i>SMM</a>
-                                    <a href="#"><i class="bi bi-chat-dots me-2"></i>ORM</a>
-                                    <a href="#"><i class="bi bi-envelope-fill me-2"></i>E-mail Marketing</a>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <h6>Creative Design (WO)</h6>
-                                    <a href="#"><i class="bi bi-pencil-square me-2"></i>UI/UX</a>
-                                    <a href="#"><i class="bi bi-award-fill me-2"></i>Branding Identity</a>
-                                    <a href="#"><i class="bi bi-card-text me-2"></i>Content Design</a>
-                                    <a href="#"><i class="bi bi-type me-2"></i>Logo Design</a>
-                                    <a href="#"><i class="bi bi-image-fill me-2"></i>Banner/Poster</a>
-                                    <a href="#"><i class="bi bi-box-seam-fill me-2"></i>Packaging Design</a>
-                                    <a href="#"><i class="bi bi-palette-fill me-2"></i>Illustration</a>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <h6>Animation & Video</h6>
-                                    <a href="#"><i class="bi bi-file-earmark-play-fill me-2"></i>2D Animation</a>
-                                    <a href="#"><i class="bi bi-film me-2"></i>3D Animation</a>
-                                    <a href="#"><i class="bi bi-youtube me-2"></i>Social Video Ads</a>
-                                    <a href="#"><i class="bi bi-skip-forward-fill me-2"></i>Motion Graphics</a>
-                                    <a href="#"><i class="bi bi-scissors me-2"></i>Video Editing</a>
-                                    <a href="#"><i class="bi bi-magic me-2"></i>CGI Ads</a>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <h6>Web Development</h6>
-                                    <a href="#"><i class="bi bi-wordpress me-2"></i>WordPress</a>
-                                    <a href="#"><i class="bi bi-shop me-2"></i>Shopify</a>
-                                    <a href="#"><i class="bi bi-laptop me-2"></i>Wix</a>
-                                    <a href="#"><i class="bi bi-code-slash me-2"></i>Custom Code</a>
-                                    <a href="#"><i class="bi bi-window-split me-2"></i>Landing Page</a>
-
-                                    <h6 class="mt-4">Global Locations</h6>
-                                    <a href="#"><span class="fi fi-us"></span>USA</a>
-                                    <a href="#"><span class="fi fi-ae"></span>UAE</a>
-                                    <a href="#"><span class="fi fi-hk"></span>Hong Kong</a>
-                                    <a href="#"><span class="fi fi-eu"></span>EU (General)</a>
-                                </div>
-
-                            </div>
-                            <hr class="my-4">
-                           
-                        </div>
-                    </div>
-                </li>
-            
-                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-folder-fill me-1"></i>Case Studies</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-telephone-fill me-1"></i>Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-star-fill me-1"></i>Review</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-people-fill me-1"></i>Team</a></li>
-                
-                <li class="nav-item ms-lg-3"><a class="nav-link btn btn-purple text-white" href="#"><i class="bi bi-speedometer me-1"></i>Dashboard</a></li>
+            <ul class="navbar-nav ms-auto align-items-lg-center"> 
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-circle"></i>Clients</a></li>
+                <li class="nav-item mx-3"><a class="nav-link service-nav-link" href="#dynamic-services"><i class="bi bi-box-seam"></i>Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-card-checklist"></i>Case Studies</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-telephone"></i>Contact</a></li>
+                <li class="nav-item ms-lg-3"><a class="nav-link btn btn-purple text-white" href="#"><i class="bi bi-lock-fill me-1"></i>Client Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<section class="hero-section">
+<div class="dynamic-services-container" id="dynamic-services">
     <div class="container-xl">
         
-        <h1 class="hero-title">Driving Growth with <span class="text-purple">AI-Powered Creativity</span></h1>
-        <p class="hero-subtitle">Our unified intelligence system connects design, marketing, and development to deliver integrated results.</p>
-        
-      
+        <div id="service-nav-wrapper" onmouseleave="hideCategoryContent()">
 
-        <div class="viz-container"> 
-            <div class="ai-center">
-                <i class="bi bi-cpu-fill"></i> 
+            <div class="service-nav-bar" id="service-nav-bar" style="display: none;">
+                <button class="service-category-btn" data-target="digitalMedia" onmouseenter="showCategoryContent('digitalMedia', this)"><i class="bi bi-graph-up-arrow"></i> Digital & Media</button>
+                <button class="service-category-btn" data-target="creativeBranding" onmouseenter="showCategoryContent('creativeBranding', this)"><i class="bi bi-brush-fill"></i> Creative & Branding</button>
+                <button class="service-category-btn" data-target="webTech" onmouseenter="showCategoryContent('webTech', this)"><i class="bi bi-laptop-fill"></i> Web & Tech</button>
+                <button class="service-category-btn" data-target="globalOps" onmouseenter="showCategoryContent('globalOps', this)"><i class="bi bi-globe2"></i> Global Operations</button>
             </div>
-
-            <div class="service-wrapper s1"><div class="service-icon" data-name="Digital Marketing"><i class="bi bi-megaphone-fill"></i></div></div>
-            <div class="service-wrapper s2"><div class="service-icon" data-name="Creative Design"><i class="bi bi-pencil-square"></i></div></div>
-            <div class="service-wrapper s3"><div class="service-icon" data-name="UI/UX Design"><i class="bi bi-award-fill"></i></div></div>
-            <div class="service-wrapper s4"><div class="service-icon" data-name="Animation & Video"><i class="bi bi-film"></i></div></div>
-            <div class="service-wrapper s5"><div class="service-icon" data-name="Media Buying"><i class="bi bi-currency-dollar"></i></div></div>
-            <div class="service-wrapper s6"><div class="service-icon" data-name="SEO Optimization"><i class="bi bi-search"></i></div></div>
-            <div class="service-wrapper s7"><div class="service-icon" data-name="Web Development"><i class="bi bi-shop"></i></div></div>
+            <div id="service-content-display">
+            </div>
         </div>
-        
+
     </div>
-</section>
-
-
-<section class="partners-reviews-section py-5 bg-white text-center">
+</div>
+<div class="hero-section">
     <div class="container-xl">
-        <h2 class="h3 fw-bold mb-5">We're proud to work with leading partners and brands.</h2>
-
-        <div class="row align-items-center justify-content-center mb-5 g-4">
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="new-google-partner-badge-1.png" alt="Google Partner" class="img-fluid" style="max-height: 80px;">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+            <h1>
+    We Architect <span class="text-purple">Predictive Intelligence</span> for Global Leaders.
+    </h1>
+<p class="lead">
+    Our team delivers bespoke, AI-powered marketing and development solutions. We leverage machine learning and deep data analysis to drive unprecedented growth and secure market leadership across continents.
+    </p>
+                <div class="mt-5 d-flex align-items-center">
+                    <a href="#" class="btn btn-purple btn-lg me-3">Start Your Project <i class="bi bi-arrow-right-short"></i></a>
+                    <a href="#" class="text-purple fw-semibold text-decoration-none" style="font-size: 1.1rem;">
+                        <i class="bi bi-patch-question me-1"></i>Pricing & Packages
+                    </a>
+                </div>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="Logo_of_Infinix.png" alt="Infinix Logo" class="img-fluid" style="max-height: 50px;">
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-image-placeholder"></div>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="KKK.png" alt="Khaadi Logo" class="img-fluid" style="max-height: 50px;">
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="Air-Blue65.png" alt="Airblue Logo" class="img-fluid" style="max-height: 50px;">
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center gap-3 mb-5">
-            <a href="#" class="btn btn-purple btn-lg px-4">Get Started</a>
-            <a href="#" class="btn btn-outline-purple btn-lg px-4">Pricing <i class="bi bi-chevron-right ms-2"></i></a>
-        </div>
-
-        <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="height: 30px;">
-            <div class="d-flex">
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-half text-warning fs-5"></i>
-            </div>
-            <span class="lead fw-bold">Rated <span class="text-purple">4.9/5</span> across Google &amp; Trustpilot</span>
         </div>
     </div>
-</section>
+</div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const vizContainer = document.querySelector('.viz-container');
+    // UPDATED: Data Structure for all Services based on the diagram
+    const servicesData = {
+        digitalMedia: {
+            title: "Digital Marketing & Media Buying",
+            items: [
+                { id: 'digitalmkt', icon: 'bi-megaphone-fill', name: 'Digital Marketing', subItems: [
+                    'Strategy & Planning', 'Performance Tracking', 'Cross-Channel Campaigns', 'Reporting & Analysis'
+                ]},
+                { id: 'mediabuy', icon: 'bi-currency-exchange', name: 'Media Buying', subItems: [
+                    'PPC Management', 'Social Ads (Meta/TikTok)', 'Display & Video Ads', 'Budget Optimization'
+                ]},
+                { id: 'seo', icon: 'bi-search', name: 'SEO Optimization', subItems: [
+                    'Technical SEO Audit', 'Content Strategy', 'Off-Page SEO', 'Local SEO'
+                ]},
+                { id: 'smm', icon: 'bi-hand-index-thumb-fill', name: 'SMM (Social Media)', subItems: [
+                    'Community Management', 'Content Scheduling', 'Engagement Strategy', 'Ad Campaign Setup'
+                ]},
+                { id: 'crm', icon: 'bi-person-badge-fill', name: 'CRM/PRM', subItems: [
+                    'CRM Setup & Integration', 'Customer Data Management', 'Partner Relationship Mgmt', 'Retention Funnels'
+                ]},
+                { id: 'email', icon: 'bi-envelope-fill', name: 'E-mail Marketing', subItems: [
+                    'Nurture Flows', 'Automation Setup', 'Newsletter Design', 'List Segmentation'
+                ]},
+                { id: 'ai', icon: 'bi-robot', name: 'AI Automation', subItems: [
+                    'Process Automation', 'Chatbot Integration', 'Marketing Tech Stacks', 'Data Analysis'
+                ]}
+            ]
+        },
+        creativeBranding: {
+            title: "Branding, Design & Motion Graphics",
+            items: [
+                { id: 'uiux', icon: 'bi-palette-fill', name: 'UI/UX Design', subItems: [
+                    'User Research', 'Wireframing', 'Prototyping & Testing', 'Interaction Design'
+                ]},
+                { id: 'brand', icon: 'bi-award-fill', name: 'Branding & Identity', subItems: [
+                    'Brand Guidelines', 'Logo Design', 'Visual Identity System', 'Tone of Voice'
+                ]},
+                { id: 'content', icon: 'bi-chat-left-dots-fill', name: 'Content Design', subItems: [
+                    'Copywriting', 'Blog & Article Writing', 'Whitepapers', 'Landing Page Copy'
+                ]},
+                { id: 'graphic', icon: 'bi-vector-pen', name: 'Graphics Design', subItems: [
+                    'Social Media Graphics', 'Web Banners', 'Infographics', 'Print Media Design'
+                ]},
+                { id: 'pack', icon: 'bi-box-seam-fill', name: 'Packaging Design', subItems: [
+                    '3D Mockups', 'Dieline Setup', 'Label Design', 'Material Consultation'
+                ]},
+                { id: 'illust', icon: 'bi-pen-fill', name: 'Illustration', subItems: [
+                    'Custom Illustrations', 'Character Design', 'Iconography', 'Editorial Graphics'
+                ]},
+                { id: 'anim2d', icon: 'bi-file-earmark-play-fill', name: '2D Animation', subItems: [
+                    'Explainer Videos', 'Motion Graphics', '2D Character Animation', 'Kinetic Typography'
+                ]},
+                { id: 'anim3d', icon: 'bi-film', name: '3D Animation & CGI', subItems: [
+                    '3D Product Visualization', 'Architectural Visualization', 'VFX Integration', '3D Modeling'
+                ]},
+                { id: 'socialads', icon: 'bi-camera-video-fill', name: 'Social Video Ads', subItems: [
+                    'Concept Development', 'Script Writing', 'Video Production', 'Performance Testing'
+                ]}
+            ]
+        },
+        webTech: {
+            title: "Web Platforms & Development",
+            items: [
+                { id: 'webdev', icon: 'bi-browser-safari', name: 'Web Development', subItems: [
+                    'Front-End Development', 'Back-End Development', 'Database Integration', 'API Creation'
+                ]},
+                { id: 'wordpress', icon: 'bi-wordpress', name: 'WordPress', subItems: [
+                    'Custom Themes', 'WooCommerce E-commerce', 'CMS Integration', 'Speed Optimization'
+                ]},
+                { id: 'shopify', icon: 'bi-shop', name: 'Shopify', subItems: [
+                    'Store Setup & Migration', 'Liquid Code Customization', 'App Integration', 'E-commerce Optimization'
+                ]},
+                { id: 'wix', icon: 'bi-bricks', name: 'Wix', subItems: [
+                    'Wix Velo Development', 'Business App Integration', 'Design Customization', 'Training'
+                ]},
+                { id: 'customcode', icon: 'bi-code-slash', name: 'Custom Code', subItems: [
+                    'Full-Stack Solutions', 'Progressive Web Apps (PWA)', 'Advanced APIs', 'Bespoke Software'
+                ]},
+                { id: 'landingpage', icon: 'bi-tablet-landscape-fill', name: 'Landing Page', subItems: [
+                    'High-Converting Design', 'A/B Testing Integration', 'Form Optimization', 'Fast Loading Speed'
+                ]}
+            ]
+        },
+        globalOps: {
+            title: "Global Operations & Support",
+            items: [
+                { id: 'usa', icon: 'fi fi-us', name: 'USA Operations', subItems: [
+                    'Localized Marketing', 'Legal & Compliance Consulting', 'Regional Partnering', 'US Market Entry'
+                ]},
+                { id: 'uae', icon: 'fi fi-ae', name: 'UAE Hub', subItems: [
+                    'MENA Market Strategy', 'Arabic Content Localization', 'Local Payment Gateway Setup', 'Regional Support'
+                ]},
+                { id: 'hk', icon: 'fi fi-hk', name: 'Hong Kong', subItems: [
+                    'Asia-Pacific Strategy', 'Mandarin & Cantonese Support', 'Cross-Border E-commerce', 'Logistics Consulting'
+                ]},
+                { id: 'eu', icon: 'fi fi-eu', name: 'EU/Europe', subItems: [
+                    'GDPR Compliance', 'Multi-Language Localization', 'Regional Digital Ads', 'European Market Entry'
+                ]},
+                { id: 'clientdesk', icon: 'bi-headset', name: 'Client Desk/Contacts', subItems: [
+                    'Dedicated Account Manager', '24/7 Priority Support', 'Project Status Portal', 'Ticketing System'
+                ]},
+                { id: 'dashboard', icon: 'bi-speedometer', name: 'Dashboard & Reports', subItems: [
+                    'Real-Time Analytics', 'Custom KPI Dashboards', 'Automated Monthly Reports', 'Client Portal Access'
+                ]}
+            ]
+        }
+    };
 
-        if (vizContainer) {
-            // Options for the Intersection Observer
-            const observerOptions = {
-                root: null, // relative to the viewport
-                rootMargin: '0px',
-                threshold: 0.2 // Trigger when 20% of the element is visible
-            };
+    const contentDisplay = document.getElementById('service-content-display');
+    const categoryButtons = document.querySelectorAll('.service-category-btn');
+    const serviceNavWrapper = document.getElementById('service-nav-wrapper'); // Get the new wrapper
+    const serviceNavBar = document.getElementById('service-nav-bar'); // Get the nav bar
 
-            // Observer callback function
-            const observerCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Element is visible, trigger the animation
-                        entry.target.classList.add('reveal');
-                        
-                        // Stop observing after the animation is triggered once
-                        observer.unobserve(entry.target); 
-                    }
+    // --- RENDER LEVEL 2 SUB-SERVICE CONTENT (Unchanged) ---
+    function renderSubServiceContent(serviceItem) {
+        if (!serviceItem || !serviceItem.subItems) {
+            return `
+                <div class="sub-service-panel">
+                    <h4>No Sub-Services Defined</h4>
+                    <p class="text-muted">This service is broad and requires a direct consultation. Contact our team to discuss detailed deliverables.</p>
+                </div>`;
+        }
+        
+        let subList = serviceItem.subItems.map(sub => 
+            `<li><i class="bi bi-check-circle-fill"></i> ${sub}</li>`
+        ).join('');
+
+        return `
+            <div class="sub-service-panel">
+                <h4>Sub-Services for ${serviceItem.name}</h4>
+                <ul class="sub-service-list">${subList}</ul>
+                <div class="sub-service-cta">
+                    <p class="small fw-semibold text-purple mb-2">Ready to move forward with ${serviceItem.name}?</p>
+                    <a href="#" class="btn btn-purple btn-sm">Get Detailed Proposal <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        `;
+    }
+
+    // --- RENDER LEVEL 1 CATEGORY CONTENT (Unchanged) ---
+    function renderCategoryContent(categoryKey) {
+        const data = servicesData[categoryKey];
+        if (!data) return '';
+
+        let contentHTML = `
+            <h3 class="content-header">${data.title}</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="service-grid">
+        `;
+        
+        // Render Level 1 items
+        data.items.forEach(item => {
+            const iconElement = item.icon.startsWith('fi') 
+                ? `<span class="${item.icon}"></span>` 
+                : `<i class="bi ${item.icon}"></i>`;
+            
+            // Attach onmouseenter to show Level 2 details
+            contentHTML += `
+                <a href="#" class="service-item-block" data-service-id="${item.id}" 
+                   onmouseenter="showSubServiceDetail('${categoryKey}', '${item.id}', this)"
+                   onclick="return false;">
+                    ${iconElement}
+                    <span>${item.name}</span>
+                </a>
+            `;
+        });
+        
+        contentHTML += `
+                    </div>
+                </div>
+                <div class="col-lg-6" id="sub-service-detail-panel">
+                    <div class="sub-service-panel">
+                        <h4>Explore Specific Deliverables</h4>
+                        <p class="text-muted">Hover over any service on the left to instantly see a detailed breakdown of its core components and deliverables.</p>
+                        <div class="sub-service-cta">
+                            <p class="small fw-semibold text-purple mb-2">Need a high-level overview?</p>
+                            <a href="#" class="btn btn-purple btn-sm">Download Full Service Brochure <i class="bi bi-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        return contentHTML;
+    }
+
+    // --- JAVASCRIPT LOGIC ---
+    let currentCategory = null; // No active category on load
+    let isTransitioning = false;
+
+    // FUNCTION: Hides the content display on mouseleave from the wrapper
+    function hideCategoryContent() {
+        if (isTransitioning) return;
+        
+        // Check if the mouse is truly leaving the entire wrapper
+        if (serviceNavWrapper.matches(':hover') || contentDisplay.matches(':hover')) {
+             // If still hovering over the wrapper or content, do nothing. This is a common fix for absolute positioned dropdowns.
+            return;
+        }
+
+        isTransitioning = true;
+        
+        // Fade out
+        contentDisplay.classList.remove('show');
+        
+        // Remove active state from category buttons
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Reset state after transition
+        setTimeout(() => {
+            contentDisplay.innerHTML = '';
+            currentCategory = null;
+            isTransitioning = false;
+            
+            // Also hide the service nav bar
+            if (serviceNavBar) {
+                serviceNavBar.style.display = 'none';
+            }
+        }, 400); // Match transition duration
+    }
+
+    // Level 1: Handles Category Hover (Fades content in/out)
+    function showCategoryContent(categoryKey, activeBtn) {
+        if (categoryKey === currentCategory || isTransitioning) {
+            return;
+        }
+        
+        isTransitioning = true;
+        
+        // 1. Update button classes
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        activeBtn.classList.add('active');
+
+        // 2. Hide previous content (if any)
+        contentDisplay.classList.remove('show');
+        
+        // 3. Change content and fade in
+        setTimeout(() => {
+            contentDisplay.innerHTML = renderCategoryContent(categoryKey);
+            contentDisplay.classList.add('show');
+            currentCategory = categoryKey;
+            isTransitioning = false;
+            
+            // Auto-select the first service item after content loads for a better UX
+            const firstServiceItem = contentDisplay.querySelector('.service-item-block');
+            if (firstServiceItem) {
+                showSubServiceDetail(categoryKey, firstServiceItem.getAttribute('data-service-id'), firstServiceItem);
+            }
+        }, 300); // Wait for fade-out transition
+    }
+    
+    // Level 2: Handles Sub-Service Item Hover (Instant content swap)
+    function showSubServiceDetail(categoryKey, serviceId, activeLink) {
+        const category = servicesData[categoryKey];
+        const serviceItem = category.items.find(item => item.id === serviceId);
+
+        const subPanel = document.getElementById('sub-service-detail-panel');
+
+        if (subPanel) {
+            // Update active state for visual feedback on the L1 item
+            // This needs to be scoped to the currently active category's service-grid
+            const currentGrid = subPanel.closest('.row').querySelector('.service-grid');
+            if (currentGrid) {
+                 currentGrid.querySelectorAll('.service-item-block').forEach(link => {
+                    link.classList.remove('active-service');
                 });
-            };
+            }
+            activeLink.classList.add('active-service');
+            
+            // Inject new L2 content
+            subPanel.innerHTML = renderSubServiceContent(serviceItem);
+        }
+    }
 
-            // Create and start the observer
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-            observer.observe(vizContainer);
+    // Initial load: Setup listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        const serviceNavLink = document.querySelector('.service-nav-link');
+        const dynamicServicesContainer = document.getElementById('dynamic-services');
+
+        // Initial state adjustments
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        contentDisplay.classList.remove('show');
+        contentDisplay.innerHTML = ''; 
+
+        // Listener to show the navigation bar when hovering over the "Services" link
+        if (serviceNavLink && serviceNavBar) {
+            serviceNavLink.addEventListener('mouseenter', () => {
+                serviceNavBar.style.display = 'flex';
+                dynamicServicesContainer.style.display = 'block';
+            });
+            
+            // This listener keeps the nav bar and content visible if the mouse moves into the nav bar or content area
+            serviceNavWrapper.addEventListener('mouseenter', () => {
+                serviceNavBar.style.display = 'flex';
+                dynamicServicesContainer.style.display = 'block';
+            });
+            
+            // The hideCategoryContent function is already attached to onmouseleave of the serviceNavWrapper in the HTML
         }
     });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
