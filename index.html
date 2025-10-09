@@ -11,461 +11,557 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-   <style>
-    /* --- Colors & Fonts (Kept Consistent) --- */
-    :root {
-        --primary-font: 'Poppins', sans-serif;
-        --primary-purple: #3a0b76;
-        --purple-accent: #8b3cff;
-        --purple-light: #f5f0ff;
-        --text-dark: #1f1f1f;
-        --text-muted: #555;
-        --bg-body: #ffffff;
+  <style>
+        /* --- Colors & Fonts (Kept Consistent) --- */
+        :root {
+            --primary-font: 'Poppins', sans-serif;
+            --primary-purple: #3a0b76;
+            --purple-accent: #8b3cff;
+            --purple-light: #f5f0ff;
+            --text-dark: #1f1f1f;
+            --text-muted: #555;
+            --bg-body: #ffffff;
+            
+            /* Unified Gradient Colors */
+            --unified-gradient-start: #3a0b76; /* Deep Purple */
+            --unified-gradient-end: #8b3cff;  /* Lighter Accent Purple */
+        }
+
+        body {
+            font-family: var(--primary-font);
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 0;
+        }
+
+        /* Global Button Style (kept) */
+        .btn-purple {
+            color: #fff;
+            background: linear-gradient(90deg, var(--purple-accent), var(--primary-purple));
+            border: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(58, 11, 118, 0.4);
+        }
+        .btn-purple:hover {
+            background: linear-gradient(90deg, var(--primary-purple), var(--purple-accent));
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(58, 11, 118, 0.6);
+            color: #fff;
+        }
+
+        /* --- TOP BAR & LOGO (kept) --- */
+        .top-header-bar {
+            background-color: var(--primary-purple);
+            color: #fff;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .revenue-figure {
+            font-size: 1.1rem;
+            color: #ffc107;
+            font-weight: 700;
+        }
+        .custom-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .announcement-bar {
+            background-color: var(--purple-light);
+            color: var(--primary-purple);
+            padding: 8px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* --- MODERN NAVIGATION MENU STYLING (kept) --- */
+        .modern-navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        .modern-navbar .nav-link {
+            font-weight: 500;
+            color: var(--text-dark);
+            margin: 0 10px;
+            padding: 10px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .modern-navbar .nav-link:hover, .modern-navbar .active-link {
+            color: var(--primary-purple);
+        }
+
+        /* --- MEGA-MENU/WIDE DROPDOWN (Enhanced Hover & Spacing) --- */
+        .mega-menu-item {
+            position: static;
+        }
         
-        /* Unified Gradient Colors */
-        --unified-gradient-start: #3a0b76; /* Deep Purple */
-        --unified-gradient-end: #8b3cff;  /* Lighter Accent Purple */
-    }
-
-    body {
-        font-family: var(--primary-font);
-        background-color: var(--bg-body);
-        color: var(--text-dark);
-        line-height: 1.6;
-        padding-top: 0;
-    }
-
-    /* Global Button Style (kept) */
-    .btn-purple {
-        color: #fff;
-        background: linear-gradient(90deg, var(--purple-accent), var(--primary-purple));
-        border: none;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        font-weight: 600;
-        padding: 0.75rem 2rem;
-        border-radius: 50px;
-        box-shadow: 0 10px 30px rgba(58, 11, 118, 0.4);
-    }
-    .btn-purple:hover {
-        background: linear-gradient(90deg, var(--primary-purple), var(--purple-accent));
-        transform: translateY(-2px);
-        box-shadow: 0 15px 40px rgba(58, 11, 118, 0.6);
-        color: #fff;
-    }
-
-    /* --- TOP BAR & LOGO (kept) --- */
-    .top-header-bar {
-        background-color: var(--primary-purple);
-        color: #fff;
-        padding: 8px 0;
-        font-size: 0.9rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .revenue-figure {
-        font-size: 1.1rem;
-        color: #ffc107;
-        font-weight: 700;
-    }
-    .custom-logo {
-        height: 40px;
-        width: auto;
-    }
-
-    .announcement-bar {
-        background-color: var(--purple-light);
-        color: var(--primary-purple);
-        padding: 8px 0;
-        font-size: 0.9rem;
-        font-weight: 500;
-    }
-
-    /* --- MODERN NAVIGATION MENU STYLING (kept) --- */
-    .modern-navbar {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        background-color: #ffffff;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    }
-    .modern-navbar .nav-link {
-        font-weight: 500;
-        color: var(--text-dark);
-        margin: 0 10px;
-        padding: 10px 0;
-        position: relative;
-        transition: color 0.3s;
-    }
-    .modern-navbar .nav-link:hover, .modern-navbar .active-link {
-        color: var(--primary-purple);
-    }
-
-    /* --- MEGA-MENU/WIDE DROPDOWN (Enhanced Hover & Spacing) --- */
-    .mega-menu-item {
-        position: static;
-    }
-    
-    /* Menu Panel Appearance and Persistence Fix */
-    .mega-menu-panel {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        border-top: 5px solid var(--purple-accent);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        padding: 40px 0;
+        /* Menu Panel Appearance and Persistence Fix */
+        .mega-menu-panel {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #ffffff;
+            border-top: 5px solid var(--purple-accent);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px 0;
+            
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+            transform: translateY(-10px);
+            z-index: 1000;
+        }
         
-        display: none;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
-        transform: translateY(-10px);
-        z-index: 1000;
-    }
-    
-    /* Show menu on hover over the entire parent <li> */
-    .mega-menu-item:hover .mega-menu-panel {
+        /* Show menu on hover over the entire parent <li> */
+        .mega-menu-item:hover .mega-menu-panel {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+            transform: translateY(0);
+        }
+
+        /* --- PERFECT ALIGNMENT FIXES FOR MEGA MENU --- */
+
+        /* JavaScript-controlled mega menu styling */
+        .mega-menu-js {
+            position: static;
+        }
+        
+        .mega-menu-panel-js {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #ffffff;
+            border-top: 5px solid var(--purple-accent);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px 0;
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(-10px);
+            z-index: 1000;
+        }
+        
+        .mega-menu-panel-js.active {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Force the container to stretch */
+        .mega-menu-panel-js .container-xl {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Make the row stretch all columns equally */
+        .mega-menu-panel-js .row {
+            display: flex;
+            align-items: stretch;
+            min-height: 320px; /* Force minimum height for all columns */
+            margin: 0;
+            width: 100%;
+        }
+
+        /* Configure equal columns */
+        .mega-menu-col {
+            flex: 1; /* Equal width distribution */
+            padding: 0 20px;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%; /* Take full height of parent */
+        }
+        .mega-menu-col:last-child {
+            border-right: none;
+        }
+
+        
+        /* Make the list take remaining space and align items */
+        .sub-service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1; /* Take all available space */
+            display: flex;
+            flex-direction: column;
+        }
+
+       .sub-service-list li {
         display: flex;
-        opacity: 1;
-        visibility: visible;
-        transition-delay: 0s;
-        transform: translateY(0);
-    }
-
-    /* --- PERFECT ALIGNMENT FIXES FOR MEGA MENU --- */
-
-    /* JavaScript-controlled mega menu styling */
-    .mega-menu-js {
-        position: static;
-    }
-    
-    .mega-menu-panel-js {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        border-top: 5px solid var(--purple-accent);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        padding: 40px 0;
-        display: none;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        transform: translateY(-10px);
-        z-index: 1000;
-    }
-    
-    .mega-menu-panel-js.active {
-        display: flex;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    /* Force the container to stretch */
-    .mega-menu-panel-js .container-xl {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Make the row stretch all columns equally */
-    .mega-menu-panel-js .row {
-        display: flex;
-        align-items: stretch;
-        min-height: 320px; /* Force minimum height for all columns */
-        margin: 0;
-        width: 100%;
-    }
-
-    /* Configure equal columns */
-    .mega-menu-col {
-        flex: 1; /* Equal width distribution */
-        padding: 0 20px;
-        border-right: 1px solid #eee;
-        display: flex;
-        flex-direction: column;
-        min-height: 100%; /* Take full height of parent */
-    }
-    .mega-menu-col:last-child {
-        border-right: none;
-    }
-
-    
-    /* Make the list take remaining space and align items */
-    .sub-service-list {
-        list-style: none;
+        align-items: center;
+        height: 36px;
         padding: 0;
-        margin: 0;
-        flex-grow: 1; /* Take all available space */
-        display: flex;
-        flex-direction: column;
-    }
-
-   .sub-service-list li {
-    display: flex;
-    align-items: center;
-    height: 36px;
-    padding: 0;
-    flex-shrink: 0;
-    margin-bottom: 8px; /* Add space below each item */
-}
-
-.sub-service-list li a {
-    color: var(--text-dark);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    line-height: 1.2;
-    padding: 6px 0;
-}
-
-    .sub-service-list li a:hover {
-        color: var(--purple-accent);
-    }
-
-    .sub-service-list li a i, 
-    .sub-service-list li a .flag-icon {
-        color: var(--purple-accent);
-        margin-right: 8px;
-        display: inline-block;
         flex-shrink: 0;
-        width: 16px;
-        text-align: center;
+        margin-bottom: 8px; /* Add space below each item */
     }
 
-    /* Filler items for perfect alignment */
-    .sub-service-list li.filler-item {
-        visibility: hidden;
-        min-height: 32px;
-        padding: 2px 0;
+    .sub-service-list li a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        line-height: 1.2;
+        padding: 6px 0;
     }
 
-    /* --- OTHER SECTIONS (kept) --- */
-    .hero-section { 
-        padding: 80px 0; 
-        background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
-    }
-    .hero-section h1 { 
-        font-size: 3rem; 
-        font-weight: 800; 
-        margin-bottom: 1.5rem;
-    }
-    .text-purple { color: var(--purple-accent) !important; }
-    .hero-image-placeholder {
-        height: 500px;
-        background-image: url("neb.png");
-        background-size: cover;
-    }
-
-
-    @media (max-width: 991.98px) {
-    .hero-image-placeholder {
-            display: block !important;
-
-        height: 500px; /* Smaller height for mobile */
-    }
-}
-         /* 1. Mobile & Small Tablet (up to 991.98px) */
-    @media (max-width: 991.98px) {
-        .hero-section {
-            padding: 40px 0; /* Less padding on top/bottom */
+        .sub-service-list li a:hover {
+            color: var(--purple-accent);
         }
-        .hero-section h1 {
-            font-size: 2.25rem; /* Smaller heading on mobile */
+
+        .sub-service-list li a i, 
+        .sub-service-list li a .flag-icon {
+            color: var(--purple-accent);
+            margin-right: 8px;
+            display: inline-block;
+            flex-shrink: 0;
+            width: 16px;
             text-align: center;
         }
-        .hero-section p.lead {
-            text-align: center;
+
+        /* Filler items for perfect alignment */
+        .sub-service-list li.filler-item {
+            visibility: hidden;
+            min-height: 32px;
+            padding: 2px 0;
         }
-        .hero-section .d-flex {
-            justify-content: center; /* Center buttons */
+
+        /* --- OTHER SECTIONS (kept) --- */
+        .hero-section { 
+            padding: 80px 0; 
+            background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
         }
+        .hero-section h1 { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            margin-bottom: 1.5rem;
+        }
+        .text-purple { color: var(--purple-accent) !important; }
         .hero-image-placeholder {
-            height: 300px; /* Smaller height for mobile */
-            margin-top: 30px;
-            display: block !important; /* Force show on mobile */
+            height: 500px;
+            background-image: url("neb.png");
+            background-size: cover;
         }
 
+        /* Category heading styling */
+        .category-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--purple-light);
+            flex-shrink: 0; /* Don't let heading shrink */
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .chat-toggle-btn {
-        position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%;
-        background: linear-gradient(135deg, var(--purple-accent), var(--primary-purple));
-        color: white; border: none; font-size: 1.8rem;
-        box-shadow: 0 10px 20px rgba(58, 11, 118, 0.4); transition: all 0.3s ease; z-index: 1050;
-    }
-    .chat-modal-dialog { max-width: 400px; }
-    .chat-modal-content { border-radius: 15px; overflow: hidden; border: none; }
-    .chat-modal-header { background-color: var(--primary-purple); color: white; padding: 15px 20px; border-bottom: none; }
-    .chat-modal-body { background-color: #f7f9fc; padding: 20px; max-height: 400px; overflow-y: auto; }
-    .chat-modal-footer { display: flex; padding: 10px 20px; background-color: #ffffff; border-top: 1px solid #eee; }
-    .chat-message { margin-bottom: 15px; display: flex; flex-direction: column; }
-    .bot-message p {
-        background-color: #e0e0e0; color: var(--text-dark); padding: 10px 15px;
-        border-radius: 15px 15px 15px 0; max-width: 85%; align-self: flex-start;
-        font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .user-message p {
-        background-color: var(--purple-accent); color: white; padding: 10px 15px;
-        border-radius: 15px 15px 0 15px; max-width: 85%; align-self: flex-end;
-        font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .quick-reply .badge {
-        cursor: pointer; margin-right: 5px; margin-bottom: 5px; border: 1px solid var(--purple-accent);
-        color: var(--primary-purple); background-color: var(--purple-light) !important; transition: background-color 0.2s;
-    }
-    .btn-purple-outline {
-        background-color: transparent; border: 2px solid var(--primary-purple); color: var(--primary-purple);
-        font-weight: 600; padding: 5px 15px; border-radius: 50px; transition: all 0.2s;
-    }
-    .btn-purple-outline:hover { background-color: var(--primary-purple); color: white; }
-    
-    /* Improved hover behavior for mega menu */
-    .mega-menu-panel {
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.1s;
-    }
-    
-    .mega-menu-item:hover .mega-menu-panel {
-        transition-delay: 0s;
-    }
-    
-    /* Add a small gap between the menu item and the dropdown */
-    .mega-menu-panel::before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: 0;
-        right: 0;
-        height: 10px;
-        background: transparent;
-    }
-    
-    /* Rotate the chevron icon when menu is open */
-    .mega-menu-item:hover .bi-chevron-down {
-        transform: rotate(180deg);
-        transition: transform 0.3s ease;
-    }
-    
-    .bi-chevron-down {
-        transition: transform 0.3s ease;
-    }
-    
-    .mega-menu-trigger {
-        cursor: pointer;
-    }
-    
-    .services-highlight {
-        color: var(--primary-purple);
-        font-weight: 600;
-    }
-    
-    .services-highlight .bi-chevron-down {
-        transition: transform 0.3s ease;
-    }
-    
-    .services-highlight.active .bi-chevron-down {
-        transform: rotate(180deg);
-    }
+        /* Service icon container */
+        .category-heading .service-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    /* Category heading styling */
-.category-heading {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-purple);
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--purple-light);
-    flex-shrink: 0; /* Don't let heading shrink */
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+        /* Service icon styling */
+        .category-heading .service-icon i {
+            font-size: 1.2rem;
+            color: var(--primary-purple); /* Dark purple icon color */
+            position: relative;
+            z-index: 2;
+        }
 
-/* Service icon container */
-.category-heading .service-icon {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        /* Background shapes behind icons */
+        .category-heading .service-icon::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(139, 60, 255, 0.3); /* Darker purple background */
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
 
-/* Service icon styling */
-.category-heading .service-icon i {
-    font-size: 1.2rem;
-    color: var(--primary-purple); /* Dark purple icon color */
-    position: relative;
-    z-index: 2;
-}
+            background: radial-gradient(circle at 30% 30%, 
+                rgba(0, 191, 255, 0.8),   /* aqua */
+                rgba(255, 105, 180, 0.6), /* pink */
+                rgba(255, 215, 0, 0.5)    /* gold */
+            );
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); /* soft depth */
+            transition: all 0.3s ease;
+        }
 
-/* Background shapes behind icons */
-.category-heading .service-icon::before {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(139, 60, 255, 0.3); /* Darker purple background */
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+        /* Different shapes for each service category */
+        .mega-menu-col:nth-child(1) .service-icon::before {
 
-    background: radial-gradient(circle at 30% 30%, 
-        rgba(0, 191, 255, 0.8),   /* aqua */
-        rgba(255, 105, 180, 0.6), /* pink */
-        rgba(255, 215, 0, 0.5)    /* gold */
-    );
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); /* soft depth */
-    transition: all 0.3s ease;
-}
+            border-radius: 50%; /* Circle for Digital Marketing */
+        }
 
-/* Different shapes for each service category */
-.mega-menu-col:nth-child(1) .service-icon::before {
+        .mega-menu-col:nth-child(2) .service-icon::before {
+            border-radius: 8px; /* Square for Commercial Prod */
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
 
-    border-radius: 50%; /* Circle for Digital Marketing */
-}
+        .mega-menu-col:nth-child(3) .service-icon::before {
+            /* Perfect heart shape */
+            border-radius: 0;
+            transform: translate(-50%, -50%);
+            width: 38px;
+            height: 37px;
+            background-color: rgba(139, 60, 255, 0.3);
+            clip-path: path('M18 3.5C9 -2.5 -2.5 9 3.5 18c6 9 14.5 14.5 14.5 14.5S30 27 36 18c6-9 -5.5-20.5-14.5-14.5C21.5 3.5 18 3.5 18 3.5z');
+        }
+        .mega-menu-col:nth-child(4) .service-icon::before {
+            border-radius: 4px; /* Rounded square for Web Development */
+        }
 
-.mega-menu-col:nth-child(2) .service-icon::before {
-    border-radius: 8px; /* Square for Commercial Prod */
-    transform: translate(-50%, -50%) rotate(45deg);
-}
+        .mega-menu-col:nth-child(5) .service-icon::before {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Cloud shape for Global Operations */
+        }
 
-.mega-menu-col:nth-child(3) .service-icon::before {
-    /* Perfect heart shape */
-    border-radius: 0;
-    transform: translate(-50%, -50%);
-    width: 38px;
-    height: 37px;
-    background-color: rgba(139, 60, 255, 0.3);
-    clip-path: path('M18 3.5C9 -2.5 -2.5 9 3.5 18c6 9 14.5 14.5 14.5 14.5S30 27 36 18c6-9 -5.5-20.5-14.5-14.5C21.5 3.5 18 3.5 18 3.5z');
-}
-.mega-menu-col:nth-child(4) .service-icon::before {
-    border-radius: 4px; /* Rounded square for Web Development */
-}
+        /* Hover effects */
+        .mega-menu-col:hover .service-icon::before {
+            background-color: rgba(139, 60, 255, 0.4); /* Even darker on hover */
+            transform: translate(-50%, -50%) scale(1.1);
+        }
 
-.mega-menu-col:nth-child(5) .service-icon::before {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Cloud shape for Global Operations */
-}
+        .mega-menu-col:nth-child(2):hover .service-icon::before {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+        }
 
-/* Hover effects */
-.mega-menu-col:hover .service-icon::before {
-    background-color: rgba(139, 60, 255, 0.4); /* Even darker on hover */
-    transform: translate(-50%, -50%) scale(1.1);
-}
+        .mega-menu-col:nth-child(3):hover .service-icon::before {
+            transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
+        }
 
-.mega-menu-col:nth-child(2):hover .service-icon::before {
-    transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
-}
+        /* --- RESPONSIVE STYLES --- */
+        
+        /* Mobile & Small Tablet (up to 991.98px) */
+        @media (max-width: 991.98px) {
+            /* Hero section adjustments */
+            .hero-section {
+                padding: 40px 0; /* Less padding on top/bottom */
+            }
+            .hero-section h1 {
+                font-size: 2.25rem; /* Smaller heading on mobile */
+                text-align: center;
+            }
+            .hero-section p.lead {
+                text-align: center;
+            }
+            .hero-section .d-flex {
+                justify-content: center; /* Center buttons */
+            }
+            .hero-image-placeholder {
+                height: 300px; /* Smaller height for mobile */
+                margin-top: 30px;
+                display: block !important; /* Force show on mobile */
+            }
+            
+            /* Mobile navigation adjustments */
+            .modern-navbar .navbar-nav {
+                text-align: center;
+            }
+            
+            /* Mobile mega menu adjustments */
+            .mega-menu-panel-js {
+                position: static;
+                box-shadow: none;
+                border-top: none;
+                padding: 20px 0;
+                transform: none;
+                display: none !important;
+            }
+            
+            .mega-menu-panel-js.active {
+                display: block !important;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+            
+            .mega-menu-panel-js .row {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .mega-menu-col {
+                flex: none;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding: 20px 0;
+            }
+            
+            .mega-menu-col:last-child {
+                border-bottom: none;
+            }
+            
+            .sub-service-list {
+                flex-grow: 0;
+            }
+            
+            /* Mobile menu trigger styling */
+            .mega-menu-trigger {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 10px 0;
+                background: none;
+                border: none;
+                font-weight: 500;
+                color: var(--text-dark);
+            }
+            
+            .mega-menu-trigger.active {
+                color: var(--primary-purple);
+            }
+            
+            /* Mobile navbar toggler styling */
+            .navbar-toggler {
+                border: none;
+                padding: 5px 10px;
+            }
+            
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+            
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            }
+        }
+        
+        /* Desktop (992px and above) */
+        @media (min-width: 992px) {
+            .mega-menu-trigger {
+                display: none;
+            }
+        }
+        
+        /* Small mobile devices (up to 576px) */
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 1.75rem;
+            }
+            
+            .btn-purple {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .top-header-bar, .announcement-bar {
+                font-size: 0.8rem;
+            }
+            
+            .revenue-figure {
+                font-size: 1rem;
+            }
+        }
 
-.mega-menu-col:nth-child(3):hover .service-icon::before {
-    transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
-}
-</style>
+        /* Chat button and modal styles */
+        .chat-toggle-btn {
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-accent), var(--primary-purple));
+            color: white; border: none; font-size: 1.8rem;
+            box-shadow: 0 10px 20px rgba(58, 11, 118, 0.4); transition: all 0.3s ease; z-index: 1050;
+        }
+        .chat-modal-dialog { max-width: 400px; }
+        .chat-modal-content { border-radius: 15px; overflow: hidden; border: none; }
+        .chat-modal-header { background-color: var(--primary-purple); color: white; padding: 15px 20px; border-bottom: none; }
+        .chat-modal-body { background-color: #f7f9fc; padding: 20px; max-height: 400px; overflow-y: auto; }
+        .chat-modal-footer { display: flex; padding: 10px 20px; background-color: #ffffff; border-top: 1px solid #eee; }
+        .chat-message { margin-bottom: 15px; display: flex; flex-direction: column; }
+        .bot-message p {
+            background-color: #e0e0e0; color: var(--text-dark); padding: 10px 15px;
+            border-radius: 15px 15px 15px 0; max-width: 85%; align-self: flex-start;
+            font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .user-message p {
+            background-color: var(--purple-accent); color: white; padding: 10px 15px;
+            border-radius: 15px 15px 0 15px; max-width: 85%; align-self: flex-end;
+            font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .quick-reply .badge {
+            cursor: pointer; margin-right: 5px; margin-bottom: 5px; border: 1px solid var(--purple-accent);
+            color: var(--primary-purple); background-color: var(--purple-light) !important; transition: background-color 0.2s;
+        }
+        .btn-purple-outline {
+            background-color: transparent; border: 2px solid var(--primary-purple); color: var(--primary-purple);
+            font-weight: 600; padding: 5px 15px; border-radius: 50px; transition: all 0.2s;
+        }
+        .btn-purple-outline:hover { background-color: var(--primary-purple); color: white; }
+        
+        /* Improved hover behavior for mega menu */
+        .mega-menu-panel {
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.1s;
+        }
+        
+        .mega-menu-item:hover .mega-menu-panel {
+            transition-delay: 0s;
+        }
+        
+        /* Add a small gap between the menu item and the dropdown */
+        .mega-menu-panel::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: transparent;
+        }
+        
+        /* Rotate the chevron icon when menu is open */
+        .mega-menu-item:hover .bi-chevron-down {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .bi-chevron-down {
+            transition: transform 0.3s ease;
+        }
+        
+        .mega-menu-trigger {
+            cursor: pointer;
+        }
+        
+        .services-highlight {
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+        
+        .services-highlight .bi-chevron-down {
+            transition: transform 0.3s ease;
+        }
+        
+        .services-highlight.active .bi-chevron-down {
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
 
 <body>
@@ -822,6 +918,7 @@ if (key === 'globalOperations') {
     </script>
 </body>
 </html>
+
 
 
 
