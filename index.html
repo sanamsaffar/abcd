@@ -269,6 +269,26 @@
         display: block !important; /* Force show on mobile */
     }
 }
+         /* 1. Mobile & Small Tablet (up to 991.98px) */
+    @media (max-width: 991.98px) {
+        .hero-section {
+            padding: 40px 0; /* Less padding on top/bottom */
+        }
+        .hero-section h1 {
+            font-size: 2.25rem; /* Smaller heading on mobile */
+            text-align: center;
+        }
+        .hero-section p.lead {
+            text-align: center;
+        }
+        .hero-section .d-flex {
+            justify-content: center; /* Center buttons */
+        }
+        .hero-image-placeholder {
+            height: 300px; /* Smaller height for mobile */
+            margin-top: 30px;
+            display: block !important; /* Force show on mobile */
+        }
 
 
     .chat-toggle-btn {
@@ -529,7 +549,38 @@
             </div>
         </div>
     </div>
+  <section class="partners-reviews-section py-5 bg-white text-center">
+    <div class="container-xl">
+        <h2 class="h3 fw-bold mb-3">We're proud to work with leading partners and brands.</h2>
 
+        <div class="row align-items-center justify-content-center mb-5 g-4">
+            <div class="col-6 col-md-3 col-lg-2">
+                <img src="new-google-partner-badge-1.png" alt="Google Partner" class="img-fluid" style="max-height: 80px;">
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <img src="Logo_of_Infinix.png" alt="Infinix Logo" class="img-fluid" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <img src="KKK.png" alt="Khaadi Logo" class="img-fluid" style="max-height: 50px;">
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <img src="Air-Blue65.png" alt="Airblue Logo" class="img-fluid" style="max-height: 50px;">
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="height: 30px;">
+            <div class="d-flex">
+                <i class="bi bi-star-fill text-warning fs-5"></i>
+                <i class="bi bi-star-fill text-warning fs-5"></i>
+                <i class="bi bi-star-fill text-warning fs-5"></i>
+                <i class="bi bi-star-fill text-warning fs-5"></i>
+                <i class="bi bi-star-half text-warning fs-5"></i>
+            </div>
+            <span class="lead fw-bold">Rated <span class="text-purple">4.9/5</span> across Google &amp; Trustpilot</span>
+        </div>
+    </div>
+</section>
     <button class="chat-toggle-btn" data-bs-toggle="modal" data-bs-target="#chatModal">
         <i class="bi bi-robot"></i>
     </button>
@@ -771,3 +822,4 @@ if (key === 'globalOperations') {
     </script>
 </body>
 </html>
+
