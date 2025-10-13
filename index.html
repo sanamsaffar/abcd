@@ -3,205 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ABCDMEDIA LTD</title>
+    <title>ABCDMEDIA LTD </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-        /* --- Colors & Fonts (Kept Consistent) --- */
-        :root {
-            --primary-font: 'Poppins', sans-serif;
-            --primary-purple: #3a0b76;
-            --purple-accent: #8b3cff;
-            --purple-light: #f5f0ff;
-            --text-dark: #1f1f1f;
-            --text-muted: #555;
-            --bg-body: #ffffff;
-            
-            /* Unified Gradient Colors */
-            --unified-gradient-start: #3a0b76; /* Deep Purple */
-            --unified-gradient-end: #8b3cff;  /* Lighter Accent Purple */
-        }
+    <style>
+    /* --- Colors & Fonts --- */
+    :root {
+        --primary-font: 'Poppins', sans-serif;
+        --primary-purple: #3a0b76;
+        --purple-accent: #8b3cff;
+        --purple-light: #f5f0ff;
+        --text-dark: #1f1f1f;
+        --text-muted: #555;
+        --bg-body: #ffffff;
+        --unified-gradient-start: #3a0b76;
+        --unified-gradient-end: #8b3cff;
+    }
 
-        body {
-            font-family: var(--primary-font);
-            background-color: var(--bg-body);
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding-top: 0;
-        }
+    body {
+        font-family: var(--primary-font);
+        background-color: var(--bg-body);
+        color: var(--text-dark);
+        line-height: 1.6;
+        padding-top: 0;
+    }
+    
+    /* Global Button Style */
+    .btn-purple {
+        color: #fff;
+        background: linear-gradient(90deg, var(--purple-accent), var(--primary-purple));
+        border: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        font-weight: 600;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(58, 11, 118, 0.4);
+    }
+    .btn-purple:hover {
+        background: linear-gradient(90deg, var(--primary-purple), var(--purple-accent));
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px rgba(58, 11, 118, 0.6);
+        color: #fff;
+    }
+    .btn-outline-purple {
+        color: var(--primary-purple);
+        background-color: transparent;
+        border: 2px solid var(--primary-purple);
+        transition: all 0.3s;
+        font-weight: 600;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+    }
+    .btn-outline-purple:hover {
+        background-color: var(--primary-purple);
+        color: white;
+        border-color: var(--primary-purple);
+    }
 
-        /* Global Button Style (kept) */
-        .btn-purple {
-            color: #fff;
-            background: linear-gradient(90deg, var(--purple-accent), var(--primary-purple));
-            border: none;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            font-weight: 600;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(58, 11, 118, 0.4);
-        }
-        .btn-purple:hover {
-            background: linear-gradient(90deg, var(--primary-purple), var(--purple-accent));
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(58, 11, 118, 0.6);
-            color: #fff;
-        }
 
-        /* --- TOP BAR & LOGO (kept) --- */
-        .top-header-bar {
-            background-color: var(--primary-purple);
-            color: #fff;
-            padding: 8px 0;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .revenue-figure {
-            font-size: 1.1rem;
-            color: #ffc107;
-            font-weight: 700;
-        }
-        .custom-logo {
-            height: 40px;
-            width: auto;
-        }
+    /* --- TOP BAR & LOGO --- */
+    .top-header-bar {
+        background-color: var(--primary-purple);
+        color: #fff;
+        padding: 8px 0;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .revenue-figure {
+        font-size: 1.1rem;
+        color: #ffc107;
+        font-weight: 700;
+    }
+    .custom-logo {
+        height: 40px;
+        width: auto;
+    }
 
-        .announcement-bar {
-            background-color: var(--purple-light);
-            color: var(--primary-purple);
-            padding: 8px 0;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+    .announcement-bar {
+        background-color: var(--purple-light);
+        color: var(--primary-purple);
+        padding: 8px 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
 
-        /* --- MODERN NAVIGATION MENU STYLING (kept) --- */
-        .modern-navbar {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            background-color: #ffffff;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        .modern-navbar .nav-link {
-            font-weight: 500;
-            color: var(--text-dark);
-            margin: 0 10px;
-            padding: 10px 0;
-            position: relative;
-            transition: color 0.3s;
-        }
-        .modern-navbar .nav-link:hover, .modern-navbar .active-link {
-            color: var(--primary-purple);
-        }
+    /* --- MODERN NAVIGATION MENU STYLING --- */
+    .modern-navbar {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    .modern-navbar .nav-link {
+        font-weight: 500;
+        color: var(--text-dark);
+        margin: 0 10px;
+        padding: 10px 0;
+        position: relative;
+        transition: color 0.3s;
+    }
+    .modern-navbar .nav-link:hover, .modern-navbar .active-link {
+        color: var(--primary-purple);
+    }
 
-        /* --- MEGA-MENU/WIDE DROPDOWN (Enhanced Hover & Spacing) --- */
-        .mega-menu-item {
-            position: static;
-        }
+    /* --- MEGA-MENU/WIDE DROPDOWN --- */
+    .mega-menu-item {
+        position: static;
+    }
+    
+    /* Menu Panel Appearance and Persistence Fix - Original Desktop Hover */
+    .mega-menu-panel-js {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border-top: 5px solid var(--purple-accent);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        padding: 40px 0;
         
-        /* Menu Panel Appearance and Persistence Fix */
-        .mega-menu-panel {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: #ffffff;
-            border-top: 5px solid var(--purple-accent);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            padding: 40px 0;
-            
-            display: none;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
-            transform: translateY(-10px);
-            z-index: 1000;
-        }
-        
-        /* Show menu on hover over the entire parent <li> */
-        .mega-menu-item:hover .mega-menu-panel {
-            display: flex;
-            opacity: 1;
-            visibility: visible;
-            transition-delay: 0s;
-            transform: translateY(0);
-        }
+        display: none; /* Controlled by JS for small/medium screens */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateY(-10px);
+        z-index: 1000;
+    }
+    
+    /* Active state controlled by JS */
+    .mega-menu-panel-js.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    /* Force the container to stretch */
+    .mega-menu-panel-js .container-xl {
+        width: 100%;
+        max-width: 100%;
+    }
 
-        /* --- PERFECT ALIGNMENT FIXES FOR MEGA MENU --- */
+    /* Make the row stretch all columns equally */
+    .mega-menu-panel-js .row {
+        display: flex;
+        align-items: stretch;
+        min-height: 320px; /* Force minimum height for all columns */
+        margin: 0;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
 
-        /* JavaScript-controlled mega menu styling */
-        .mega-menu-js {
-            position: static;
-        }
-        
-        .mega-menu-panel-js {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: #ffffff;
-            border-top: 5px solid var(--purple-accent);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            padding: 40px 0;
-            display: none;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: translateY(-10px);
-            z-index: 1000;
-        }
-        
-        .mega-menu-panel-js.active {
-            display: flex;
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+    /* Configure equal columns */
+    .mega-menu-col {
+        flex: 1; /* Equal width distribution */
+        padding: 0 20px;
+        border-right: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%; /* Take full height of parent */
+    }
+    .mega-menu-col:last-child {
+        border-right: none;
+    }
 
-        /* Force the container to stretch */
-        .mega-menu-panel-js .container-xl {
-            width: 100%;
-            max-width: 100%;
-        }
+    
+    /* Make the list take remaining space and align items */
+    .sub-service-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-grow: 1; /* Take all available space */
+        display: flex;
+        flex-direction: column;
+    }
 
-        /* Make the row stretch all columns equally */
-        .mega-menu-panel-js .row {
-            display: flex;
-            align-items: stretch;
-            min-height: 320px; /* Force minimum height for all columns */
-            margin: 0;
-            width: 100%;
-        }
-
-        /* Configure equal columns */
-        .mega-menu-col {
-            flex: 1; /* Equal width distribution */
-            padding: 0 20px;
-            border-right: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            min-height: 100%; /* Take full height of parent */
-        }
-        .mega-menu-col:last-child {
-            border-right: none;
-        }
-
-        
-        /* Make the list take remaining space and align items */
-        .sub-service-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-grow: 1; /* Take all available space */
-            display: flex;
-            flex-direction: column;
-        }
-
-       .sub-service-list li {
+    .sub-service-list li {
         display: flex;
         align-items: center;
         height: 36px;
@@ -223,349 +203,385 @@
         padding: 6px 0;
     }
 
-        .sub-service-list li a:hover {
-            color: var(--purple-accent);
-        }
+    .sub-service-list li a:hover {
+        color: var(--purple-accent);
+    }
 
-        .sub-service-list li a i, 
-        .sub-service-list li a .flag-icon {
-            color: var(--purple-accent);
-            margin-right: 8px;
-            display: inline-block;
-            flex-shrink: 0;
-            width: 16px;
+    .sub-service-list li a i, 
+    .sub-service-list li a .flag-icon {
+        color: var(--purple-accent);
+        margin-right: 8px;
+        display: inline-block;
+        flex-shrink: 0;
+        width: 16px;
+        text-align: center;
+    }
+
+    /* Filler items for perfect alignment (mostly for design consistency) */
+    .sub-service-list li.filler-item {
+        visibility: hidden;
+        min-height: 32px;
+        padding: 2px 0;
+    }
+
+    /* Category heading styling */
+    .category-heading {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--primary-purple);
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--purple-light);
+        flex-shrink: 0; /* Don't let heading shrink */
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .category-heading .service-icon {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .category-heading .service-icon i {
+        font-size: 1.2rem;
+        color: var(--primary-purple);
+        position: relative;
+        z-index: 2;
+    }
+    .category-heading .service-icon::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(139, 60, 255, 0.3);
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+        background: radial-gradient(circle at 30% 30%, 
+            rgba(0, 191, 255, 0.8), 
+            rgba(255, 105, 180, 0.6),
+            rgba(255, 215, 0, 0.5)
+        );
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    /* Different shapes for each service category */
+    .mega-menu-col:nth-child(1) .service-icon::before { border-radius: 50%; }
+    .mega-menu-col:nth-child(2) .service-icon::before { border-radius: 8px; transform: translate(-50%, -50%) rotate(45deg); }
+    .mega-menu-col:nth-child(3) .service-icon::before { 
+        border-radius: 0; transform: translate(-50%, -50%); width: 38px; height: 37px;
+        clip-path: path('M18 3.5C9 -2.5 -2.5 9 3.5 18c6 9 14.5 14.5 14.5 14.5S30 27 36 18c6-9 -5.5-20.5-14.5-14.5C21.5 3.5 18 3.5 18 3.5z');
+    }
+    .mega-menu-col:nth-child(4) .service-icon::before { border-radius: 4px; }
+    .mega-menu-col:nth-child(5) .service-icon::before { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+
+    /* Hover effects */
+    .mega-menu-col:hover .service-icon::before {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    .mega-menu-col:nth-child(2):hover .service-icon::before {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+    }
+    .mega-menu-col:nth-child(3):hover .service-icon::before {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
+    }
+    
+    /* Mega menu interaction and icon styles */
+    .mega-menu-trigger {
+        cursor: pointer;
+    }
+    .services-highlight {
+        color: var(--primary-purple);
+        font-weight: 600;
+    }
+    .services-highlight .bi-chevron-down {
+        transition: transform 0.3s ease;
+    }
+    .services-highlight.active .bi-chevron-down {
+        transform: rotate(180deg);
+    }
+
+
+    /* --- OTHER SECTIONS --- */
+    .hero-section { 
+        padding: 80px 0; 
+        background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
+    }
+    .hero-section h1 { 
+        font-size: 3rem; 
+        font-weight: 800; 
+        margin-bottom: 1.5rem;
+    }
+    .text-purple { color: var(--purple-accent) !important; }
+    .hero-image-placeholder {
+        height: 500px;
+        background-image: url("neb.png"); /* Replace with your actual image path */
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Chat/Floating button styles */
+    .chat-toggle-btn {
+        position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%;
+        background: linear-gradient(135deg, var(--purple-accent), var(--primary-purple));
+        color: white; border: none; font-size: 1.8rem;
+        box-shadow: 0 10px 20px rgba(58, 11, 118, 0.4); transition: all 0.3s ease; z-index: 1050;
+    }
+    .chat-modal-dialog { max-width: 400px; }
+    .chat-modal-content { border-radius: 15px; overflow: hidden; border: none; }
+    .chat-modal-header { background-color: var(--primary-purple); color: white; padding: 15px 20px; border-bottom: none; }
+    .chat-modal-body { background-color: #f7f9fc; padding: 20px; max-height: 400px; overflow-y: auto; }
+    .chat-modal-footer { display: flex; padding: 10px 20px; background-color: #ffffff; border-top: 1px solid #eee; }
+    .chat-message { margin-bottom: 15px; display: flex; flex-direction: column; }
+    .bot-message p {
+        background-color: #e0e0e0; color: var(--text-dark); padding: 10px 15px;
+        border-radius: 15px 15px 15px 0; max-width: 85%; align-self: flex-start;
+        font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .user-message p {
+        background-color: var(--purple-accent); color: white; padding: 10px 15px;
+        border-radius: 15px 15px 0 15px; max-width: 85%; align-self: flex-end;
+        font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .quick-reply .badge {
+        cursor: pointer; margin-right: 5px; margin-bottom: 5px; border: 1px solid var(--purple-accent);
+        color: var(--primary-purple); background-color: var(--purple-light) !important; transition: background-color 0.2s;
+    }
+    .btn-purple-outline {
+        background-color: transparent; border: 2px solid var(--primary-purple); color: var(--primary-purple);
+        font-weight: 600; padding: 5px 15px; border-radius: 50px; transition: all 0.2s;
+    }
+    .btn-purple-outline:hover { background-color: var(--primary-purple); color: white; }
+    
+    
+    /* --- UK POPUP STYLING (New, Enhanced Version) --- */
+    
+    /* 4. Large screens (1200px and above) */
+    @media (min-width: 1200px) {
+        .mega-menu-panel-js .row {
+            flex-wrap: nowrap;
+        }
+    }
+
+    /* UK Popup Modal Styling */
+    .uk-popup-modal .modal-dialog {
+        max-width: 600px;
+    }
+
+    .uk-popup-modal .modal-content {
+        border-radius: 20px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .uk-popup-modal .modal-header {
+        background: linear-gradient(135deg, var(--primary-purple), var(--purple-accent));
+        color: white;
+        border-bottom: none;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .uk-popup-modal .modal-body {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .uk-popup-modal .modal-footer {
+        border-top: none;
+        padding: 0 30px 30px;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; /* Added for mobile responsiveness */
+    }
+
+    .uk-popup-modal .uk-flag {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .uk-popup-modal .btn-continue {
+        background: linear-gradient(135deg, var(--primary-purple), var(--purple-accent));
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .uk-popup-modal .btn-continue:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(58, 11, 118, 0.4);
+    }
+
+    .uk-popup-modal .btn-uk-site {
+        background-color: transparent;
+        border: 2px solid var(--primary-purple);
+        color: var(--primary-purple);
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .uk-popup-modal .btn-uk-site:hover {
+        background-color: var(--primary-purple);
+        color: white;
+    }
+
+    /* Ensure buttons take full width on small screens */
+    @media (max-width: 575.98px) {
+        .uk-popup-modal .modal-footer button,
+        .uk-popup-modal .modal-footer a {
+            width: 100%;
+            margin: 5px 0;
+        }
+    }
+
+    /* ========================================================================= */
+    /* --- RESPONSIVENESS ADJUSTMENTS --- */
+    /* ========================================================================= */
+    
+    /* 1. Mobile & Small Tablet (up to 991.98px) */
+    @media (max-width: 991.98px) {
+        .hero-section {
+            padding: 40px 0;
+        }
+        .hero-section h1 {
+            font-size: 2.25rem;
             text-align: center;
         }
-
-        /* Filler items for perfect alignment */
-        .sub-service-list li.filler-item {
-            visibility: hidden;
-            min-height: 32px;
-            padding: 2px 0;
+        .hero-section p.lead {
+            text-align: center;
         }
-
-        /* --- OTHER SECTIONS (kept) --- */
-        .hero-section { 
-            padding: 80px 0; 
-            background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
-        }
-        .hero-section h1 { 
-            font-size: 3rem; 
-            font-weight: 800; 
-            margin-bottom: 1.5rem;
-        }
-        .text-purple { color: var(--purple-accent) !important; }
-        .hero-image-placeholder {
-            height: 500px;
-            background-image: url("neb.png");
-            background-size: cover;
-        }
-
-        /* Category heading styling */
-        .category-heading {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-purple);
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--purple-light);
-            flex-shrink: 0; /* Don't let heading shrink */
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* Service icon container */
-        .category-heading .service-icon {
-            position: relative;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
+        .hero-section .d-flex {
             justify-content: center;
         }
-
-        /* Service icon styling */
-        .category-heading .service-icon i {
-            font-size: 1.2rem;
-            color: var(--primary-purple); /* Dark purple icon color */
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Background shapes behind icons */
-        .category-heading .service-icon::before {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(139, 60, 255, 0.3); /* Darker purple background */
-            z-index: 1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s ease;
-
-            background: radial-gradient(circle at 30% 30%, 
-                rgba(0, 191, 255, 0.8),   /* aqua */
-                rgba(255, 105, 180, 0.6), /* pink */
-                rgba(255, 215, 0, 0.5)    /* gold */
-            );
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); /* soft depth */
-            transition: all 0.3s ease;
-        }
-
-        /* Different shapes for each service category */
-        .mega-menu-col:nth-child(1) .service-icon::before {
-
-            border-radius: 50%; /* Circle for Digital Marketing */
-        }
-
-        .mega-menu-col:nth-child(2) .service-icon::before {
-            border-radius: 8px; /* Square for Commercial Prod */
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .mega-menu-col:nth-child(3) .service-icon::before {
-            /* Perfect heart shape */
-            border-radius: 0;
-            transform: translate(-50%, -50%);
-            width: 38px;
-            height: 37px;
-            background-color: rgba(139, 60, 255, 0.3);
-            clip-path: path('M18 3.5C9 -2.5 -2.5 9 3.5 18c6 9 14.5 14.5 14.5 14.5S30 27 36 18c6-9 -5.5-20.5-14.5-14.5C21.5 3.5 18 3.5 18 3.5z');
-        }
-        .mega-menu-col:nth-child(4) .service-icon::before {
-            border-radius: 4px; /* Rounded square for Web Development */
-        }
-
-        .mega-menu-col:nth-child(5) .service-icon::before {
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Cloud shape for Global Operations */
-        }
-
-        /* Hover effects */
-        .mega-menu-col:hover .service-icon::before {
-            background-color: rgba(139, 60, 255, 0.4); /* Even darker on hover */
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .mega-menu-col:nth-child(2):hover .service-icon::before {
-            transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
-        }
-
-        .mega-menu-col:nth-child(3):hover .service-icon::before {
-            transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
-        }
-
-        /* --- RESPONSIVE STYLES --- */
-        
-        /* Mobile & Small Tablet (up to 991.98px) */
-        @media (max-width: 991.98px) {
-            /* Hero section adjustments */
-            .hero-section {
-                padding: 40px 0; /* Less padding on top/bottom */
-            }
-            .hero-section h1 {
-                font-size: 2.25rem; /* Smaller heading on mobile */
-                text-align: center;
-            }
-            .hero-section p.lead {
-                text-align: center;
-            }
-            .hero-section .d-flex {
-                justify-content: center; /* Center buttons */
-            }
-            .hero-image-placeholder {
-                height: 300px; /* Smaller height for mobile */
-                margin-top: 30px;
-                display: block !important; /* Force show on mobile */
-            }
-            
-            /* Mobile navigation adjustments */
-            .modern-navbar .navbar-nav {
-                text-align: center;
-            }
-            
-            /* Mobile mega menu adjustments */
-            .mega-menu-panel-js {
-                position: static;
-                box-shadow: none;
-                border-top: none;
-                padding: 20px 0;
-                transform: none;
-                display: none !important;
-            }
-            
-            .mega-menu-panel-js.active {
-                display: block !important;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-            }
-            
-            .mega-menu-panel-js .row {
-                flex-direction: column;
-                min-height: auto;
-            }
-            
-            .mega-menu-col {
-                flex: none;
-                border-right: none;
-                border-bottom: 1px solid #eee;
-                padding: 20px 0;
-            }
-            
-            .mega-menu-col:last-child {
-                border-bottom: none;
-            }
-            
-            .sub-service-list {
-                flex-grow: 0;
-            }
-            
-            /* Mobile menu trigger styling */
-            .mega-menu-trigger {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 10px 0;
-                background: none;
-                border: none;
-                font-weight: 500;
-                color: var(--text-dark);
-            }
-            
-            .mega-menu-trigger.active {
-                color: var(--primary-purple);
-            }
-            
-            /* Mobile navbar toggler styling */
-            .navbar-toggler {
-                border: none;
-                padding: 5px 10px;
-            }
-            
-            .navbar-toggler:focus {
-                box-shadow: none;
-            }
-            
-            .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            }
+        .hero-image-placeholder {
+            height: 300px;
+            margin-top: 30px;
+            display: block !important;
         }
         
-        /* Desktop (992px and above) */
-        @media (min-width: 992px) {
-            .mega-menu-trigger {
-                display: none;
-            }
+        /* Hide top bar elements that take up space */
+        .top-header-bar .d-flex:first-child {
+            display: none !important;
+        }
+        .top-header-bar .d-flex:last-child {
+            width: 100%;
+            justify-content: center;
+        }
+        .announcement-bar {
+            padding: 10px;
+            text-align: center;
+        }
+    }
+    
+    /* 2. Tablet & Smaller Desktop (up to 1199.98px) - Critical for Mega Menu */
+    @media (max-width: 1199.98px) {
+        /* Hide the entire desktop mega menu on smaller screens */
+        .mega-menu-panel-js {
+            display: none !important;
         }
         
-        /* Small mobile devices (up to 576px) */
-        @media (max-width: 576px) {
-            .hero-section h1 {
-                font-size: 1.75rem;
-            }
-            
-            .btn-purple {
-                padding: 0.6rem 1.5rem;
-                font-size: 0.9rem;
-            }
-            
-            .top-header-bar, .announcement-bar {
-                font-size: 0.8rem;
-            }
-            
-            .revenue-figure {
-                font-size: 1rem;
-            }
-        }
-
-        /* Chat button and modal styles */
-        .chat-toggle-btn {
-            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--purple-accent), var(--primary-purple));
-            color: white; border: none; font-size: 1.8rem;
-            box-shadow: 0 10px 20px rgba(58, 11, 118, 0.4); transition: all 0.3s ease; z-index: 1050;
-        }
-        .chat-modal-dialog { max-width: 400px; }
-        .chat-modal-content { border-radius: 15px; overflow: hidden; border: none; }
-        .chat-modal-header { background-color: var(--primary-purple); color: white; padding: 15px 20px; border-bottom: none; }
-        .chat-modal-body { background-color: #f7f9fc; padding: 20px; max-height: 400px; overflow-y: auto; }
-        .chat-modal-footer { display: flex; padding: 10px 20px; background-color: #ffffff; border-top: 1px solid #eee; }
-        .chat-message { margin-bottom: 15px; display: flex; flex-direction: column; }
-        .bot-message p {
-            background-color: #e0e0e0; color: var(--text-dark); padding: 10px 15px;
-            border-radius: 15px 15px 15px 0; max-width: 85%; align-self: flex-start;
-            font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        .user-message p {
-            background-color: var(--purple-accent); color: white; padding: 10px 15px;
-            border-radius: 15px 15px 0 15px; max-width: 85%; align-self: flex-end;
-            font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        .quick-reply .badge {
-            cursor: pointer; margin-right: 5px; margin-bottom: 5px; border: 1px solid var(--purple-accent);
-            color: var(--primary-purple); background-color: var(--purple-light) !important; transition: background-color 0.2s;
-        }
-        .btn-purple-outline {
-            background-color: transparent; border: 2px solid var(--primary-purple); color: var(--primary-purple);
-            font-weight: 600; padding: 5px 15px; border-radius: 50px; transition: all 0.2s;
-        }
-        .btn-purple-outline:hover { background-color: var(--primary-purple); color: white; }
-        
-        /* Improved hover behavior for mega menu */
-        .mega-menu-panel {
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.1s;
-        }
-        
-        .mega-menu-item:hover .mega-menu-panel {
-            transition-delay: 0s;
-        }
-        
-        /* Add a small gap between the menu item and the dropdown */
-        .mega-menu-panel::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: transparent;
-        }
-        
-        /* Rotate the chevron icon when menu is open */
-        .mega-menu-item:hover .bi-chevron-down {
-            transform: rotate(180deg);
-            transition: transform 0.3s ease;
-        }
-        
-        .bi-chevron-down {
-            transition: transform 0.3s ease;
-        }
-        
-        .mega-menu-trigger {
-            cursor: pointer;
-        }
-        
-        .services-highlight {
-            color: var(--primary-purple);
-            font-weight: 600;
-        }
-        
+        /* Show the chevron icon for mobile/tablet to indicate the dropdown works */
         .services-highlight .bi-chevron-down {
-            transition: transform 0.3s ease;
+            display: inline-block !important; /* Force show for collapsed menu */
         }
         
-        .services-highlight.active .bi-chevron-down {
-            transform: rotate(180deg);
+        /* Mobile Navbar: Add margin/padding to the items for better stacking */
+        .modern-navbar .navbar-nav {
+            padding-top: 10px;
         }
+        .modern-navbar .nav-item {
+            margin: 0 !important;
+        }
+        .modern-navbar .nav-link {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .modern-navbar .nav-link.btn {
+            border-bottom: none;
+            margin: 15px 15px 15px 15px !important;
+            display: block; /* Make button fill width */
+            text-align: center;
+        }
+        
+        /* For the collapsed menu, the Services menu must expand the standard way */
+        .mega-menu-col {
+            flex: 0 0 100%; /* Columns now take full width */
+            border-right: none;
+            border-bottom: 1px solid #eee; /* Add separator between stacked columns */
+            padding: 15px 20px;
+        }
+        
+        .mega-menu-col:last-child {
+            border-bottom: none;
+        }
+        
+        /* Hide filler items on mobile/tablet */
+        .sub-service-list li.filler-item {
+            display: none !important;
+        }
+
+        /* Ensure .row wraps on mobile */
+        #service-mega-menu-content-mobile {
+            flex-wrap: wrap !important;
+            min-height: auto !important;
+        }
+    }
+
+    /* 3. Extra Small Screens (up to 575.98px) */
+    @media (max-width: 575.98px) {
+        .hero-section h1 {
+            font-size: 1.75rem;
+        }
+        .hero-section p.lead {
+            font-size: 1rem;
+        }
+        .hero-section .d-flex {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .hero-section .btn-lg {
+            width: 100%;
+            font-size: 1rem;
+        }
+    }
     </style>
 </head>
-
 <body>
-
+    
+    <div class="modal fade uk-popup-modal" id="ukPopupModal" tabindex="-1" aria-labelledby="ukPopupModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title w-100" id="ukPopupModalLabel">
+                        <span class="fi fi-gb uk-flag"></span>
+                        Important Notice for UK Visitors
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <p class="lead mb-4">This website is for all global operations <b>excluding the UK.</b></p>
+                    <p>If you are located in the United Kingdom, please visit our dedicated UK website for services and support tailored specifically for you.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-continue" data-bs-dismiss="modal">Continue to Global Site</button>
+                    <a href="https://abcdmedia.co.uk" class="btn btn-uk-site" target="_blank">Go to UK Site</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="top-header-bar">
         <div class="container-fluid container-xl d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center text-white">
@@ -575,7 +591,7 @@
             </div>
             <div class="d-flex align-items-center">
                 <i class="bi bi-telephone-fill me-2 fs-6 text-warning"></i>
-                <a href="tel:+1234567890" class="text-white text-decoration-none fw-bold">
+                <a href="tel:+447380594504" class="text-white text-decoration-none fw-bold">
                     +44 7380 594504
                 </a>
             </div>
@@ -598,25 +614,31 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link active-link" href="#"><i class="bi bi-house-door"></i>Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-circle"></i>Clients</a></li>
+                    <li class="nav-item"><a class="nav-link active-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
 
                     <li class="nav-item mx-3 mega-menu-js" id="servicesNavItem">
-                        <a class="nav-link mega-menu-trigger services-highlight" href="#" id="servicesTrigger">
-                            <i class="bi bi-box-seam"></i>Services <i class="bi bi-chevron-down ms-1"></i>
+                        <a class="nav-link mega-menu-trigger services-highlight" href="#" id="servicesTrigger" data-bs-toggle="collapse" data-bs-target="#servicesPanelMobile" aria-expanded="false" aria-controls="servicesPanelMobile">
+                            Services <i class=" ms-1"></i>
                         </a>
 
                         <div class="mega-menu-panel-js" id="servicesPanel">
                             <div class="container-xl">
                                 <div class="row d-flex flex-nowrap" id="service-mega-menu-content">
-                                </div>
+                                    </div>
                             </div>
                         </div>
+
+                        <div class="collapse d-lg-none" id="servicesPanelMobile">
+                             <div class="row" id="service-mega-menu-content-mobile">
+                                </div>
+                        </div>
+
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-card-checklist"></i>Case Studies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-telephone"></i>Contact</a></li>
-                    <li class="nav-item ms-lg-3"><a class="nav-link btn btn-purple text-white" href="#"><i class="bi bi-lock-fill me-1"></i>Client Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Case Studies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a class="nav-link btn btn-purple text-white" href="#">Client Login</a></li>
                 </ul>
             </div>
         </div>
@@ -645,38 +667,41 @@
             </div>
         </div>
     </div>
-  <section class="partners-reviews-section py-5 bg-white text-center">
-    <div class="container-xl">
-        <h2 class="h3 fw-bold mb-3">We're proud to work with leading partners and brands.</h2>
 
-        <div class="row align-items-center justify-content-center mb-5 g-4">
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="new-google-partner-badge-1.png" alt="Google Partner" class="img-fluid" style="max-height: 80px;">
+    <section class="partners-reviews-section py-5 bg-white text-center">
+        <div class="container-xl">
+            <h2 class="h3 fw-bold mb-3">We're proud to work with leading partners and brands.</h2>
+
+            <div class="row align-items-center justify-content-center mb-5 g-4">
+                <div class="col-6 col-md-3 col-lg-2">
+                    <img src="new-google-partner-badge-1.png" alt="Google Partner" class="img-fluid" style="max-height: 80px;">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <img src="Logo_of_Infinix.png" alt="Infinix Logo" class="img-fluid" style="max-height: 50px;">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <img src="KKK.png" alt="Khaadi Logo" class="img-fluid" style="max-height: 50px;">
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <img src="Air-Blue65.png" alt="Airblue Logo" class="img-fluid" style="max-height: 50px;">
+                </div>
             </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="Logo_of_Infinix.png" alt="Infinix Logo" class="img-fluid" style="max-height: 50px;">
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="KKK.png" alt="Khaadi Logo" class="img-fluid" style="max-height: 50px;">
-            </div>
-            <div class="col-6 col-md-3 col-lg-2">
-                <img src="Air-Blue65.png" alt="Airblue Logo" class="img-fluid" style="max-height: 50px;">
+
+            <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="height: 30px;">
+                <div class="d-flex">
+                    <i class="bi bi-star-fill text-warning fs-5"></i>
+                    <i class="bi bi-star-fill text-warning fs-5"></i>
+                    <i class="bi bi-star-fill text-warning fs-5"></i>
+                    <i class="bi bi-star-fill text-warning fs-5"></i>
+                    <i class="bi bi-star-half text-warning fs-5"></i>
+                </div>
+                <span class="lead fw-bold">Rated <span class="text-purple">4.9/5</span> across Google &amp; Trustpilot</span>
             </div>
         </div>
+    </section>
 
-        <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="height: 30px;">
-            <div class="d-flex">
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-fill text-warning fs-5"></i>
-                <i class="bi bi-star-half text-warning fs-5"></i>
-            </div>
-            <span class="lead fw-bold">Rated <span class="text-purple">4.9/5</span> across Google &amp; Trustpilot</span>
-        </div>
-    </div>
-</section>
+
     <button class="chat-toggle-btn" data-bs-toggle="modal" data-bs-target="#chatModal">
         <i class="bi bi-robot"></i>
     </button>
@@ -686,14 +711,14 @@
             <div class="modal-content chat-modal-content">
                 <div class="modal-header chat-modal-header">
                     <h5 class="modal-title" id="chatModalLabel">
-                        <i class="bi bi-cpu-fill me-2"></i>AI Assistant - Predictive Intelligence
+                        <i class="bi bi-headset me-2"></i>AI Assistant - Predictive Intelligence
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body chat-modal-body">
                     <div class="chat-message bot-message">
-                        <p>Hello! I'm your <strong>Predictive Intelligence</strong> assistant. I can answer basic questions about our AI, services, and global hubs.</p>
+                        <p>Hello! I'm your **Predictive Intelligence** assistant. I can answer basic questions about our AI, services, and global hubs.</p>
                     </div>
 
                     <div class="chat-message bot-message">
@@ -709,7 +734,7 @@
                     </div>
 
                     <div class="chat-message bot-message transfer-message mt-4">
-                        <p><i class="bi bi-person-fill-gear me-1"></i> <strong>Need a specialist right now?</strong></p>
+                        <p><i class="bi bi-person-fill-gear me-1"></i> **Need a specialist right now?**</p>
                         <a href="https://wa.me/YOURPHONENUMBER?text=Hello,%20I%20have%20a%20complex%20query%20and%20would%20like%20to%20speak%20with%20a%20human%20expert." target="_blank" class="btn btn-sm btn-purple-outline">
                             <i class="bi bi-whatsapp me-1"></i> Chat via WhatsApp
                         </a>
@@ -727,199 +752,210 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Data Structure for all Services in 6 columns
-const servicesData = {
-    digitalMarketing: {
-        title: "Digital Marketing",
-        icon: 'bi-graph-up-arrow',
-        subItems: [
-            'Digital Marketing', 'Media Buying', 'SEO',
-            'SMM', 'ORM', 'E-mail Marketing'
-        ]
-    },
-    commercialProduction: {
-        title: "Commercial Prod",
-        icon: 'bi-camera-video-fill',
-        subItems: [
-            'Commercial Production', '2D Animation', '3D Animation',
-            'Social Video Ads', 'Motion Graphics', 'Video Editing',
-            'CGI Ads'
-        ]
-    },
-    graphicsDesign: {
-        title: "Graphics Design",
-        icon: 'bi-brush-fill',
-        subItems: [
-            'UI/UX Design', 'Branding Identity', 'Content Design',
-            'Logo Design', 'Banners/Flyers', 'Packaging Design',
-            'Illustration'
-        ]
-    },
-    webDevelopment: {
-        title: "Web Development",
-        icon: 'bi-laptop-fill',
-        subItems: [
-            'WordPress', 'Shopify', 'Wix',
-            'Custom Code', 'Landing Page', 'Company Branding'
-        ]
-    },
-   
-  globalOperations: {
-    title: "Global Operations",
-    icon: 'bi-globe2',
-    subItems: [
-        {name: 'UK', flag: 'gb'},
-        {name: 'USA', flag: 'us'},
-        {name: 'UAE', flag: 'ae'},
-        {name: 'Hong Kong', flag: 'hk'},
-        {name: 'EU', flag: 'eu'}
-    ]
-}
-};
-        const megaMenuContent = document.getElementById('service-mega-menu-content');
-        const servicesTrigger = document.getElementById('servicesTrigger');
-        const servicesPanel = document.getElementById('servicesPanel');
-        const servicesNavItem = document.getElementById('servicesNavItem');
-
-      function renderMegaMenu() {
-    let html = '';
-    // 1. Find the maximum number of items in any column
-    let maxItems = 0;
-    for (const key in servicesData) {
-        if (servicesData[key].subItems.length > maxItems) {
-            maxItems = servicesData[key].subItems.length;
+    // Data Structure for all Services
+    const servicesData = {
+        digitalMarketing: {
+            title: "Digital Marketing",
+            icon: 'bi-graph-up-arrow',
+            subItems: [
+                'Digital Marketing', 'Media Buying', 'SEO',
+                'SMM', 'ORM', 'E-mail Marketing'
+            ]
+        },
+        commercialProduction: {
+            title: "Commercial Prod",
+            icon: 'bi-camera-video-fill',
+            subItems: [
+                'Commercial Production', '2D Animation', '3D Animation',
+                'Social Video Ads', 'Motion Graphics', 'Video Editing',
+                'CGI Ads'
+            ]
+        },
+        graphicsDesign: {
+            title: "Graphics Design",
+            icon: 'bi-brush-fill',
+            subItems: [
+                'UI/UX Design', 'Branding Identity', 'Content Design',
+                'Logo Design', 'Banners/Flyers', 'Packaging Design',
+                'Illustration'
+            ]
+        },
+        webDevelopment: {
+            title: "Web Development",
+            icon: 'bi-laptop-fill',
+            subItems: [
+                'WordPress', 'Shopify', 'Wix',
+                'Custom Code', 'Landing Page', 'Company Branding'
+            ]
+        },
+        globalOperations: {
+            title: "Global Operations",
+            icon: 'bi-globe2',
+            subItems: [
+                {name: 'USA', flag: 'us'},
+                {name: 'UAE', flag: 'ae'},
+                {name: 'Hong Kong', flag: 'hk'},
+                {name: 'EU', flag: 'eu'},
+                {name: 'Australia', flag: 'au'}
+            ]
         }
-    }
-    
-    // The maxItems is currently 7 (from 'design')
-    
-    for (const key in servicesData) {
-        const data = servicesData[key];
+    };
+
+    const megaMenuContent = document.getElementById('service-mega-menu-content');
+    const servicesTrigger = document.getElementById('servicesTrigger');
+    const servicesPanel = document.getElementById('servicesPanel');
+    const servicesNavItem = document.getElementById('servicesNavItem');
+
+    // Function to handle rendering the mega menu content (for both desktop and mobile)
+    function renderMegaMenu(targetElementId, isMobile = false) {
+        const targetElement = document.getElementById(targetElementId);
+        if (!targetElement) return;
         
-        let subListHtml = '';
+        let html = '';
+        let maxItems = 0;
         
-        // Render the actual sub-items
-       // Render the actual sub-items
-if (key === 'globalOperations') {
-    data.subItems.forEach(item => {
-        subListHtml += `<li><a href="#"><span class="fi fi-${item.flag}"></span> ${item.name}</a></li>`;
-    });
-} else {
-    data.subItems.forEach(item => {
-        subListHtml += `<li><a href="#"><i class="bi bi-arrow-right-short"></i> ${item}</a></li>`;
-    });
-}
-        
-        // 2. Add filler items to make all columns equal height
-        const fillerCount = maxItems - data.subItems.length;
-        for (let i = 0; i < fillerCount; i++) {
-            // NOTE: The filler-item class has 'visibility: hidden;' in your CSS,
-            // but it still takes up the minimum height, ensuring the column height is equal.
-            subListHtml += '<li class="filler-item">&nbsp;</li>'; 
+        // Find max items only if desktop view (to maintain equal height columns)
+        if (!isMobile) {
+            for (const key in servicesData) {
+                if (servicesData[key].subItems.length > maxItems) {
+                    maxItems = servicesData[key].subItems.length;
+                }
+            }
         }
+        
+        for (const key in servicesData) {
+            const data = servicesData[key];
+            
+            let subListHtml = '';
+            
+            // Render the actual sub-items
+            if (key === 'globalOperations') {
+                data.subItems.forEach(item => {
+                    subListHtml += `<li><a href="#"><span class="fi fi-${item.flag}"></span> ${item.name}</a></li>`;
+                });
+            } else {
+                data.subItems.forEach(item => {
+                    subListHtml += `<li><a href="#"><i class="bi bi-arrow-right-short"></i> ${item}</a></li>`;
+                });
+            }
+            
+            // Add filler items for desktop alignment
+            if (!isMobile) {
+                const fillerCount = maxItems - data.subItems.length;
+                for (let i = 0; i < fillerCount; i++) {
+                    subListHtml += '<li class="filler-item">&nbsp;</li>'; 
+                }
+            }
 
-        html += `
-    <div class="mega-menu-col">
-        <h3 class="category-heading">
-            <span class="service-icon">
-                <i class="bi ${data.icon}"></i>
-            </span>
-            ${data.title}
-        </h3>
-        <ul class="sub-service-list">
-            ${subListHtml}
-        </ul>
-    </div>
-`;
+            html += `
+            <div class="mega-menu-col">
+                <h3 class="category-heading">
+                    <span class="service-icon">
+                        <i class="bi ${data.icon}"></i>
+                    </span>
+                    ${data.title}
+                </h3>
+                <ul class="sub-service-list">
+                    ${subListHtml}
+                </ul>
+            </div>
+            `;
+        }
+        targetElement.innerHTML = html;
     }
-    megaMenuContent.innerHTML = html;
-}
 
-        // JavaScript-controlled mega menu behavior
-        let menuTimeout;
-        let isMenuOpen = false;
+    // JavaScript-controlled mega menu behavior (Desktop Hover)
+    let menuTimeout;
+    let isMenuOpen = false;
 
-        function openMenu() {
+    function openMenu() {
+        if (window.innerWidth >= 1200) { // Only run for desktop/xl screens
             clearTimeout(menuTimeout);
             servicesPanel.classList.add('active');
             servicesTrigger.classList.add('active');
             isMenuOpen = true;
         }
+    }
 
-        function closeMenu() {
+    function closeMenu() {
+        if (window.innerWidth >= 1200) { // Only run for desktop/xl screens
             menuTimeout = setTimeout(() => {
                 servicesPanel.classList.remove('active');
                 servicesTrigger.classList.remove('active');
                 isMenuOpen = false;
             }, 300); // Delay to allow moving between trigger and panel
         }
+    }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            // Render the content when the page loads
-            renderMegaMenu();
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- UK POPUP LOGIC ---
+        // Targeting the new modal ID: ukPopupModal
+        const ukModal = new bootstrap.Modal(document.getElementById('ukPopupModal'));
+        // Show the modal immediately on page load
+        ukModal.show();
+        
+        // --- MEGA MENU RENDERING ---
+        renderMegaMenu('service-mega-menu-content', false); // Render Desktop Menu
+        renderMegaMenu('service-mega-menu-content-mobile', true); // Render Mobile Menu
+        
 
-            // Set up event listeners for the mega menu
-            servicesTrigger.addEventListener('mouseenter', openMenu);
-            servicesNavItem.addEventListener('mouseleave', closeMenu);
-            servicesPanel.addEventListener('mouseenter', openMenu);
-            servicesPanel.addEventListener('mouseleave', closeMenu);
+        // Set up event listeners for the mega menu (Desktop Hover)
+        servicesTrigger.addEventListener('mouseenter', openMenu);
+        servicesNavItem.addEventListener('mouseleave', closeMenu);
+        servicesPanel.addEventListener('mouseenter', openMenu);
+        servicesPanel.addEventListener('mouseleave', closeMenu);
 
-            // Close menu when clicking anywhere else on the page
-            document.addEventListener('click', function(e) {
-                if (!servicesNavItem.contains(e.target) && isMenuOpen) {
-                    closeMenu();
-                }
-            });
-
-            // --- CHATBOT LOGIC (kept) ---
-            const aiAnswers = {
-                'Services': {
-                    userText: 'Tell me about your Services',
-                    botText: 'Our services are now organized into six pillars: **Digital Strategy**, **Design**, **Video**, **Web Dev**, **Core Marketing Channels (SEO/SMM)**, and **Global Hubs**. Please hover over the "Services" link to see the full, detailed menu!'
-                },
-                'Pricing': {
-                    userText: 'What are your Pricing Models?',
-                    botText: 'We offer three models: **Project-Based**, **Monthly Retainer**, and **Performance-Based** (for qualifying accounts). We customize every proposal—use the "Start Your Project" button to get a quote!'
-                },
-                'AI': {
-                    userText: 'How does your AI work?',
-                    botText: 'Our proprietary system uses **Machine Learning** to analyze market trends and predict optimal conversion paths, ensuring your campaigns are always hyper-optimized for growth. It handles the data; our experts handle the strategy.'
-                }
-            };
-
-            window.simulateAnswer = function(topic) {
-                const data = aiAnswers[topic];
-                if (!data) return;
-
-                const responseContainer = document.getElementById('simulated-response');
-
-                // 1. Add the user's simulated message
-                responseContainer.innerHTML += `
-                    <div class="chat-message user-message">
-                        <p>${data.userText}</p>
-                    </div>
-                `;
-
-                // 2. Add the bot's detailed response
-                setTimeout(() => {
-                    responseContainer.innerHTML += `
-                        <div class="chat-message bot-message">
-                            <p>${data.botText}</p>
-                        </div>
-                    `;
-                    // Scroll to the bottom of the modal body
-                    const modalBody = document.querySelector('.chat-modal-body');
-                    if (modalBody) {
-                        modalBody.scrollTop = modalBody.scrollHeight;
-                    }
-                }, 500);
+        // Close menu when clicking anywhere else on the page (Desktop)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth >= 1200 && !servicesNavItem.contains(e.target) && isMenuOpen) {
+                closeMenu();
             }
         });
+
+        // --- CHATBOT LOGIC (kept) ---
+        const aiAnswers = {
+            'Services': {
+                userText: 'Tell me about your Services',
+                botText: 'Our services are now organized into five main pillars: **Digital Marketing**, **Commercial Production**, **Graphics Design**, **Web Development**, and **Global Operations**. Please hover over the "Services" link to see the full, detailed menu!'
+            },
+            'Pricing': {
+                userText: 'What are your Pricing Models?',
+                botText: 'We offer three models: **Project-Based**, **Monthly Retainer**, and **Performance-Based** (for qualifying accounts). We customize every proposal—use the "Start Your Project" button to get a quote!'
+            },
+            'AI': {
+                userText: 'How does your AI work?',
+                botText: 'Our proprietary system uses **Machine Learning** to analyze market trends and predict optimal conversion paths, ensuring your campaigns are always hyper-optimized for growth. It handles the data; our experts handle the strategy.'
+            }
+        };
+
+        window.simulateAnswer = function(topic) {
+            const data = aiAnswers[topic];
+            if (!data) return;
+
+            const responseContainer = document.getElementById('simulated-response');
+
+            // 1. Add the user's simulated message
+            responseContainer.innerHTML += `
+                <div class="chat-message user-message">
+                    <p>${data.userText}</p>
+                </div>
+            `;
+
+            // 2. Add the bot's detailed response
+            setTimeout(() => {
+                responseContainer.innerHTML += `
+                    <div class="chat-message bot-message">
+                        <p>${data.botText}</p>
+                    </div>
+                `;
+                // Scroll to the bottom of the modal body
+                const modalBody = document.querySelector('.chat-modal-body');
+                if (modalBody) {
+                    modalBody.scrollTop = modalBody.scrollHeight;
+                }
+            }, 500);
+        }
+    });
     </script>
 </body>
 </html>
-
-
-
-
-
