@@ -774,135 +774,151 @@
 
 
 
-     .impact-section {
-    background: #f1f5f9;
-    position: relative;
-    padding: 60px 0;
-    overflow: hidden;
-}
+    .impact-section {
+            background: #f1f5f9;
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
 
-.impact-section::after {
-    content: "";
-    position: absolute;
-    top: -100px;
-    right: -150px;
-    width: 600px;
-    height: 600px;
-    background: linear-gradient(135deg, #dbeafe, #ffc5b9);
-    border-radius: 50%;
-    z-index: 0;
-}
+        .impact-section::after {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #dbeafe, #ffc5b9);
+            border-radius: 50%;
+            z-index: 0;
+        }
 
-.impact-container {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: left;
-    color: var(--dark-color);
-    padding: 0 20px;
-}
+        .impact-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+            color: var(--dark-color);
+        }
 
-.impact-label {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #6b7280;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-}
+        .impact-label {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
 
-.impact-headline {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 1.5rem;
-    color: var(--dark-color);
-}
+        .impact-headline {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
 
-.impact-headline .rotating-text {
-    color: var(--primary-color);
-}
+        .impact-headline .rotating-text {
+            color: var(--primary-color);
+        }
 
-.rotating-text {
+        .rotating-text {
     position: relative;
     display: inline-block;
-    min-width: 0; /* Remove fixed min-width */
-    height: auto; /* Allow height to adjust */
+    min-width: 420px;
+    height: 1.5em;
     vertical-align: bottom;
-    font-size: 1.9rem;
+    font-size: 1.9rem; /* 🔹 reduced text size */
 }
 
-/* --- CSS-only rotating text animation --- */
-.rotating-text span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    animation: rotateWords 12s linear infinite 0s;
-    width: 100%;
-}
 
-.rotating-text span:nth-child(1) { animation-delay: 0s; }
-.rotating-text span:nth-child(2) { animation-delay: 4s; }
-.rotating-text span:nth-child(3) { animation-delay: 8s; }
+        /* --- Transition time is 1s for slower effect --- */
+        .rotating-text span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease; 
+            width: 100%;
+        }
 
-@keyframes rotateWords {
-    0% { opacity: 0; transform: translateY(20px); }
-    3% { opacity: 1; transform: translateY(0px); }
-    30% { opacity: 1; transform: translateY(0px); }
-    33% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 0; }
-}
+        .rotating-text span.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
+        .rotating-text span.exiting {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
 
-.cta-button:hover {
-    background-color: #1d4ed8;
-    color: #fff;
-}
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
 
-.impact-stats {
-    display: flex;
-    justify-content: flex-start;
-    gap: 3rem;
-    flex-wrap: wrap;
-    border-top: 1px solid #d1d5db;
-    padding-top: 2.5rem;
-    margin-top: 3rem;
-}
+        .cta-button:hover {
+            background-color: #1d4ed8;
+            color: #fff;
+        }
 
-.stat-item {
-    flex: 1;
-    min-width: 180px;
-}
+        .impact-stats {
+            display: flex;
+            justify-content: flex-start;
+            gap: 3rem;
+            flex-wrap: wrap;
+            border-top: 1px solid #d1d5db;
+            padding-top: 2.5rem;
+            margin-top: 3rem;
+        }
 
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--dark-color);
-    margin-bottom: 0.25rem;
-}
+        .stat-item {
+            flex: 1;
+            min-width: 180px;
+        }
 
-.stat-label {
-    color: #4b5563;
-    font-weight: 500;
-    font-size: 1rem;
-}
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
 
-/* ========== RESPONSIVE BREAKPOINTS ========== */
+        .stat-label {
+            color: #4b5563;
+            font-weight: 500;
+            font-size: 1rem;
+        }
 
-/* Tablet (768px and below) */
+        @media (max-width: 768px) {
+            .impact-headline {
+                font-size: 1.8rem;
+            }
+            .rotating-text {
+                min-width: 300px;
+            }
+            .impact-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .rotating-text {
+                min-width: 250px;
+            }
+        } 
+
+        /* Tablet (768px and below) */
 @media (max-width: 768px) {
     .impact-section {
         padding: 50px 0;
@@ -1049,7 +1065,6 @@
         font-size: 1.6rem;
     }
 }
-
          /* Custom gradient for card image overlay for better text readability */
         .card-bg-overlay {
             background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%);
@@ -1256,6 +1271,123 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
+
+        .webinar-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, #ede7ff 0%, #e0d8f8 100%);
+    padding: 60px 80px;
+    border-radius: 10px;
+  }
+
+  .webinar-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .webinar-content h4 {
+    color: #6c63ff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  .webinar-content h1 {
+    font-size: 2.5rem;
+    color: #1f1f39;
+    max-width: 600px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+
+  .webinar-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .webinar-buttons a {
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: #6c63ff;
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--primary-color)
+  }
+
+  .btn-secondary {
+    background-color: #fff;
+    color: #6c63ff;
+  }
+
+  .btn-secondary:hover {
+    color: #fff;
+     background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+  }
+
+  .webinar-speakers {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-width: 300px;
+  }
+
+  .speaker {
+    position: relative;
+    text-align: center;
+  }
+
+  .speaker img {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .speaker-info {
+    background-color: #ffffffd9;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
+  .speaker-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #1f1f39;
+  }
+
+  .speaker-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  @media (max-width: 900px) {
+    .webinar-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .webinar-speakers {
+      justify-content: center;
+    }
+  }
        
         
     </style>
@@ -2006,6 +2138,40 @@
         
     
     </section>
+
+
+    <section class="webinar-section">
+  <div class="webinar-content text-primary-purple">
+    <h4 class="text-primary-purple">WEBINAR | ABCDMEDIA Ltd</h4>
+    <h1>How Businesses Can Move Past the AI Pilot Phase</h1>
+    <div class="webinar-buttons">
+      <a href="#" class="btn btn-purple">Watch Now</a>
+      <a href="#" class="btn-secondary text-primary-purple">View Other Webinars</a>
+    </div>
+  </div>
+
+  <div class="webinar-speakers">
+    <div class="speaker">
+      <img src="gul.jpeg" alt="Speaker 1">
+      <div class="speaker-info">
+        <h3>Gulfam Tasawar</h3>
+        <p>CEO, ABCDMedia Ltd</p>
+      </div>
+    </div>
+
+    <div class="speaker">
+      <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=400&q=80" alt="Speaker 2">
+      <div class="speaker-info">
+        <h3>Sarah Williams</h3>
+        <p>Head of AI Strategy, ABCDMedia</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
  
 
