@@ -2,960 +2,2111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ABCDMEDIA LTD </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCDMedia Ltd - Centered Hero</title>
+    <!-- Bootstrap CSS -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-    /* --- Colors & Fonts --- */
-    :root {
-        --primary-font: 'Poppins', sans-serif;
-        --primary-purple: #3a0b76;
-        --purple-accent: #8b3cff;
-        --purple-light: #f5f0ff;
-        --text-dark: #1f1f1f;
-        --text-muted: #555;
-        --bg-body: #ffffff;
-        --unified-gradient-start: #3a0b76;
-        --unified-gradient-end: #8b3cff;
-    }
+        :root {
+            --primary-color: #8A2BE2;
+            --accent-color: #FF69B4;
+            --dark-color: #2D0C5E;
+            --light-bg: #F8F3FF;
+            --dark-panel-bg: #212529;
+            --clr-bg-dark: var(--dark-color);
+            --clr-bg-light: #5f2a96;
+            --clr-accent-hero: var(--primary-color);
+            --clr-star-fill: var(--primary-color);
+            --clr-text-main: #ffffff;
+            --clr-text-secondary: #e3e3e3;
+            --clr-light-accent: #c796ff;
+            --font-primary: 'Poppins', sans-serif;
+            --dark-gray-tag: #4B5563;
+        }
 
-    body {
-        font-family: var(--primary-font);
-        background-color: var(--bg-body);
-        color: var(--text-dark);
-        line-height: 1.6;
-        padding-top: 0;
-    }
-    
-    /* Global Button Style */
-    .btn-purple {
-        color: #fff;
-        background: linear-gradient(90deg, var(--purple-accent), var(--primary-purple));
-        border: none;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        font-weight: 600;
-        padding: 0.75rem 2rem;
-        border-radius: 50px;
-        box-shadow: 0 10px 30px rgba(58, 11, 118, 0.4);
-    }
-    .btn-purple:hover {
-        background: linear-gradient(90deg, var(--primary-purple), var(--purple-accent));
-        transform: translateY(-2px);
-        box-shadow: 0 15px 40px rgba(58, 11, 118, 0.6);
-        color: #fff;
-    }
-    .btn-outline-purple {
-        color: var(--primary-purple);
-        background-color: transparent;
-        border: 2px solid var(--primary-purple);
-        transition: all 0.3s;
-        font-weight: 600;
-        padding: 0.75rem 2rem;
-        border-radius: 50px;
-    }
-    .btn-outline-purple:hover {
-        background-color: var(--primary-purple);
-        color: white;
-        border-color: var(--primary-purple);
-    }
+        body {
+            font-family: var(--font-primary);
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Compact Mega Menu Styling */
+        .mega-menu {
+            position: static !important;
+        }
+
+        .mega-menu-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 0 0 8px 8px;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .mega-menu.show .mega-menu-content {
+            display: block;
+        }
+
+        /* Compact Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .service-column {
+            padding: 0 10px;
+        }
+
+        .service-column h6 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--light-bg);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-column h6 .service-icon {
+            font-size: 1rem;
+            margin-right: 6px;
+            color: var(--primary-color);
+        }
+
+        .service-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-column li {
+            margin-bottom: 4px;
+        }
+
+        .service-column li a {
+            display: flex;
+            align-items: center;
+            padding: 3px 0;
+            font-size: 0.8rem;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+            line-height: 1.2;
+        }
+
+        .service-column li a:hover {
+            color: var(--accent-color);
+        }
+
+        .service-column li a .fi {
+            margin-right: 4px;
+            font-size: 0.8rem;
+            min-width: 16px;
+        }
+
+        .service-column li a .bi-arrow-right-short {
+            margin-right: 4px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Compact Info Panel */
+        .info-panel {
+            background-color: var(--dark-panel-bg);
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 8px 0;
+            height: 100%;
+        }
+
+        .info-panel a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .panel-group h6 {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .tag-list a, .tag-list span {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 6px;
+            border-radius: 12px;
+            transition: background-color 0.2s;
+        }
+
+        .tag-list a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .tag-list .trending {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .banner-content img {
+            width: 60px;
+            height: 40px;
+            border-radius: 3px;
+            object-fit: cover;
+        }
+
+        .banner-text h6 {
+            font-size: 0.8rem;
+            color: white;
+            margin-bottom: 2px;
+        }
+
+        .banner-text p {
+            font-size: 0.7rem;
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background:
+                linear-gradient(135deg, rgba(95, 42, 150, 0.85), rgba(74, 22, 153, 0.85)),
+                url('b3.jpg') center/contain no-repeat;
+            text-align: center;
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            margin: 3rem auto;
+            max-width: 1200px;
+            color: #f9f9ff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content {
+            color: var(--clr-text-main);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-main-heading {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .connect-world {
+            font-size: 3rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--clr-text-secondary);
+            font-weight: 300;
+        }
+
+        .hero-section .btn-purple {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--clr-accent-hero);
+            color: var(--clr-text-main);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+            margin-bottom: 4rem;
+        }
+
+        .hero-section .btn-purple:hover {
+            background-color: #6a1ac1;
+            transform: translateY(-2px);
+        }
+
+        /* Trust Section */
+        .hero-trust-block {
+            color: var(--clr-text-main);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .trust-heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--clr-text-main);
+        }
+
+        .text-light-purple {
+            color: var(--clr-text-secondary) !important;
+        }
+
+        .text-primary-purple {
+            color: var(--primary-color) !important;
+        }
+
+        .hero-logo {
+            opacity: 0.9;
+            max-height: 60px;
+            width: auto;
+            transition: opacity 0.3s;
+        }
+
+        .google-partner-logo {
+            max-height: 80px;
+        }
+
+        .rating-bar img[alt="Google Logo"] {
+            max-height: 35px;
+            height: 35px;
+            width: auto;
+        }
+
+        .hero-logo:hover {
+            opacity: 1;
+        }
+
+        .purple-star {
+            color:  gold !important;
+        }
+
+        /* Hero Logo Animation */
+        .hero-logo-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-logo {
+            animation: fadeIn 1s ease-in-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .hero-logo:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .hero-logo:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .hero-logo:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        .hero-logo:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 0.9;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: var(--clr-light-accent);
+            text-decoration: none;
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translate(-50%, 0);
+            }
+            40% {
+                transform: translate(-50%, -10px);
+            }
+            60% {
+                transform: translate(-50%, -5px);
+            }
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(138, 43, 226, 0.4);
+        }
+
+        .btn-purple:hover {
+            background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+        }
+
+        /* Service Cards Section */
+        .services-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #111827;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: #6B7280;
+            max-width: 36rem;
+            margin-bottom: 1rem;
+        }
+
+        .explore-btn {
+            background-color: #EC4899;
+            color: white;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .explore-btn:hover {
+            background-color: #DB2777;
+            transform: scale(1.05);
+        }
+
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Service Card - FIXED SIZE */
+        .service-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            min-height: 400px;
+            height: 400px; /* Fixed height */
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-visual {
+            transition: transform 0.4s ease-out;
+            height: 12rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .service-card:hover .card-visual {
+            transform: translateY(-12px);
+        }
+
+        .card-content {
+            flex-grow: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            font-size: 0.875rem;
+        }
+
+        /* Sub-service buttons - FIXED to not expand card */
+        .sub-service-btn-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: inherit;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 0 0 0.75rem 0.75rem;
+        }
+
+        .service-card:hover .sub-service-btn-container {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sub-service-btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            white-space: nowrap;
+            transition: all 0.3s ease-in-out;
+            border: none;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .sub-service-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card Background Colors */
+        .bg-gray-900 { background-color: #111827; }
+        .bg-white { background-color: white; }
+        .bg-blue-600 { background-color: #2563EB; }
+        .bg-indigo-900 { background-color: #312E81; }
+        .bg-teal-600 { background-color: #0D9488; }
+        .bg-red-600 { background-color: #DC2626; }
+        .bg-purple-700 { background-color: #7C3AED; }
+        .bg-gray-700 { background-color: #374151; }
+
+        .text-white { color: white; }
+        .text-gray-900 { color: #111827; }
+        .text-gray-400 { color: #9CA3AF; }
+        .text-gray-500 { color: #6B7280; }
+        .text-blue-100 { color: #DBEAFE; }
+        .text-indigo-300 { color: #A5B4FC; }
+        .text-teal-100 { color: #CCFBF1; }
+        .text-red-100 { color: #FEE2E2; }
+        .text-purple-100 { color: #E9D5FF; }
+        .text-gray-300 { color: #D1D5DB; }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .hero-main-heading {
+                font-size: 3.5rem;
+            }
+            
+            .connect-world {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .info-panel {
+                margin-top: 20px;
+                border-radius: 0 0 8px 8px;
+            }
+
+            .hero-main-heading {
+                font-size: 3rem;
+            }
+            
+            .connect-world {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .explore-btn {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .service-column {
+                padding: 0 5px;
+            }
+            
+            .info-panel {
+                padding: 15px;
+            }
+            
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .banner-content img {
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+            }
+
+            .hero-section {
+                padding: 2rem 1rem;
+                min-height: auto;
+                padding-top: 100px;
+                padding-bottom: 50px;
+            }
+            
+            .hero-main-heading {
+                font-size: 2.5rem;
+            }
+            
+            .connect-world {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-section .btn-purple {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+                padding: 1rem;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-logo-row {
+                gap: 2rem;
+            }
+
+            .hero-logo {
+                max-height: 50px;
+            }
+            
+            .google-partner-logo {
+                max-height: 70px;
+            }
+
+            .rating-bar {
+                justify-content: center;
+                text-align: center;
+                gap: 0.5rem;
+                flex-direction: column;
+            }
+
+            .rating-bar span.lead {
+                font-size: 0.9rem;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .scroll-indicator {
+                display: none;
+            }
+            
+            .trust-heading {
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-main-heading {
+                font-size: 2rem;
+            }
+            
+            .connect-world {
+                font-size: 1.5rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .hero-section .btn-purple {
+                font-size: 1rem;
+            }
+
+            .hero-logo {
+                max-height: 40px;
+            }
+
+            .google-partner-logo {
+                max-height: 60px;
+            }
+            
+            .hero-logo-row {
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.875rem;
+            }
+
+            .section-description {
+                font-size: 1rem;
+            }
+        }
+
+        .logo {
+            max-height: 60px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
 
 
-    /* --- TOP BAR & LOGO --- */
-    .top-header-bar {
-        background-color: var(--primary-purple);
-        color: #fff;
-        padding: 8px 0;
-        font-size: 0.9rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .revenue-figure {
-        font-size: 1.1rem;
-        color: #ffc107;
-        font-weight: 700;
-    }
-    .custom-logo {
-        height: 40px;
-        width: auto;
-    }
 
-    .announcement-bar {
-        background-color: var(--purple-light);
-        color: var(--primary-purple);
-        padding: 8px 0;
-        font-size: 0.9rem;
-        font-weight: 500;
-    }
+     .impact-section {
+            background: #f1f5f9;
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
 
-    /* --- MODERN NAVIGATION MENU STYLING --- */
-    .modern-navbar {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        background-color: #ffffff;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    }
-    .modern-navbar .nav-link {
-        font-weight: 500;
-        color: var(--text-dark);
-        margin: 0 10px;
-        padding: 10px 0;
-        position: relative;
-        transition: color 0.3s;
-    }
-    .modern-navbar .nav-link:hover, .modern-navbar .active-link {
-        color: var(--primary-purple);
-    }
+        .impact-section::after {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #dbeafe, #ffc5b9);
+            border-radius: 50%;
+            z-index: 0;
+        }
 
-    /* --- MEGA-MENU/WIDE DROPDOWN --- */
-    .mega-menu-item {
-        position: static;
-    }
-    
-    /* Menu Panel Appearance and Persistence Fix - Original Desktop Hover */
-    .mega-menu-panel-js {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        border-top: 5px solid var(--purple-accent);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        padding: 40px 0;
+        .impact-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+            color: var(--dark-color);
+        }
+
+        .impact-label {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .impact-headline {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .impact-headline .rotating-text {
+            color: var(--primary-color);
+        }
+
+        .rotating-text {
+    position: relative;
+    display: inline-block;
+    min-width: 420px;
+    height: 1.5em;
+    vertical-align: bottom;
+    font-size: 1.9rem; /* 🔹 reduced text size */
+}
+
+
+        /* --- Transition time is 1s for slower effect --- */
+        .rotating-text span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease; 
+            width: 100%;
+        }
+
+        .rotating-text span.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .rotating-text span.exiting {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #1d4ed8;
+            color: #fff;
+        }
+
+        .impact-stats {
+            display: flex;
+            justify-content: flex-start;
+            gap: 3rem;
+            flex-wrap: wrap;
+            border-top: 1px solid #d1d5db;
+            padding-top: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            color: #4b5563;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .impact-headline {
+                font-size: 1.8rem;
+            }
+            .rotating-text {
+                min-width: 300px;
+            }
+            .impact-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .rotating-text {
+                min-width: 250px;
+            }
+        }
+
+         /* Custom gradient for card image overlay for better text readability */
+        .card-bg-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%);
+        }
         
-        display: none; /* Controlled by JS for small/medium screens */
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        transform: translateY(-10px);
-        z-index: 1000;
-    }
-    
-    /* Active state controlled by JS */
-    .mega-menu-panel-js.active {
-        display: flex;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    
-    /* Force the container to stretch */
-    .mega-menu-panel-js .container-xl {
-        width: 100%;
-        max-width: 100%;
-    }
+        /* Ensure all cards maintain a consistent, readable minimum height */
+        .min-h-card {
+            min-height: 400px;
+        }
 
-    /* Make the row stretch all columns equally */
-    .mega-menu-panel-js .row {
-        display: flex;
-        align-items: stretch;
-        min-height: 320px; /* Force minimum height for all columns */
-        margin: 0;
-        width: 100%;
-        flex-wrap: nowrap;
-    }
+        /* Custom button sizing for the carousel arrows */
+        .btn-arrow {
+            width: 2.5rem; /* 40px */
+            height: 2.5rem; /* 40px */
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Custom styling for card hover effect */
+        .case-study-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .case-study-card:hover {
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3) !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Utility for text stats */
+        .stat-label {
+            font-size: 1.1rem; /* text-xs equivalent */
+            color: #9a9393;
+        }
 
-    /* Configure equal columns */
-    .mega-menu-col {
-        flex: 1; /* Equal width distribution */
-        padding: 0 20px;
-        border-right: 1px solid #eee;
-        display: flex;
-        flex-direction: column;
-        min-height: 100%; /* Take full height of parent */
-    }
-    .mega-menu-col:last-child {
-        border-right: none;
-    }
+        /* Hide cards by default for JS to manage visibility on all screen sizes */
+        .card-wrapper {
+            display: none;
+        }
 
-    
-    /* Make the list take remaining space and align items */
-    .sub-service-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        flex-grow: 1; /* Take all available space */
-        display: flex;
-        flex-direction: column;
-    }
+        /* Styling for disabled buttons */
+        .btn:disabled, .btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
-    .sub-service-list li {
-        display: flex;
-        align-items: center;
-        height: 36px;
-        padding: 0;
-        flex-shrink: 0;
-        margin-bottom: 8px; /* Add space below each item */
-    }
+ /* Marquee Animation */
+        @keyframes marquee-scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
 
-    .sub-service-list li a {
-        color: var(--text-dark);
-        text-decoration: none;
-        font-size: 1rem;
-        transition: color 0.2s;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        line-height: 1.2;
-        padding: 6px 0;
-    }
-
-    .sub-service-list li a:hover {
-        color: var(--purple-accent);
-    }
-
-    .sub-service-list li a i, 
-    .sub-service-list li a .flag-icon {
-        color: var(--purple-accent);
-        margin-right: 8px;
-        display: inline-block;
-        flex-shrink: 0;
-        width: 16px;
-        text-align: center;
-    }
-
-    /* Filler items for perfect alignment (mostly for design consistency) */
-    .sub-service-list li.filler-item {
-        visibility: hidden;
-        min-height: 32px;
-        padding: 2px 0;
-    }
-
-    /* Category heading styling */
-    .category-heading {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--primary-purple);
-        margin-bottom: 15px;
-        padding-bottom: 5px;
-        border-bottom: 2px solid var(--purple-light);
-        flex-shrink: 0; /* Don't let heading shrink */
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-    .category-heading .service-icon {
-        position: relative;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .category-heading .service-icon i {
-        font-size: 1.2rem;
-        color: var(--primary-purple);
-        position: relative;
-        z-index: 2;
-    }
-    .category-heading .service-icon::before {
-        content: '';
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        background-color: rgba(139, 60, 255, 0.3);
-        z-index: 1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 0.3s ease;
-        background: radial-gradient(circle at 30% 30%, 
-            rgba(0, 191, 255, 0.8), 
-            rgba(255, 105, 180, 0.6),
-            rgba(255, 215, 0, 0.5)
-        );
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    /* Different shapes for each service category */
-    .mega-menu-col:nth-child(1) .service-icon::before { border-radius: 50%; }
-    .mega-menu-col:nth-child(2) .service-icon::before { border-radius: 8px; transform: translate(-50%, -50%) rotate(45deg); }
-    .mega-menu-col:nth-child(3) .service-icon::before { 
-        border-radius: 0; transform: translate(-50%, -50%); width: 38px; height: 37px;
-        clip-path: path('M18 3.5C9 -2.5 -2.5 9 3.5 18c6 9 14.5 14.5 14.5 14.5S30 27 36 18c6-9 -5.5-20.5-14.5-14.5C21.5 3.5 18 3.5 18 3.5z');
-    }
-    .mega-menu-col:nth-child(4) .service-icon::before { border-radius: 4px; }
-    .mega-menu-col:nth-child(5) .service-icon::before { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-
-    /* Hover effects */
-    .mega-menu-col:hover .service-icon::before {
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-    .mega-menu-col:nth-child(2):hover .service-icon::before {
-        transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
-    }
-    .mega-menu-col:nth-child(3):hover .service-icon::before {
-        transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
-    }
-    
-    /* Mega menu interaction and icon styles */
-    .mega-menu-trigger {
-        cursor: pointer;
-    }
-    .services-highlight {
-        color: var(--primary-purple);
-        font-weight: 600;
-    }
-    .services-highlight .bi-chevron-down {
-        transition: transform 0.3s ease;
-    }
-    .services-highlight.active .bi-chevron-down {
-        transform: rotate(180deg);
-    }
-
-
-    /* --- OTHER SECTIONS --- */
-    .hero-section { 
-        padding: 80px 0; 
-        background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
-    }
-    .hero-section h1 { 
-        font-size: 3rem; 
-        font-weight: 800; 
-        margin-bottom: 1.5rem;
-    }
-    .text-purple { color: var(--purple-accent) !important; }
-    .hero-image-placeholder {
-        height: 500px;
-        background-image: url("neb.png"); /* Replace with your actual image path */
-        background-size: cover;
-        background-position: center;
-    }
-
-    /* Chat/Floating button styles */
-    .chat-toggle-btn {
-        position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%;
-        background: linear-gradient(135deg, var(--purple-accent), var(--primary-purple));
-        color: white; border: none; font-size: 1.8rem;
-        box-shadow: 0 10px 20px rgba(58, 11, 118, 0.4); transition: all 0.3s ease; z-index: 1050;
-    }
-    .chat-modal-dialog { max-width: 400px; }
-    .chat-modal-content { border-radius: 15px; overflow: hidden; border: none; }
-    .chat-modal-header { background-color: var(--primary-purple); color: white; padding: 15px 20px; border-bottom: none; }
-    .chat-modal-body { background-color: #f7f9fc; padding: 20px; max-height: 400px; overflow-y: auto; }
-    .chat-modal-footer { display: flex; padding: 10px 20px; background-color: #ffffff; border-top: 1px solid #eee; }
-    .chat-message { margin-bottom: 15px; display: flex; flex-direction: column; }
-    .bot-message p {
-        background-color: #e0e0e0; color: var(--text-dark); padding: 10px 15px;
-        border-radius: 15px 15px 15px 0; max-width: 85%; align-self: flex-start;
-        font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .user-message p {
-        background-color: var(--purple-accent); color: white; padding: 10px 15px;
-        border-radius: 15px 15px 0 15px; max-width: 85%; align-self: flex-end;
-        font-size: 0.9rem; line-height: 1.4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    .quick-reply .badge {
-        cursor: pointer; margin-right: 5px; margin-bottom: 5px; border: 1px solid var(--purple-accent);
-        color: var(--primary-purple); background-color: var(--purple-light) !important; transition: background-color 0.2s;
-    }
-    .btn-purple-outline {
-        background-color: transparent; border: 2px solid var(--primary-purple); color: var(--primary-purple);
-        font-weight: 600; padding: 5px 15px; border-radius: 50px; transition: all 0.2s;
-    }
-    .btn-purple-outline:hover { background-color: var(--primary-purple); color: white; }
-    
-    
-    /* --- UK POPUP STYLING (New, Enhanced Version) --- */
-    
-    /* 4. Large screens (1200px and above) */
-    @media (min-width: 1200px) {
-        .mega-menu-panel-js .row {
+        .marquee-track {
+            display: flex;
+            width: 200%; 
+            animation: marquee-scroll 40s linear infinite;
             flex-wrap: nowrap;
         }
-    }
 
-    /* UK Popup Modal Styling */
-    .uk-popup-modal .modal-dialog {
-        max-width: 600px;
-    }
-
-    .uk-popup-modal .modal-content {
-        border-radius: 20px;
-        overflow: hidden;
-        border: none;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .uk-popup-modal .modal-header {
-        background: linear-gradient(135deg, var(--primary-purple), var(--purple-accent));
-        color: white;
-        border-bottom: none;
-        padding: 30px;
-        text-align: center;
-    }
-
-    .uk-popup-modal .modal-body {
-        padding: 30px;
-        text-align: center;
-    }
-
-    .uk-popup-modal .modal-footer {
-        border-top: none;
-        padding: 0 30px 30px;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap; /* Added for mobile responsiveness */
-    }
-
-    .uk-popup-modal .uk-flag {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        display: block;
-    }
-
-    .uk-popup-modal .btn-continue {
-        background: linear-gradient(135deg, var(--primary-purple), var(--purple-accent));
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-
-    .uk-popup-modal .btn-continue:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(58, 11, 118, 0.4);
-    }
-
-    .uk-popup-modal .btn-uk-site {
-        background-color: transparent;
-        border: 2px solid var(--primary-purple);
-        color: var(--primary-purple);
-        padding: 10px 25px;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        text-decoration: none;
-    }
-
-    .uk-popup-modal .btn-uk-site:hover {
-        background-color: var(--primary-purple);
-        color: white;
-    }
-
-    /* Ensure buttons take full width on small screens */
-    @media (max-width: 575.98px) {
-        .uk-popup-modal .modal-footer button,
-        .uk-popup-modal .modal-footer a {
-            width: 100%;
-            margin: 5px 0;
+        .marquee-container:hover .marquee-track {
+            animation-play-state: paused;
         }
-    }
 
-    /* ========================================================================= */
-    /* --- RESPONSIVENESS ADJUSTMENTS --- */
-    /* ========================================================================= */
-    
-    /* 1. Mobile & Small Tablet (up to 991.98px) */
-    @media (max-width: 991.98px) {
-        .hero-section {
-            padding: 40px 0;
-        }
-        .hero-section h1 {
-            font-size: 2.25rem;
-            text-align: center;
-        }
-        .hero-section p.lead {
-            text-align: center;
-        }
-        .hero-section .d-flex {
+        .logo-item {
+            min-width: 150px;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            flex: 0 0 10%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-        }
-        .hero-image-placeholder {
-            height: 300px;
-            margin-top: 30px;
-            display: block !important;
+            height: 80px;
         }
         
-        /* Hide top bar elements that take up space */
-        .top-header-bar .d-flex:first-child {
-            display: none !important;
-        }
-        .top-header-bar .d-flex:last-child {
-            width: 100%;
-            justify-content: center;
-        }
-        .announcement-bar {
-            padding: 10px;
-            text-align: center;
-        }
-    }
-    
-    /* 2. Tablet & Smaller Desktop (up to 1199.98px) - Critical for Mega Menu */
-    @media (max-width: 1199.98px) {
-        /* Hide the entire desktop mega menu on smaller screens */
-        .mega-menu-panel-js {
-            display: none !important;
+        .logo-img {
+            max-height: 35px;
+            width: auto;
+            transition: all 0.3s ease;
         }
         
-        /* Show the chevron icon for mobile/tablet to indicate the dropdown works */
-        .services-highlight .bi-chevron-down {
-            display: inline-block !important; /* Force show for collapsed menu */
+        .logo-img:hover {
+            transform: scale(1.1);
         }
         
-        /* Mobile Navbar: Add margin/padding to the items for better stacking */
-        .modern-navbar .navbar-nav {
-            padding-top: 10px;
-        }
-        .modern-navbar .nav-item {
-            margin: 0 !important;
-        }
-        .modern-navbar .nav-link {
-            padding: 10px 15px;
-            border-bottom: 1px solid #f5f5f5;
-        }
-        .modern-navbar .nav-link.btn {
-            border-bottom: none;
-            margin: 15px 15px 15px 15px !important;
-            display: block; /* Make button fill width */
-            text-align: center;
+        .main-heading {
+            font-weight: 800;
+            margin-bottom: 3rem;
         }
         
-        /* For the collapsed menu, the Services menu must expand the standard way */
-        .mega-menu-col {
-            flex: 0 0 100%; /* Columns now take full width */
-            border-right: none;
-            border-bottom: 1px solid #eee; /* Add separator between stacked columns */
-            padding: 15px 20px;
+        .purple-text {
+            color: #6f42c1;
         }
         
-        .mega-menu-col:last-child {
-            border-bottom: none;
+        .image-gallery {
+            margin-top: 4rem;
         }
         
-        /* Hide filler items on mobile/tablet */
-        .sub-service-list li.filler-item {
-            display: none !important;
+        .gallery-img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, #6f42c1, #e83e8c);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
         }
 
-        /* Ensure .row wraps on mobile */
-        #service-mega-menu-content-mobile {
-            flex-wrap: wrap !important;
-            min-height: auto !important;
-        }
-    }
-
-    /* 3. Extra Small Screens (up to 575.98px) */
-    @media (max-width: 575.98px) {
-        .hero-section h1 {
-            font-size: 1.75rem;
-        }
-        .hero-section p.lead {
-            font-size: 1rem;
-        }
-        .hero-section .d-flex {
+          /* 2. Style the individual certification cards */
+        .certification-card {
+            background-color: #fff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            height: 100%; 
+            display: flex;
             flex-direction: column;
-            gap: 15px;
+            justify-content: flex-start;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
         }
-        .hero-section .btn-lg {
-            width: 100%;
-            font-size: 1rem;
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(124, 58, 237, 0.15);
+            border-color: #7c3aed;
         }
-    }
+        
+        /* 3. Style the images */
+        .cert-image {
+            height: 60px; /* Consistent height for logos */
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            margin: 0 auto 1rem; /* Center the image and add bottom margin */
+            filter: grayscale(0.3);
+            transition: filter 0.3s ease;
+        }
+        
+        .certification-card:hover .cert-image {
+            filter: grayscale(0);
+        }
+        
+        /* 4. Ensure column minimum width for small screens (Mobile/Tablet) */
+        .col-cert {
+            min-width: 220px; /* Minimum width for each card to prevent cramming */
+        }
+        
+        
+        
+        /* Section header styling */
+        .section-header2 {
+            position: relative;
+            margin: 2rem;
+        }
+        
+        .section-header2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Award badges */
+        .award-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+       
+        
     </style>
 </head>
 <body>
-    
-    <div class="modal fade uk-popup-modal" id="ukPopupModal" tabindex="-1" aria-labelledby="ukPopupModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title w-100" id="ukPopupModalLabel">
-                        <span class="fi fi-gb uk-flag"></span>
-                        Important Notice for UK Visitors
-                    </h2>
-                </div>
-                <div class="modal-body">
-                    <p class="lead mb-4">This website is for all global operations <b>excluding the UK.</b></p>
-                    <p>If you are located in the United Kingdom, please visit our dedicated UK website for services and support tailored specifically for you.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-continue" data-bs-dismiss="modal">Continue to Global Site</button>
-                    <a href="https://abcdmedia.co.uk" class="btn btn-uk-site" target="_blank">Go to UK Site</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="top-header-bar">
-        <div class="container-fluid container-xl d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center text-white">
-                <i class="bi bi-graph-up-arrow me-2 fs-5 text-warning"></i>
-                <span class="fw-bold me-1">Revenue Driven:</span>
-                <span class="revenue-figure">$1.2 Billion+</span>
-            </div>
-            <div class="d-flex align-items-center">
-                <i class="bi bi-telephone-fill me-2 fs-6 text-warning"></i>
-                <a href="tel:+447380594504" class="text-white text-decoration-none fw-bold">
-                    +44 7380 594504
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="abcd-1024x260.png" alt="ABCDMedia Logo" class="logo">
                 </a>
-            </div>
-        </div>
-    </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Clients</a>
+                        </li>
+                        <li class="nav-item dropdown mega-menu">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Services <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu-content" aria-labelledby="servicesDropdown">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <!-- Services Section -->
+                                        <div class="col-lg-9 col-md-8">
+                                            <div class="service-grid" id="services-container">
+                                                <!-- Services will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <!-- Right Panel -->
+                                        <div class="col-lg-3 col-md-4">
+                                            <div class="info-panel">
+                                                <div class="panel-group">
+                                                    <h6>Solutions</h6>
+                                                    <div class="tag-list">
+                                                        <a href="#">Salesforce</a>
+                                                        <a href="#">AWS</a>
+                                                        <a href="#">Power BI</a>
+                                                        <a href="#">SAP</a>
+                                                        <a href="#">ServiceNow</a>
+                                                        <a href="#">Shopify</a>
+                                                        <a href="#">MuleSoft</a>
+                                                        <a href="#">Azure</a>
+                                                    </div>
+                                                </div>
 
-    <div class="announcement-bar">
-        <div class="container-fluid container-xl text-center">
-            <i class="bi bi-info-circle-fill me-2"></i>**Attention:** Global operations (excluding the UK) are managed through this portal.
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light modern-navbar sticky-top">
-        <div class="container-fluid container-xl">
-            <a class="navbar-brand fw-bold" href="#">
-                <img src="abcd-1024x260.png" alt="Company Logo" class="custom-logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link active-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
-
-                    <li class="nav-item mx-3 mega-menu-js" id="servicesNavItem">
-                        <a class="nav-link mega-menu-trigger services-highlight" href="#" id="servicesTrigger" data-bs-toggle="collapse" data-bs-target="#servicesPanelMobile" aria-expanded="false" aria-controls="servicesPanelMobile">
-                            Services <i class=" ms-1"></i>
-                        </a>
-
-                        <div class="mega-menu-panel-js" id="servicesPanel">
-                            <div class="container-xl">
-                                <div class="row d-flex flex-nowrap" id="service-mega-menu-content">
+                                                <div class="panel-group">
+                                                    <h6>Expertise</h6>
+                                                    <div class="tag-list">
+                                                        <a href="#">UX Design</a>
+                                                        <a href="#">RPA</a>
+                                                        <a href="#">DevOps</a>
+                                                        <a href="#">IoT</a>
+                                                        <a href="#">Blockchain</a>
+                                                        <a href="#">AR/VR/MR</a>
+                                                        <a href="#" class="trending">Cybersecurity</a>
+                                                        <a href="#" class="trending">Data Science</a>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="panel-group">
+                                                    <h6>What's New?</h6>
+                                                    <div class="banner-content">
+                                                        <img src="https://picsum.photos/id/1018/200/120" alt="Webinar Thumbnail">
+                                                        <div class="banner-text">
+                                                            <h6>AI for Business Impact</h6>
+                                                            <p>Roadmap for SMEs & SMBs</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                            </div>
-                        </div>
-
-                        <div class="collapse d-lg-none" id="servicesPanelMobile">
-                             <div class="row" id="service-mega-menu-content-mobile">
                                 </div>
-                        </div>
-
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="#">Case Studies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item ms-lg-3"><a class="nav-link btn btn-purple text-white" href="#">Client Login</a></li>
-                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Company</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <button class="btn btn-purple">Get Quote</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <div class="hero-section">
-        <div class="container-xl">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1>
-                        We Architect <span class="text-purple">Predictive Intelligence</span> for Global Leaders.
-                    </h1>
-                    <p class="lead">
-                        Our team delivers bespoke, AI-powered marketing and development solutions. We leverage machine learning and deep data analysis to drive unprecedented growth and secure market leadership across continents.
-                    </p>
-                    <div class="mt-5 d-flex align-items-center">
-                        <a href="#" class="btn btn-purple btn-lg me-3">Start Your Project <i class="bi bi-arrow-right-short"></i></a>
-                        <a href="#" class="text-purple fw-semibold text-decoration-none" style="font-size: 1.1rem;">
-                            <i class="bi bi-patch-question me-1"></i>Pricing & Packages
-                        </a>
+    <!-- Centered Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Main Heading -->
+                <h1 class="hero-main-heading">Amplify Your Brand.</h1>
+                
+                <!-- Tagline -->
+                <p class="tagline">ABCDMedia Ltd: Innovative Strategies for a Digital Age. We deliver cutting edge solutions that drive growth and transform businesses.</p>
+                
+                <!-- CTA Button -->
+                <a href="#solutions" class="btn btn-purple">
+                    Discover Our Solutions &rarr;
+                </a>
+                
+                <!-- Trust Section -->
+                <div class="hero-trust-block">
+                    <h2 class="trust-heading">We're proud to work with leading partners and brands.</h2>
+
+                    <div class="hero-logo-row">
+                        <img src="Logo_of_Infinix.png" alt="Infinix Logo" class="hero-logo">
+                        <img src="new-google-partner-badge-1.png" alt="Google Partner" class="hero-logo google-partner-logo">
+                        <img src="Air-Blue65.png" alt="Airblue Logo" class="hero-logo">
+                        <img src="KKK.png" alt="Khaadi Logo" class="hero-logo">
+                    </div>
+
+                    <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 rating-bar">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="height: 35px;">
+                        <div class="d-flex">
+                            <i class="bi bi-star-fill purple-star fs-5"></i>
+                            <i class="bi bi-star-fill purple-star fs-5"></i>
+                            <i class="bi bi-star-fill purple-star fs-5"></i>
+                            <i class="bi bi-star-fill purple-star fs-5"></i>
+                            <i class="bi bi-star-half purple-star fs-5"></i>
+                        </div>
+                        <span class="lead fw-bold ">Rated <span class="purple-star">4.9/5</span> across Google &amp; Trustpilot</span>
                     </div>
                 </div>
-                <div class="col-lg-5 ">
-                    <div class="hero-image-placeholder"></div>
-                </div>
             </div>
         </div>
-    </div>
+        <a href="#services-section" class="scroll-indicator" aria-label="Scroll down">
+            &darr;
+        </a>
+    </section>
 
-    <section class="partners-reviews-section py-5 bg-white text-center">
-        <div class="container-xl">
-            <h2 class="h3 fw-bold mb-3">We're proud to work with leading partners and brands.</h2>
+    <!-- Services Section -->
+    <section class="services-section">
+        <!-- Section Header with Explore Button -->
+        <div class="section-header">
+            <div class="text-left">
+                <h5 class="section-title">Services that meet you where you are.</h5>
+               
+            </div>
+<a href="#" class="btn btn-purple">
+  Explore All Services <i class="bi bi-arrow-right ms-2"></i>
+</a>
+        </div>
 
-            <div class="row align-items-center justify-content-center mb-5 g-4">
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="new-google-partner-badge-1.png" alt="Google Partner" class="img-fluid" style="max-height: 80px;">
+        <!-- Service Cards Grid -->
+        <div class="services-grid">
+            <!-- Card 1: Digital Marketing (Teal Background) -->
+            <div class="service-card bg-teal-600 text-white">
+                <!-- Visual/Image Area -->
+                <div class="card-visual">
+                    <!-- Placeholder SVG for Target/Growth -->
+                    <svg class="w-full h-full text-teal-200 opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="4" opacity="0.3"/>
+                        <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="3" opacity="0.5"/>
+                        <circle cx="50" cy="50" r="15" fill="currentColor"/>
+                        <path d="M50 10L60 30L85 35L70 55L75 80L50 70L25 80L30 55L15 35L40 30L50 10Z" stroke="currentColor" fill="none" stroke-width="1.5" opacity="0.7"/>
+                    </svg>
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="Logo_of_Infinix.png" alt="Infinix Logo" class="img-fluid" style="max-height: 50px;">
+
+                <div class="card-content">
+                    <h3 class="card-title">Digital Marketing</h3>
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="KKK.png" alt="Khaadi Logo" class="img-fluid" style="max-height: 50px;">
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="Air-Blue65.png" alt="Airblue Logo" class="img-fluid" style="max-height: 50px;">
+                
+                <!-- Rounded Sub-service Buttons (Hidden until hover) -->
+                <div class="sub-service-btn-container">
+                    <span class="sub-service-btn">Media Buying</span>
+                    <span class="sub-service-btn">SEO</span>
+                    <span class="sub-service-btn">SMM</span>
+                    <span class="sub-service-btn">ORM</span>
+                    <span class="sub-service-btn">Email Marketing</span>
                 </div>
             </div>
 
-            <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="height: 30px;">
-                <div class="d-flex">
-                    <i class="bi bi-star-fill text-warning fs-5"></i>
-                    <i class="bi bi-star-fill text-warning fs-5"></i>
-                    <i class="bi bi-star-fill text-warning fs-5"></i>
-                    <i class="bi bi-star-fill text-warning fs-5"></i>
-                    <i class="bi bi-star-half text-warning fs-5"></i>
+            <!-- Card 2: Commercial Production (Red Background) -->
+            <div class="service-card bg-red-600 text-white">
+                <!-- Visual/Image Area -->
+                <div class="card-visual">
+                    <!-- Placeholder SVG for Film/Camera -->
+                    <svg class="w-full h-full text-red-200 opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="30" width="60" height="40" rx="5" stroke="currentColor" stroke-width="3"/>
+                        <circle cx="50" cy="50" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="50" r="4" fill="currentColor"/>
+                        <rect x="75" y="25" width="10" height="5" rx="2" fill="currentColor"/>
+                        <path d="M20 70L15 85H85L80 70" fill="currentColor" opacity="0.1"/>
+                        <path d="M30 70L30 85L70 85L70 70Z" fill="currentColor" opacity="0.1"/>
+                    </svg>
                 </div>
-                <span class="lead fw-bold">Rated <span class="text-purple">4.9/5</span> across Google &amp; Trustpilot</span>
+
+                <div class="card-content">
+                    <h3 class="card-title">Commercial Production</h3>
+                </div>
+                
+                <!-- Rounded Sub-service Buttons (Hidden until hover) -->
+                <div class="sub-service-btn-container">
+                    <span class="sub-service-btn">2D Animation</span>
+                    <span class="sub-service-btn">3D Animation</span>
+                    <span class="sub-service-btn">Video Ads</span>
+                    <span class="sub-service-btn">Motion Graphics</span>
+                   
+                </div>
+            </div>
+            
+            <!-- Card 3: Web Development (Purple Background) -->
+            <div class="service-card bg-purple-700 text-white">
+                <!-- Visual/Image Area -->
+                <div class="card-visual">
+                    <!-- Placeholder SVG for Code/Browser -->
+                    <svg class="w-full h-full text-purple-200 opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="20" width="80" height="60" rx="5" stroke="currentColor" stroke-width="3" fill="none"/>
+                        <line x1="10" y1="30" x2="90" y2="30" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="16" cy="25" r="2" fill="currentColor"/>
+                        <circle cx="22" cy="25" r="2" fill="currentColor"/>
+                        <circle cx="28" cy="25" r="2" fill="currentColor"/>
+                        <path d="M30 45L45 60L30 75" stroke="currentColor" stroke-width="2"/>
+                        <path d="M70 45L55 60L70 75" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="card-content">
+                    <h3 class="card-title">Web Development</h3>
+                </div>
+                
+                <!-- Rounded Sub-service Buttons (Hidden until hover) -->
+                <div class="sub-service-btn-container">
+                    <span class="sub-service-btn">WordPress</span>
+                    <span class="sub-service-btn">Shopify</span>
+                    <span class="sub-service-btn">Custom Code</span>
+                    <span class="sub-service-btn">Landing Pages</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Graphics Design (Dark Gray Background) -->
+            <div class="service-card bg-gray-700 text-white">
+                <!-- Visual/Image Area -->
+                <div class="card-visual">
+                    <!-- Placeholder SVG for Pen Tool / Design -->
+                    <svg class="w-full h-full text-gray-300 opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 80L80 20L50 50L20 80Z" stroke="currentColor" stroke-width="3" fill="none"/>
+                        <circle cx="80" cy="20" r="5" fill="currentColor"/>
+                        <path d="M80 20L50 50L50 80L20 50L50 20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+                    </svg>
+                </div>
+
+                <div class="card-content">
+                    <h3 class="card-title">Graphics Design</h3>
+                </div>
+                
+                <!-- Rounded Sub-service Buttons (Hidden until hover) -->
+                <div class="sub-service-btn-container">
+                    <span class="sub-service-btn">UI/UX Design</span>
+                    <span class="sub-service-btn">Logo Design</span>
+                    <span class="sub-service-btn">Banners/Flyers</span>
+                    <span class="sub-service-btn">Packaging</span>
+                </div>
             </div>
         </div>
     </section>
 
 
-    <button class="chat-toggle-btn" data-bs-toggle="modal" data-bs-target="#chatModal">
-        <i class="bi bi-robot"></i>
-    </button>
 
-    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered chat-modal-dialog">
-            <div class="modal-content chat-modal-content">
-                <div class="modal-header chat-modal-header">
-                    <h5 class="modal-title" id="chatModalLabel">
-                        <i class="bi bi-headset me-2"></i>AI Assistant - Predictive Intelligence
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="impact-section">
+        <div class="container impact-container">
+            <div class="impact-label">OUR IMPACT</div>
+
+            <h5 class="impact-headline">
+                We Helped 
+                <span class="rotating-text" id="rotating-text">
+                    <!-- Updated content for ABCDMedia -->
+                    <span class="active">Tech Startup to achieve 400% ROI on paid ad spend.</span>
+                    <span>E-commerce Retailer to increase organic traffic by 65%.</span>
+                    <span>National Food Chain to produce a video reaching 10M views.</span>
+                </span>
+            </h5>
+
+            <a href="#contact" class="btn btn-purple">Let's Work Together</a>
+
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years of driving growth</div>
                 </div>
-
-                <div class="modal-body chat-modal-body">
-                    <div class="chat-message bot-message">
-                        <p>Hello! I'm your **Predictive Intelligence** assistant. I can answer basic questions about our AI, services, and global hubs.</p>
-                    </div>
-
-                    <div class="chat-message bot-message">
-                        <p>How can I help you today? Choose one of the topics below or type your question.</p>
-                        <div class="quick-reply">
-                            <span class="badge text-bg-light" onclick="simulateAnswer('Services')">Tell me about your Services</span>
-                            <span class="badge text-bg-light" onclick="simulateAnswer('Pricing')">What are your Pricing Models?</span>
-                            <span class="badge text-bg-light" onclick="simulateAnswer('AI')">How does your AI work?</span>
-                        </div>
-                    </div>
-
-                    <div id="simulated-response">
-                    </div>
-
-                    <div class="chat-message bot-message transfer-message mt-4">
-                        <p><i class="bi bi-person-fill-gear me-1"></i> **Need a specialist right now?**</p>
-                        <a href="https://wa.me/YOURPHONENUMBER?text=Hello,%20I%20have%20a%20complex%20query%20and%20would%20like%20to%20speak%20with%20a%20human%20expert." target="_blank" class="btn btn-sm btn-purple-outline">
-                            <i class="bi bi-whatsapp me-1"></i> Chat via WhatsApp
-                        </a>
-                    </div>
-
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Digital projects delivered</div>
                 </div>
-
-                <div class="modal-footer chat-modal-footer">
-                    <input type="text" class="form-control" placeholder="Type your message..." aria-label="Type your message">
-                    <button class="btn btn-purple"><i class="bi bi-send-fill"></i></button>
+                <div class="stat-item">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">Customer satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Global clients served</div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    // Data Structure for all Services
-    const servicesData = {
-        digitalMarketing: {
-            title: "Digital Marketing",
-            icon: 'bi-graph-up-arrow',
-            subItems: [
-                'Digital Marketing', 'Media Buying', 'SEO',
-                'SMM', 'ORM', 'E-mail Marketing'
-            ]
-        },
-        commercialProduction: {
-            title: "Commercial Prod",
-            icon: 'bi-camera-video-fill',
-            subItems: [
-                'Commercial Production', '2D Animation', '3D Animation',
-                'Social Video Ads', 'Motion Graphics', 'Video Editing',
-                'CGI Ads'
-            ]
-        },
-        graphicsDesign: {
-            title: "Graphics Design",
-            icon: 'bi-brush-fill',
-            subItems: [
-                'UI/UX Design', 'Branding Identity', 'Content Design',
-                'Logo Design', 'Banners/Flyers', 'Packaging Design',
-                'Illustration'
-            ]
-        },
-        webDevelopment: {
-            title: "Web Development",
-            icon: 'bi-laptop-fill',
-            subItems: [
-                'WordPress', 'Shopify', 'Wix',
-                'Custom Code', 'Landing Page', 'Company Branding'
-            ]
-        },
-        globalOperations: {
-            title: "Global Operations",
-            icon: 'bi-globe2',
-            subItems: [
-                {name: 'USA', flag: 'us'},
-                {name: 'UAE', flag: 'ae'},
-                {name: 'Hong Kong', flag: 'hk'},
-                {name: 'EU', flag: 'eu'},
-                {name: 'Australia', flag: 'au'}
-            ]
-        }
-    };
 
-    const megaMenuContent = document.getElementById('service-mega-menu-content');
-    const servicesTrigger = document.getElementById('servicesTrigger');
-    const servicesPanel = document.getElementById('servicesPanel');
-    const servicesNavItem = document.getElementById('servicesNavItem');
+    
 
-    // Function to handle rendering the mega menu content (for both desktop and mobile)
-    function renderMegaMenu(targetElementId, isMobile = false) {
-        const targetElement = document.getElementById(targetElementId);
-        if (!targetElement) return;
-        
-        let html = '';
-        let maxItems = 0;
-        
-        // Find max items only if desktop view (to maintain equal height columns)
-        if (!isMobile) {
-            for (const key in servicesData) {
-                if (servicesData[key].subItems.length > maxItems) {
-                    maxItems = servicesData[key].subItems.length;
-                }
-            }
-        }
-        
-        for (const key in servicesData) {
-            const data = servicesData[key];
+    <section class="container py-5">
+        <!-- Section Header -->
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-4 px-0">
+            <h2 class="h3 fw-bold text-dark mb-4 mb-sm-0">Empowering Success Stories</h2>
             
-            let subListHtml = '';
-            
-            // Render the actual sub-items
-            if (key === 'globalOperations') {
-                data.subItems.forEach(item => {
-                    subListHtml += `<li><a href="#"><span class="fi fi-${item.flag}"></span> ${item.name}</a></li>`;
-                });
-            } else {
-                data.subItems.forEach(item => {
-                    subListHtml += `<li><a href="#"><i class="bi bi-arrow-right-short"></i> ${item}</a></li>`;
-                });
-            }
-            
-            // Add filler items for desktop alignment
-            if (!isMobile) {
-                const fillerCount = maxItems - data.subItems.length;
-                for (let i = 0; i < fillerCount; i++) {
-                    subListHtml += '<li class="filler-item">&nbsp;</li>'; 
-                }
-            }
-
-            html += `
-            <div class="mega-menu-col">
-                <h3 class="category-heading">
-                    <span class="service-icon">
-                        <i class="bi ${data.icon}"></i>
-                    </span>
-                    ${data.title}
-                </h3>
-                <ul class="sub-service-list">
-                    ${subListHtml}
-                </ul>
-            </div>
-            `;
-        }
-        targetElement.innerHTML = html;
-    }
-
-    // JavaScript-controlled mega menu behavior (Desktop Hover)
-    let menuTimeout;
-    let isMenuOpen = false;
-
-    function openMenu() {
-        if (window.innerWidth >= 1200) { // Only run for desktop/xl screens
-            clearTimeout(menuTimeout);
-            servicesPanel.classList.add('active');
-            servicesTrigger.classList.add('active');
-            isMenuOpen = true;
-        }
-    }
-
-    function closeMenu() {
-        if (window.innerWidth >= 1200) { // Only run for desktop/xl screens
-            menuTimeout = setTimeout(() => {
-                servicesPanel.classList.remove('active');
-                servicesTrigger.classList.remove('active');
-                isMenuOpen = false;
-            }, 300); // Delay to allow moving between trigger and panel
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // --- UK POPUP LOGIC ---
-        // Targeting the new modal ID: ukPopupModal
-        const ukModal = new bootstrap.Modal(document.getElementById('ukPopupModal'));
-        // Show the modal immediately on page load
-        ukModal.show();
-        
-        // --- MEGA MENU RENDERING ---
-        renderMegaMenu('service-mega-menu-content', false); // Render Desktop Menu
-        renderMegaMenu('service-mega-menu-content-mobile', true); // Render Mobile Menu
-        
-
-        // Set up event listeners for the mega menu (Desktop Hover)
-        servicesTrigger.addEventListener('mouseenter', openMenu);
-        servicesNavItem.addEventListener('mouseleave', closeMenu);
-        servicesPanel.addEventListener('mouseenter', openMenu);
-        servicesPanel.addEventListener('mouseleave', closeMenu);
-
-        // Close menu when clicking anywhere else on the page (Desktop)
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth >= 1200 && !servicesNavItem.contains(e.target) && isMenuOpen) {
-                closeMenu();
-            }
-        });
-
-        // --- CHATBOT LOGIC (kept) ---
-        const aiAnswers = {
-            'Services': {
-                userText: 'Tell me about your Services',
-                botText: 'Our services are now organized into five main pillars: **Digital Marketing**, **Commercial Production**, **Graphics Design**, **Web Development**, and **Global Operations**. Please hover over the "Services" link to see the full, detailed menu!'
-            },
-            'Pricing': {
-                userText: 'What are your Pricing Models?',
-                botText: 'We offer three models: **Project-Based**, **Monthly Retainer**, and **Performance-Based** (for qualifying accounts). We customize every proposal—use the "Start Your Project" button to get a quote!'
-            },
-            'AI': {
-                userText: 'How does your AI work?',
-                botText: 'Our proprietary system uses **Machine Learning** to analyze market trends and predict optimal conversion paths, ensuring your campaigns are always hyper-optimized for growth. It handles the data; our experts handle the strategy.'
-            }
-        };
-
-        window.simulateAnswer = function(topic) {
-            const data = aiAnswers[topic];
-            if (!data) return;
-
-            const responseContainer = document.getElementById('simulated-response');
-
-            // 1. Add the user's simulated message
-            responseContainer.innerHTML += `
-                <div class="chat-message user-message">
-                    <p>${data.userText}</p>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-secondary rounded-3 me-3 fw-medium" type="button">
+                    All Case Studies &rarr;
+                </button>
+                
+                <div class="d-flex gap-2">
+                    <!-- Left Arrow -->
+                    <button id="scroll-left" class="btn btn-light rounded-circle btn-arrow shadow-sm" type="button">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <!-- Right Arrow -->
+                    <button id="scroll-right" class="btn btn-light rounded-circle btn-arrow shadow-sm" type="button">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
-            `;
+            </div>
+        </div>
 
-            // 2. Add the bot's detailed response
-            setTimeout(() => {
-                responseContainer.innerHTML += `
-                    <div class="chat-message bot-message">
-                        <p>${data.botText}</p>
+        <!-- Success Story Carousel Container -->
+        <div class="overflow-hidden">
+            <!-- Row to hold all cards, using .row-cols-1 for mobile, .row-cols-md-2 for desktop grid simulation -->
+            <div id="case-study-container" class="row gx-4 gy-4">
+                
+                <!-- Card Wrapper - Card 1: Viral Video Campaign (Video Production) -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="0"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="National Food Chain Video Production" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-danger rounded-pill fw-semibold p-2">Video Production</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">Viral Video Campaign</h3>
+                            <p class="mb-4 small">Produced high-impact creative content that resonated with audiences across platforms.</p>
+                            
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">FoodChain</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">10M+</p>
+                                    <p class="stat-label mb-0">Total Views Reached</p>
+                                </div>
+                                <a href="#" class="btn btn-danger btn-arrow rounded-circle" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Wrapper - Card 2: Precision Ad Spend (Paid Ads) -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="1"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Tech Startup Ad Performance" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-success rounded-pill fw-semibold p-2">Paid Ads</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">Precision Ad Spend</h3>
+                            <p class="mb-4 small">Targeting and optimization for scale with advanced analytics and A/B testing.</p>
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">TechStartup</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">400%</p>
+                                    <p class="stat-label mb-0">Return on Ad Spend (ROAS)</p>
+                                </div>
+                                <a href="#" class="btn btn-success btn-arrow rounded-circle" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Wrapper - Card 3: High-Conversion Lead Engine (FinTech) -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="2"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Financial Firm Lead Generation" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-purple rounded-pill fw-semibold p-2" style="background-color: #9333ea;">FinTech</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">High-Conversion Lead Engine</h3>
+                            <p class="mb-4 small">Developed bespoke landing page funnels with personalized user journeys.</p>
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">SwiftInvest</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">40%</p>
+                                    <p class="stat-label mb-0">Increase in Lead Quality</p>
+                                </div>
+                                <a href="#" class="btn btn-arrow rounded-circle" style="background-color: #9333ea; color: white;" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Wrapper - Card 4: Dominating Search Rankings (SEO & Content) -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="3"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="E-commerce Retailer SEO Strategy" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-primary rounded-pill fw-semibold p-2">SEO & Content</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">Dominating Search Rankings</h3>
+                            <p class="mb-4 small">Comprehensive content and technical SEO audit with ongoing optimization.</p>
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">RetailX</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">65%</p>
+                                    <p class="stat-label mb-0">Increase in Organic Traffic</p>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-arrow rounded-circle" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Wrapper - Card 5: Social Media Management -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="4"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Local Boutique Social Media" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-pink rounded-pill fw-semibold p-2" style="background-color: #ec4899;">Social Media</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">Community Growth</h3>
+                            <p class="mb-4 small">Full-service community management and content strategy across platforms.</p>
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">LocalBoutique</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">120%</p>
+                                    <p class="stat-label mb-0">Increase in Engagement</p>
+                                </div>
+                                <a href="#" class="btn btn-arrow rounded-circle" style="background-color: #ec4899; color: white;" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card Wrapper - Card 6: Custom Web Development -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="5"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Education Client Platform" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-warning rounded-pill fw-semibold p-2">Web Dev</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">E-Learning Platform</h3>
+                            <p class="mb-4 small">Developed custom-built Angular application with interactive learning modules.</p>
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">Edutainment</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">99.9%</p>
+                                    <p class="stat-label mb-0">Uptime Reliability</p>
+                                </div>
+                                <a href="#" class="btn btn-warning btn-arrow rounded-circle" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Wrapper - Card 7: B2B Content Strategy -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="6"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Enterprise B2B Content" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-info rounded-pill fw-semibold p-2">B2B Content</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">Industry Authority</h3>
+                            <p class="mb-4 small">Launched whitepaper and executive article series establishing thought leadership.</p>
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">EnterpriseX</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">5X</p>
+                                    <p class="stat-label mb-0">Leads from Thought Leadership</p>
+                                </div>
+                                <a href="#" class="btn btn-info btn-arrow rounded-circle" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Wrapper - Card 8: E-commerce Optimisation -->
+                <div class="col-12 col-md-6 card-wrapper" data-index="7"> 
+                    <div class="case-study-card card bg-dark text-white rounded-4 overflow-hidden shadow-lg position-relative">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Retail Brand Conversion Rate" class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover opacity-60">
+                        <div class="card-bg-overlay position-absolute start-0 top-0 w-100 h-100"></div>
+                        
+                        <span class="position-absolute top-0 end-0 m-4 badge text-bg-indigo rounded-pill fw-semibold p-2" style="background-color: #4f46e5;">E-commerce</span>
+
+                        <div class="card-body position-relative z-1 d-flex flex-column justify-content-end min-h-card">
+                            <h3 class="h4 fw-bold mb-2">Conversion Rate Jump</h3>
+                            <p class="mb-4 small">A/B tested checkout flow and product pages to optimize user experience.</p>
+                            <div class="d-flex align-items-center justify-content-between border-top border-secondary pt-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <span class="fs-5 fw-bold me-2">BrandGear</span> 
+                                </div>
+                                <div class="text-end me-3">
+                                    <p class="fs-5 fw-semibold mb-0">18%</p>
+                                    <p class="stat-label mb-0">Conversion Rate Uplift</p>
+                                </div>
+                                <a href="#" class="btn btn-arrow rounded-circle" style="background-color: #4f46e5; color: white;" aria-label="View Case Study">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+<div class="container">
+        <!-- Main Heading -->
+        <h1 class="text-center main-heading">
+            Trusted by <span class="purple-text">fast-scaling businesses...</span>
+        </h1>
+        
+        <!-- Marquee Container -->
+        <div class="marquee-container overflow-hidden position-relative user-select-none">
+            <div class="marquee-track">
+                <!-- Logo Set 1 -->
+                <div class="logo-item">
+                    <img src="SAS-300x59.png" 
+                         alt="Sastaticket.pk Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="zameen_logo-F-300x59.png" 
+                         alt="Zameen.com Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="KKK.png" 
+                         alt="KHAADI Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="Alkaram_Studio_logo-300x53.png" 
+                         alt="QKokonomstudio Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="LAMARETAIL-e1750506669954-300x118.webp" 
+                         alt="LAMA Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="Air-Blue65.png" 
+                         alt="Airblue Logo" 
+                         class="logo-img">
+                </div>
+                
+                <!-- Logo Set 2 (Duplicate for seamless animation) -->
+                <div class="logo-item">
+                    <img src="SAS-300x59.png" 
+                         alt="Sastaticket.pk Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="zameen_logo-F-300x59.png" 
+                         alt="Zameen.com Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="KKK.png" 
+                         alt="KHAADI Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="Alkaram_Studio_logo-300x53.png" 
+                         alt="QKokonomstudio Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="LAMARETAIL-e1750506669954-300x118.webp" 
+                         alt="LAMA Logo" 
+                         class="logo-img">
+                </div>
+                <div class="logo-item">
+                    <img src="Air-Blue65.png" 
+                         alt="Airblue Logo" 
+                         class="logo-img">
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+   
+
+    <section class="container my-5 position-relative ">
+        <div class="text-center mt-6 section-header2">
+            <h2 class="display-6 fw-bold text-dark mb-3">
+                Awards & <span class="text-primary-purple">Certifications</span>
+            </h2>
+            <p class="lead text-secondary mx-auto" style="max-width: 700px;">
+                We are proud of the recognition we have received demonstrating our 
+                industry leading practices and capabilities.
+            </p>
+        </div>
+
+        <!-- Navigation arrows -->
+       
+
+        <!-- The row is forced to be non-wrapping (flex-nowrap) and horizontally scrollable (overflow-x-auto) -->
+        <div class="row scrollable-row g-4" id="certificationsRow">
+            
+            <!-- Certification 1: Meta Certified -->
+            <div class="col-cert col-lg-2 position-relative">
+                <div class="certification-card">
+                    <span class="award-badge">
+                        <i class="fas fa-award"></i>
+                    </span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png" 
+                         alt="Meta Certified Logo" 
+                         class="cert-image">
+                    <div class="card-body p-0">
+                        <h5 class="fs-6 fw-bold mb-2 text-dark">Meta Certified</h5>
+                        <p class="text-muted small">Expertise in Meta advertising platforms and strategies.</p>
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <!-- Certification 3: LinkedIn Marketing Strategy -->
+            <div class="col-cert col-lg-2 position-relative">
+                <div class="certification-card">
+                    <span class="award-badge">
+                        <i class="fas fa-award"></i>
+                    </span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png" 
+                         alt="LinkedIn Marketing Strategy Logo" 
+                         class="cert-image">
+                    <div class="card-body p-0">
+                        <h5 class="fs-6 fw-bold mb-2 text-dark">LinkedIn Marketing Strategy</h5>
+                        <p class="text-muted small">Certified in developing effective marketing strategies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification 4: Adobe Certified -->
+            <div class="col-cert col-lg-2 position-relative">
+                <div class="certification-card">
+                    <span class="award-badge">
+                        <i class="fas fa-award"></i>
+                    </span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Adobe_Corporate_Logo.png/1280px-Adobe_Corporate_Logo.png" 
+                         alt="Adobe Certified Logo" 
+                         class="cert-image">
+                    <div class="card-body p-0">
+                        <h5 class="fs-6 fw-bold mb-2 text-dark">Adobe Certified</h5>
+                        <p class="text-muted small">Proficiency recognized in Adobe Creative Cloud applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification 5: Google Certified -->
+            <div class="col-cert col-lg-2 position-relative">
+                <div class="certification-card">
+                    <span class="award-badge">
+                        <i class="fas fa-award"></i>
+                    </span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" 
+                         alt="Google Certified Logo" 
+                         class="cert-image">
+                    <div class="card-body p-0">
+                        <h5 class="fs-6 fw-bold mb-2 text-dark">Google Certified</h5>
+                        <p class="text-muted small">Expert in Google Ads, Analytics, and marketing platforms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification 6: HubSpot Certified -->
+          
+            
+            <!-- Certification 7: Microsoft Certified -->
+            <div class="col-cert col-lg-2 position-relative">
+                <div class="certification-card">
+                    <span class="award-badge">
+                        <i class="fas fa-award"></i>
+                    </span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png" 
+                         alt="Microsoft Certified Logo" 
+                         class="cert-image">
+                    <div class="card-body p-0">
+                        <h5 class="fs-6 fw-bold mb-2 text-dark">Microsoft Certified</h5>
+                        <p class="text-muted small">Expertise in Microsoft technologies and solutions.</p>
+                    </div>
+                </div>
+            </div>
+            
+           
+        
+    
+    </section>
+
+ 
+
+   
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Data structure for all services
+        const servicesData = [
+            {
+                title: "Digital Marketing",
+                icon: 'bi-graph-up-arrow',
+                subItems: [ 
+                    'Media Buying', 
+                    'SEO', 
+                    'SMM', 
+                    'ORM', 
+                    'Email Marketing', 
+                    'Content Strategy' 
+                ]
+            },
+            {
+                title: "Commercial Production",
+                icon: 'bi-camera-video-fill',
+                subItems: [
+                    '2D Animation', 
+                    '3D Animation', 
+                    'Video Ads', 
+                    'Motion Graphics', 
+                    'Video Editing', 
+                    'CGI Ads'
+                ]
+            },
+            {
+                title: "Web Development",
+                icon: 'bi-laptop-fill',
+                subItems: [
+                    'WordPress', 
+                    'Shopify', 
+                    'Custom Code', 
+                    'Landing Pages'
+                ]
+            },
+            {
+                title: "Graphics Design",
+                icon: 'bi-brush-fill',
+                subItems: [
+                    'UI/UX Design', 
+                    'Brand Identity', 
+                    'Content Design',
+                    'Logo Design', 
+                    'Banners/Flyers', 
+                    'Packaging'
+                ]
+            },
+            {
+                title: "Company Formation",
+                icon: 'bi-globe2',
+                subItems: [
+                    {name: 'USA', flag: 'us'}, 
+                    {name: 'UAE', flag: 'ae'}, 
+                    {name: 'Hong Kong', flag: 'hk'}, 
+                    {name: 'EU', flag: 'eu'}, 
+                    {name: 'Australia', flag: 'au'}
+                ]
+            },
+            {
+                title: "IT Consulting",
+                icon: 'bi-lightbulb-fill',
+                subItems: [
+                    'Digital Transformation',
+                    'Cloud Solutions',
+                    'IT Strategy',
+                    'System Integration'
+                ]
+            }
+        ];
+
+        // Function to render services
+        function renderServices() {
+            const servicesContainer = document.getElementById('services-container');
+            let html = '';
+            
+            servicesData.forEach(service => {
+                let subListHtml = '';
+                
+                if (service.title === "Company Formation") {
+                    service.subItems.forEach(item => {
+                        subListHtml += `<li><a href="#"><span class="fi fi-${item.flag}"></span> ${item.name}</a></li>`;
+                    });
+                } else {
+                    service.subItems.forEach(item => {
+                        subListHtml += `<li><a href="#"><i class="bi bi-arrow-right-short"></i> ${item}</a></li>`;
+                    });
+                }
+                
+                html += `
+                    <div class="service-column">
+                        <h6>
+                            <span class="service-icon"><i class="bi ${service.icon}"></i></span>
+                            ${service.title}
+                        </h6>
+                        <ul>
+                            ${subListHtml}
+                        </ul>
                     </div>
                 `;
-                // Scroll to the bottom of the modal body
-                const modalBody = document.querySelector('.chat-modal-body');
-                if (modalBody) {
-                    modalBody.scrollTop = modalBody.scrollHeight;
-                }
-            }, 500);
+            });
+            
+            servicesContainer.innerHTML = html;
         }
-    });
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            renderServices();
+        });
+
+ document.addEventListener('DOMContentLoaded', function() {
+            const rotatingText = document.getElementById('rotating-text');
+            const textItems = rotatingText.querySelectorAll('span');
+            let currentIndex = 0;
+            let isTransitioning = false;
+
+            function rotateText() {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                
+                // Get current and next indices
+                const nextIndex = (currentIndex + 1) % textItems.length;
+                
+                // Add exiting class to current item
+                textItems[currentIndex].classList.add('exiting');
+                
+                // After fade out, update content and fade in
+                // Timeout duration is 1000ms (1 second) to match the CSS transition
+                setTimeout(() => {
+                    // Remove active and exiting classes from current item
+                    textItems[currentIndex].classList.remove('active', 'exiting');
+                    
+                    // Add active class to next item
+                    textItems[nextIndex].classList.add('active');
+                    
+                    // Update current index
+                    currentIndex = nextIndex;
+                    
+                    // Reset transition flag
+                    isTransitioning = false;
+                }, 1000); // 1000ms delay to match the 1s CSS transition
+            }
+
+            // Start the rotation (3 seconds between transitions)
+            setInterval(rotateText, 3000);
+        });
+
+
+           document.addEventListener('DOMContentLoaded', function() {
+            // Select all card wrappers
+            const cardWrappers = document.querySelectorAll('.card-wrapper');
+            const scrollLeftBtn = document.getElementById('scroll-left');
+            const scrollRightBtn = document.getElementById('scroll-right');
+            
+            // Track current position (index of the first visible card)
+            let currentPosition = 0;
+            
+            // Determine the number of cards to show based on screen size
+            function getCardsPerView() {
+                // If the screen width is medium (768px) or larger, show 2 cards. Otherwise, show 1.
+                return window.innerWidth >= 768 ? 2 : 1;
+            }
+            
+            function updateVisibleCards() {
+                const cardsPerView = getCardsPerView();
+                
+                // 1. Hide all cards
+                cardWrappers.forEach(wrapper => {
+                    wrapper.style.display = 'none';
+                });
+                
+                // 2. Show the necessary cards based on the current position
+                for (let i = currentPosition; i < currentPosition + cardsPerView && i < cardWrappers.length; i++) {
+                    if (cardWrappers[i]) {
+                        cardWrappers[i].style.display = 'block';
+                    }
+                }
+                
+                // 3. Update button states
+                scrollLeftBtn.disabled = currentPosition === 0;
+                scrollRightBtn.disabled = currentPosition >= cardWrappers.length - cardsPerView;
+            }
+            
+            // Function to scroll to next set of cards
+            function scrollNext() {
+                const cardsPerView = getCardsPerView();
+                if (currentPosition < cardWrappers.length - cardsPerView) {
+                    currentPosition += cardsPerView;
+                    updateVisibleCards();
+                }
+            }
+            
+            // Function to scroll to previous set of cards
+            function scrollPrev() {
+                const cardsPerView = getCardsPerView();
+                if (currentPosition > 0) {
+                    currentPosition = Math.max(0, currentPosition - cardsPerView);
+                    updateVisibleCards();
+                }
+            }
+            
+            // Event Listeners
+            scrollLeftBtn.addEventListener('click', scrollPrev);
+            scrollRightBtn.addEventListener('click', scrollNext);
+
+            // Handle resize event to ensure responsive layout is updated (e.g., switching from 1 card view to 2 card view)
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    // Reset position to 0 to ensure the visible cards are correct on new viewport size
+                    currentPosition = 0; 
+                    updateVisibleCards();
+                }, 100); // Debounce resize event
+            });
+            
+            // Initialize the carousel
+            updateVisibleCards();
+        });
+    
+         
     </script>
 </body>
 </html>
