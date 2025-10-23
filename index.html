@@ -24,6 +24,8 @@
             --dark-panel-bg: #212529;
             --clr-bg-dark: var(--dark-color);
             --clr-bg-light: #5f2a96;
+                        --footer-bg: #1a0b2e;
+
             --clr-accent-hero: var(--primary-color);
             --clr-star-fill: var(--primary-color);
             --clr-text-main: #ffffff;
@@ -1388,6 +1390,395 @@
       justify-content: center;
     }
   }
+
+
+  .footer-section {
+    margin-top: 40px;
+            background: linear-gradient(135deg, var(--footer-bg) 0%, #2D0C5E 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-section::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(255, 105, 180, 0.1) 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .footer-section::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.05) 0%, rgba(255, 105, 180, 0.05) 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            padding: 60px 0 40px;
+        }
+
+        .footer-brand {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            height: 50px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: #b8b8b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            position: relative;
+        }
+
+        .footer-heading::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #b8b8b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1rem;
+            color: #b8b8b8;
+            font-size: 0.9rem;
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            margin-top: 2px;
+            min-width: 16px;
+        }
+
+        .newsletter-form {
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: white;
+            width: 100%;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-input::placeholder {
+            color: #b8b8b8;
+        }
+
+        .btn-newsletter {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        .btn-newsletter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+        }
+
+        .copyright {
+            color: #b8b8b8;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            color: #b8b8b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            color: #b8b8b8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .trust-badge i {
+            color: var(--accent-color);
+        }
+
+        /* ========== RESPONSIVE BREAKPOINTS ========== */
+
+        /* Tablet (992px and below) */
+        @media (max-width: 992px) {
+            .footer-main {
+                padding: 50px 0 30px;
+            }
+            
+            .footer-brand {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+            
+            .footer-description {
+                max-width: 100%;
+                margin: 0 auto 1.5rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .footer-heading {
+                margin-top: 2rem;
+            }
+        }
+
+        /* Tablet (768px and below) */
+        @media (max-width: 768px) {
+            .footer-section {
+                padding: 0 15px;
+            }
+            
+            .footer-main {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-logo {
+                height: 45px;
+            }
+            
+            .footer-heading {
+                font-size: 1rem;
+            }
+            
+            .footer-legal {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+            
+            .copyright {
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Mobile (576px and below) */
+        @media (max-width: 576px) {
+            .footer-main {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-logo {
+                height: 40px;
+            }
+            
+            .footer-description {
+                font-size: 0.9rem;
+            }
+            
+            .social-link {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .footer-heading {
+                margin-top: 1.5rem;
+            }
+            
+            .footer-links a {
+                font-size: 0.85rem;
+            }
+            
+            .contact-info li {
+                font-size: 0.85rem;
+            }
+            
+            .newsletter-input {
+                padding: 10px 14px;
+            }
+            
+            .btn-newsletter {
+                padding: 10px 20px;
+            }
+            
+            .trust-badges {
+                justify-content: center;
+            }
+            
+            .footer-bottom {
+                padding: 20px 0;
+            }
+            
+            .copyright {
+                font-size: 0.85rem;
+            }
+            
+            .footer-legal {
+                gap: 1rem;
+            }
+            
+            .footer-legal a {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Small Mobile (400px and below) */
+        @media (max-width: 400px) {
+            .footer-section::before {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .footer-section::after {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .social-links {
+                gap: 0.8rem;
+            }
+            
+            .trust-badge {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+        }
+
+
        
         
     </style>
@@ -2163,11 +2554,123 @@
       <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=400&q=80" alt="Speaker 2">
       <div class="speaker-info">
         <h3>Sarah Williams</h3>
-        <p>Head of AI Strategy, ABCDMedia</p>
+        <p>Head of AI Strategy, ABCDMedia Ltd</p>
       </div>
     </div>
   </div>
 </section>
+
+
+
+    <footer class="footer-section">
+        <div class="container footer-container">
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <div class="row">
+                    <!-- Brand Column -->
+                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                        <div class="footer-brand">
+                            <img src="abcd-1024x260.png" alt="ABCDMedia Ltd" class="footer-logo">
+                            <p class="footer-description">
+                                Transforming businesses through innovative digital solutions. We deliver cutting-edge strategies that drive growth and success.
+                            </p>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure & Trusted</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-award"></i>
+                                <span>Certified Partner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="bi bi-chevron-right"></i> Home</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i> Services</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i> Case Studies</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i> Careers</a></li>
+                            <li><a href="#"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+
+                  
+
+                    <!-- Contact & Newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-heading">Contact Info</h5>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>73 Shelton Street,London,England,WC2H, United Kingdom</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+44 7380 594504</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@abcdmedia.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                            </li>
+                        </ul>
+
+                        <div class="newsletter-form">
+                            <h5 class="footer-heading">Newsletter</h5>
+                            <p style="color: #b8b8b8; font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to get updates on our latest services and insights.</p>
+                            <input type="email" class="newsletter-input" placeholder="Enter your email">
+                            <button class="btn-newsletter">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">© 2024 ABCDMedia Ltd. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-legal">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Cookie Policy</a>
+                            <a href="#">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
 
 
