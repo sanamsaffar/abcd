@@ -16,6 +16,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+
+        @media (max-width: 768px) {
+    .rotating-text {
+        font-size: 1.5rem; /* Smaller for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .rotating-text {
+        font-size: 1.2rem; /* Even smaller for mobile */
+        display: block; /* Make it full width on mobile */
+        text-align: center; /* Center align on mobile */
+    }
+
         :root {
             --primary-color: #8A2BE2;
             --accent-color: #FF69B4;
@@ -2110,3 +2124,4 @@
     </script>
 </body>
 </html>
+
