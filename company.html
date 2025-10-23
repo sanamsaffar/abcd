@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCDMedia Ltd </title>
+    <!-- Bootstrap CSS -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #8A2BE2;
+            --accent-color: #FF69B4;
+            --dark-color: #2D0C5E;
+            --light-bg: #F8F3FF;
+            --dark-panel-bg: #212529;
+            --clr-bg-dark: var(--dark-color);
+            --clr-bg-light: #5f2a96;
+                        --footer-bg: #1a0b2e;
+
+            --clr-accent-hero: var(--primary-color);
+            --clr-star-fill: var(--primary-color);
+            --clr-text-main: #ffffff;
+            --clr-text-secondary: #e3e3e3;
+            --clr-light-accent: #c796ff;
+            --font-primary: 'Poppins', sans-serif;
+            --dark-gray-tag: #4B5563;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Compact Mega Menu Styling */
+        .mega-menu {
+            position: static !important;
+        }
+
+        .mega-menu-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 0 0 8px 8px;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .mega-menu.show .mega-menu-content {
+            display: block;
+        }
+
+        /* Compact Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .service-column {
+            padding: 0 10px;
+        }
+
+        .service-column h6 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--light-bg);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-column h6 .service-icon {
+            font-size: 1rem;
+            margin-right: 6px;
+            color: var(--primary-color);
+        }
+
+        .service-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-column li {
+            margin-bottom: 4px;
+        }
+
+        .service-column li a {
+            display: flex;
+            align-items: center;
+            padding: 3px 0;
+            font-size: 0.8rem;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+            line-height: 1.2;
+        }
+
+        .service-column li a:hover {
+            color: var(--accent-color);
+        }
+
+        .service-column li a .fi {
+            margin-right: 4px;
+            font-size: 0.8rem;
+            min-width: 16px;
+        }
+
+        .service-column li a .bi-arrow-right-short {
+            margin-right: 4px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Compact Info Panel */
+        .info-panel {
+            background-color: var(--dark-panel-bg);
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 8px 0;
+            height: 100%;
+        }
+
+        .info-panel a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .panel-group h6 {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .tag-list a, .tag-list span {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 6px;
+            border-radius: 12px;
+            transition: background-color 0.2s;
+        }
+
+        .tag-list a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .tag-list .trending {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .banner-content img {
+            width: 60px;
+            height: 40px;
+            border-radius: 3px;
+            object-fit: cover;
+        }
+
+        .banner-text h6 {
+            font-size: 0.8rem;
+            color: white;
+            margin-bottom: 2px;
+        }
+
+        .banner-text p {
+            font-size: 0.7rem;
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, #FF69B4, #8A2BE2);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(138, 43, 226, 0.4);
+        }
+
+        .btn-purple:hover {
+            background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+        }
+         .logo {
+            max-height: 60px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        </style>
+        </head>
+        <body>
+
+                <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="abcd-1024x260.png" alt="ABCDMedia Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index3.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="client.html">Clients</a>
+                        </li>
+                        <li class="nav-item dropdown mega-menu">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Services <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu-content" aria-labelledby="servicesDropdown">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <!-- Services Section -->
+                                        <div class="col-lg-9 col-md-8">
+                                            <div class="service-grid" id="services-container">
+                                                <!-- Services will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <!-- Right Panel -->
+                                        <div class="col-lg-3 col-md-4">
+                                            <div class="info-panel">
+                                                <div class="panel-group">
+                                                    <h6>Solutions</h6>
+                                                    <div class="tag-list">
+                                                        <a href="#">Salesforce</a>
+                                                        <a href="#">AWS</a>
+                                                        <a href="#">Power BI</a>
+                                                        <a href="#">SAP</a>
+                                                        <a href="#">ServiceNow</a>
+                                                        <a href="#">Shopify</a>
+                                                        <a href="#">MuleSoft</a>
+                                                        <a href="#">Azure</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel-group">
+                                                    <h6>Expertise</h6>
+                                                    <div class="tag-list">
+                                                        <a href="#">UX Design</a>
+                                                        <a href="#">RPA</a>
+                                                        <a href="#">DevOps</a>
+                                                        <a href="#">IoT</a>
+                                                        <a href="#">Blockchain</a>
+                                                        <a href="#">AR/VR/MR</a>
+                                                        <a href="#" class="trending">Cybersecurity</a>
+                                                        <a href="#" class="trending">Data Science</a>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="panel-group">
+                                                    <h6>What's New?</h6>
+                                                    <div class="banner-content">
+                                                        <img src="https://picsum.photos/id/1018/200/120" alt="Webinar Thumbnail">
+                                                        <div class="banner-text">
+                                                            <h6>AI for Business Impact</h6>
+                                                            <p>Roadmap for SMEs & SMBs</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="company.html">Company</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <button class="btn btn-purple">Get Quote</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+            <h1 class="text-primary-purple text-center">Coming Soon.........</h1>
+
+        </body>
+
+
+        <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Data structure for all services
+        const servicesData = [
+            {
+                title: "Digital Marketing",
+                icon: 'bi-graph-up-arrow',
+                subItems: [ 
+                    'Media Buying', 
+                    'SEO', 
+                    'SMM', 
+                    'ORM', 
+                    'Email Marketing', 
+                    'Content Strategy' 
+                ]
+            },
+            {
+                title: "Commercial Production",
+                icon: 'bi-camera-video-fill',
+                subItems: [
+                    '2D Animation', 
+                    '3D Animation', 
+                    'Video Ads', 
+                    'Motion Graphics', 
+                    'Video Editing', 
+                    'CGI Ads'
+                ]
+            },
+            {
+                title: "Web Development",
+                icon: 'bi-laptop-fill',
+                subItems: [
+                    'WordPress', 
+                    'Shopify', 
+                    'Custom Code', 
+                    'Landing Pages'
+                ]
+            },
+            {
+                title: "Graphics Design",
+                icon: 'bi-brush-fill',
+                subItems: [
+                    'UI/UX Design', 
+                    'Brand Identity', 
+                    'Content Design',
+                    'Logo Design', 
+                    'Banners/Flyers', 
+                    'Packaging'
+                ]
+            },
+            {
+                title: "Company Formation",
+                icon: 'bi-globe2',
+                subItems: [
+                    {name: 'USA', flag: 'us'}, 
+                    {name: 'UAE', flag: 'ae'}, 
+                    {name: 'Hong Kong', flag: 'hk'}, 
+                    {name: 'EU', flag: 'eu'}, 
+                    {name: 'Australia', flag: 'au'}
+                ]
+            },
+            {
+                title: "IT Consulting",
+                icon: 'bi-lightbulb-fill',
+                subItems: [
+                    'Digital Transformation',
+                    'Cloud Solutions',
+                    'IT Strategy',
+                    'System Integration'
+                ]
+            }
+        ];
+
+        // Function to render services
+        function renderServices() {
+            const servicesContainer = document.getElementById('services-container');
+            let html = '';
+            
+            servicesData.forEach(service => {
+                let subListHtml = '';
+                
+                if (service.title === "Company Formation") {
+                    service.subItems.forEach(item => {
+                        subListHtml += `<li><a href="#"><span class="fi fi-${item.flag}"></span> ${item.name}</a></li>`;
+                    });
+                } else {
+                    service.subItems.forEach(item => {
+                        subListHtml += `<li><a href="#"><i class="bi bi-arrow-right-short"></i> ${item}</a></li>`;
+                    });
+                }
+                
+                html += `
+                    <div class="service-column">
+                        <h6>
+                            <span class="service-icon"><i class="bi ${service.icon}"></i></span>
+                            ${service.title}
+                        </h6>
+                        <ul>
+                            ${subListHtml}
+                        </ul>
+                    </div>
+                `;
+            });
+            
+            servicesContainer.innerHTML = html;
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            renderServices();
+        });
+        </script>
+
+        </html>
