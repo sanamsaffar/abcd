@@ -408,25 +408,39 @@
         }
 
  
-/* Remove border-radius and adjust background for small screens */
+/* Mobile screens - Use desktop image version */
 @media (max-width: 768px) {
     .hero-section {
-        border-radius: 0; /* Remove rounded corners */
-        margin: 0; /* Remove margin to use full width */
+        border-radius: 0;
+        margin: 0;
         padding: 2rem 1rem;
         min-height: auto;
         padding-top: 100px;
         padding-bottom: 50px;
-        background: url('b3.jpg') center/cover no-repeat;
+        /* Use the same desktop image but with contain to show full image */
+        background: url('b3.jpg') center/contain no-repeat;
+        background-color: #f8f9fa; /* Ensure background color shows around image */
     }
 }
 
-/* For very small screens, ensure it's completely flush */
+/* Small mobile screens */
 @media (max-width: 576px) {
     .hero-section {
         border-radius: 0;
         margin: 0;
-        background: url('b3.jpg') center/cover no-repeat;
+        /* Maintain desktop image with contain to prevent cropping */
+        background: url('b3.jpg') center/contain no-repeat;
+        background-color: #f8f9fa;
+    }
+}
+
+/* Extra small screens - ensure image remains visible */
+@media (max-width: 400px) {
+    .hero-section {
+        /* You might want to adjust min-height for very small screens */
+        min-height: 70vh;
+        background: url('b3.jpg') center/contain no-repeat;
+        background-color: #f8f9fa;
     }
 }
 
@@ -2932,6 +2946,7 @@
     </script>
 </body>
 </html>
+
 
 
 
