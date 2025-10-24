@@ -408,7 +408,27 @@
         }
 
  
+/* Remove border-radius and adjust background for small screens */
+@media (max-width: 768px) {
+    .hero-section {
+        border-radius: 0; /* Remove rounded corners */
+        margin: 0; /* Remove margin to use full width */
+        padding: 2rem 1rem;
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        background: url('b3.jpg') center/cover no-repeat;
+    }
+}
 
+/* For very small screens, ensure it's completely flush */
+@media (max-width: 576px) {
+    .hero-section {
+        border-radius: 0;
+        margin: 0;
+        background: url('b3.jpg') center/cover no-repeat;
+    }
+}
 
 
         /* Service Cards Section */
@@ -2912,6 +2932,7 @@
     </script>
 </body>
 </html>
+
 
 
 
