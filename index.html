@@ -1155,88 +1155,175 @@
             cursor: not-allowed;
         }
 
- /* Marquee Animation */
-        @keyframes marquee-scroll {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-50%);
-            }
-        }
+/* Trusted Businesses Section - Full Width */
+.trusted-businesses-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+    margin: 4rem 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 
-        .marquee-track {
-            display: flex;
-            width: 200%; 
-            animation: marquee-scroll 40s linear infinite;
-            flex-wrap: nowrap;
-        }
+.trusted-businesses-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-        .marquee-container:hover .marquee-track {
-            animation-play-state: paused;
-        }
+.trusted-businesses-heading {
+    font-weight: 800;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2D0C5E;
+}
 
-        .logo-item {
-            min-width: 150px;
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
-            flex: 0 0 10%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 80px;
-        }
-        
-        .logo-img {
-            max-height: 35px;
-            width: auto;
-            transition: all 0.3s ease;
-        }
-        
-        .logo-img:hover {
-            transform: scale(1.1);
-        }
-        
-        .main-heading {
-            font-weight: 800;
-            margin-bottom: 3rem;
-        }
-        
-        .purple-text {
-            color: #6f42c1;
-        }
-        
-        .image-gallery {
-            margin-top: 4rem;
-        }
-        
-        .gallery-img {
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-img:hover {
-            transform: translateY(-5px);
-        }
-        
-        .section-title {
-            font-weight: 700;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 4px;
-            background: linear-gradient(90deg, #6f42c1, #e83e8c);
-            bottom: -10px;
-            left: 0;
-            border-radius: 2px;
-        }
+.purple-text {
+    color: #8A2BE2;
+}
 
+/* Enhanced Marquee Animation */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.marquee-track {
+    display: flex;
+    width: fit-content;
+    animation: marquee-scroll 30s linear infinite;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Enhanced Logo Items */
+.logo-item {
+    flex: 0 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.logo-item:hover {
+    transform: translateY(-5px);
+}
+
+.logo-img {
+    max-height: 40px;
+    width: auto;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.logo-item:hover .logo-img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .trusted-businesses-heading {
+        font-size: 2.25rem;
+    }
+    
+    .logo-item {
+        min-width: 160px;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .trusted-businesses-section {
+        padding: 3rem 0;
+        margin: 3rem 0;
+    }
+    
+    .trusted-businesses-heading {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .logo-item {
+        min-width: 140px;
+        height: 70px;
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .logo-img {
+        max-height: 35px;
+    }
+    
+    .marquee-track {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .trusted-businesses-section {
+        padding: 2rem 0;
+        margin: 2rem 0;
+    }
+    
+    .trusted-businesses-heading {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .logo-item {
+        min-width: 120px;
+        height: 60px;
+        padding: 0.6rem 1rem;
+    }
+    
+    .logo-img {
+        max-height: 30px;
+    }
+    
+    .marquee-track {
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+}
+
+/* Small Mobile Optimization */
+@media (max-width: 400px) {
+    .trusted-businesses-heading {
+        font-size: 1.5rem;
+    }
+    
+    .logo-item {
+        min-width: 100px;
+        height: 50px;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .logo-img {
+        max-height: 25px;
+    }
+}
         
 /* 2. Style the individual certification cards */
         .certification-card {
@@ -2384,15 +2471,15 @@
         </div>
     </section>
 
-    <section>
-<div class="container">
+ <section class="trusted-businesses-section">
+    <div class="trusted-businesses-container">
         <!-- Main Heading -->
-        <h1 class="text-center main-heading">
+        <h1 class="trusted-businesses-heading">
             Trusted by <span class="purple-text">fast-scaling businesses...</span>
         </h1>
         
-        <!-- Marquee Container -->
-        <div class="marquee-container overflow-hidden position-relative user-select-none">
+        <!-- Enhanced Marquee Container -->
+        <div class="marquee-container">
             <div class="marquee-track">
                 <!-- Logo Set 1 -->
                 <div class="logo-item">
@@ -2412,7 +2499,7 @@
                 </div>
                 <div class="logo-item">
                     <img src="Alkaram_Studio_logo-300x53.png" 
-                         alt="QKokonomstudio Logo" 
+                         alt="Alkaram Studio Logo" 
                          class="logo-img">
                 </div>
                 <div class="logo-item">
@@ -2444,7 +2531,7 @@
                 </div>
                 <div class="logo-item">
                     <img src="Alkaram_Studio_logo-300x53.png" 
-                         alt="QKokonomstudio Logo" 
+                         alt="Alkaram Studio Logo" 
                          class="logo-img">
                 </div>
                 <div class="logo-item">
@@ -2459,10 +2546,8 @@
                 </div>
             </div>
         </div>
-
-
-        </div>
-    </section>
+    </div>
+</section>
    
 
    <section class="container my-5 position-relative">
@@ -2693,17 +2778,6 @@
         </div>
     </footer>
 
-
-
-
-
-
- 
-
-   
-
-
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -2933,18 +3007,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
