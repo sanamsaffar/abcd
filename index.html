@@ -408,39 +408,25 @@
         }
 
  
-/* Mobile screens - Use desktop image version */
+/* Remove border-radius and adjust background for small screens */
 @media (max-width: 768px) {
     .hero-section {
-        border-radius: 0;
-        margin: 0;
+        border-radius: 0; /* Remove rounded corners */
+        margin: 0; /* Remove margin to use full width */
         padding: 2rem 1rem;
         min-height: auto;
         padding-top: 50px;
         padding-bottom: 50px;
-        /* Use the same desktop image but with contain to show full image */
-        background: url('b3.jpg') center/contain no-repeat;
-        background-color: #f8f9fa; /* Ensure background color shows around image */
+        background: url('b3.jpg') center/cover no-repeat;
     }
 }
 
-/* Small mobile screens */
+/* For very small screens, ensure it's completely flush */
 @media (max-width: 576px) {
     .hero-section {
         border-radius: 0;
         margin: 0;
-        /* Maintain desktop image with contain to prevent cropping */
-        background: url('b3.jpg') center/contain no-repeat;
-        background-color: #f8f9fa;
-    }
-}
-
-/* Extra small screens - ensure image remains visible */
-@media (max-width: 400px) {
-    .hero-section {
-        /* You might want to adjust min-height for very small screens */
-        min-height: 70vh;
-        background: url('b3.jpg') center/contain no-repeat;
-        background-color: #f8f9fa;
+        background: url('b3.jpg') center/cover no-repeat;
     }
 }
 
@@ -2946,6 +2932,7 @@
     </script>
 </body>
 </html>
+
 
 
 
