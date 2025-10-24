@@ -1237,66 +1237,47 @@
             border-radius: 2px;
         }
 
-          /* 2. Style the individual certification cards */
-        .certification-card {
-            background-color: #fff;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            height: 100%; 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
+         /* Center the certifications section */
+.certifications-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
 
-        .certification-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(124, 58, 237, 0.15);
-            border-color: #7c3aed;
-        }
-        
-        /* 3. Style the images */
-        .cert-image {
-            height: 60px; /* Consistent height for logos */
-            width: auto;
-            max-width: 120px;
-            object-fit: contain;
-            margin: 0 auto 1rem; /* Center the image and add bottom margin */
-            filter: grayscale(0.3);
-            transition: filter 0.3s ease;
-        }
-        
-        .certification-card:hover .cert-image {
-            filter: grayscale(0);
-        }
-        
-        /* 4. Ensure column minimum width for small screens (Mobile/Tablet) */
-        .col-cert {
-            min-width: 220px; /* Minimum width for each card to prevent cramming */
-        }
-        
-        
-        
-        /* Section header styling */
-        .section-header2 {
-            position: relative;
-            margin: 2rem;
-        }
-        
-        .section-header2:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #7c3aed, #a855f7);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
+/* Center the certifications row */
+.scrollable-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Center individual certification cards */
+.col-cert {
+    display: flex;
+    justify-content: center;
+}
+
+.certification-card {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Center section header */
+.section-header2 {
+    text-align: center;
+    width: 100%;
+}
+
+.section-header2:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
         
         /* Award badges */
         .award-badge {
@@ -2463,8 +2444,10 @@
     </section>
    
 
-    <section class="container my-5 position-relative ">
-        <div class="text-center mt-6 section-header2">
+   <section class="container my-5 position-relative">
+    <div class="certifications-container">
+        <!-- Section Header -->
+        <div class="text-center section-header2">
             <h2 class="display-6 fw-bold text-dark mb-3">
                 Awards & <span class="text-primary-purple">Certifications</span>
             </h2>
@@ -2474,14 +2457,11 @@
             </p>
         </div>
 
-        <!-- Navigation arrows -->
-       
-
-        <!-- The row is forced to be non-wrapping (flex-nowrap) and horizontally scrollable (overflow-x-auto) -->
-        <div class="row scrollable-row g-4" id="certificationsRow">
+        <!-- Centered Certifications Row -->
+        <div class="row justify-content-center g-4 mt-4" id="certificationsRow">
             
             <!-- Certification 1: Meta Certified -->
-            <div class="col-cert col-lg-2 position-relative">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-cert">
                 <div class="certification-card">
                     <span class="award-badge">
                         <i class="fas fa-award"></i>
@@ -2496,10 +2476,8 @@
                 </div>
             </div>
 
-          
-
-            <!-- Certification 3: LinkedIn Marketing Strategy -->
-            <div class="col-cert col-lg-2 position-relative">
+            <!-- Certification 2: LinkedIn Marketing Strategy -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-cert">
                 <div class="certification-card">
                     <span class="award-badge">
                         <i class="fas fa-award"></i>
@@ -2514,8 +2492,8 @@
                 </div>
             </div>
 
-            <!-- Certification 4: Adobe Certified -->
-            <div class="col-cert col-lg-2 position-relative">
+            <!-- Certification 3: Adobe Certified -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-cert">
                 <div class="certification-card">
                     <span class="award-badge">
                         <i class="fas fa-award"></i>
@@ -2530,8 +2508,8 @@
                 </div>
             </div>
 
-            <!-- Certification 5: Google Certified -->
-            <div class="col-cert col-lg-2 position-relative">
+            <!-- Certification 4: Google Certified -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-cert">
                 <div class="certification-card">
                     <span class="award-badge">
                         <i class="fas fa-award"></i>
@@ -2546,11 +2524,8 @@
                 </div>
             </div>
 
-            <!-- Certification 6: HubSpot Certified -->
-          
-            
-            <!-- Certification 7: Microsoft Certified -->
-            <div class="col-cert col-lg-2 position-relative">
+            <!-- Certification 5: Microsoft Certified -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-cert">
                 <div class="certification-card">
                     <span class="award-badge">
                         <i class="fas fa-award"></i>
@@ -2564,11 +2539,10 @@
                     </div>
                 </div>
             </div>
-            
-           
-        
-    
-    </section>
+
+        </div>
+    </div>
+</section>
 
 
     <section class="webinar-section">
@@ -2951,6 +2925,7 @@
     </script>
 </body>
 </html>
+
 
 
 
