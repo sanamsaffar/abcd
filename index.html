@@ -364,6 +364,175 @@
             }
         }
 
+
+        /* Solutions & Expertise Panel Styling */
+.solutions-expertise-panel {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 20px 20px 20px;
+    border: 1px solid #e9ecef;
+}
+
+.solutions-expertise-panel h6 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.solutions-expertise-panel .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+.solutions-expertise-panel .tag-list a {
+    background: white;
+    color: var(--dark-color);
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.solutions-expertise-panel .tag-list a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(138, 43, 226, 0.3);
+    border-color: var(--primary-color);
+}
+
+.solutions-expertise-panel .tag-list a.trending {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+/* Contact Mini Styling */
+.contact-mini p {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-mini i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    min-width: 16px;
+}
+
+/* Adjust service grid margin to accommodate new panel */
+.service-grid {
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .solutions-expertise-panel {
+        margin: 0 10px 15px 10px;
+        padding: 15px;
+    }
+    
+    .solutions-expertise-panel .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .solutions-expertise-panel .col-6 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .solutions-expertise-panel {
+        margin: 0 5px 10px 5px;
+        padding: 12px;
+    }
+    
+    .solutions-expertise-panel h6 {
+        font-size: 0.85rem;
+    }
+    
+    .solutions-expertise-panel .tag-list a {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+}
+
+/* Updated Banner Content Styling */
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.banner-content:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.banner-content img {
+    width: 80px; /* Increased width */
+    height: 60px; /* Increased height */
+    border-radius: 6px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.banner-content:hover img {
+    transform: scale(1.05);
+}
+
+.banner-text h6 {
+    font-size: 0.9rem; /* Slightly larger */
+    color: white;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.banner-text p {
+    font-size: 0.75rem; /* Slightly larger */
+    margin: 0;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Alternative: If you want even larger banner */
+.banner-content.large {
+    padding: 15px;
+}
+
+.banner-content.large img {
+    width: 700px;
+    height: 705px;
+}
+
+.banner-content.large .banner-text h6 {
+    font-size: 1rem;
+}
+
+.banner-content.large .banner-text p {
+    font-size: 0.8rem;
+}
+
         /* Scroll Indicator */
         .scroll-indicator {
             position: absolute;
@@ -1918,40 +2087,36 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="abcd-1024x260.png" alt="ABCDMedia Logo" class="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="client.html">Clients</a>
-                        </li>
-                        <li class="nav-item dropdown mega-menu">
-                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services <i class="bi bi-chevron-down"></i>
-                            </a>
-                            <div class="dropdown-menu mega-menu-content" aria-labelledby="servicesDropdown">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <!-- Services Section -->
-                                        <div class="col-lg-9 col-md-8">
-                                            <div class="service-grid" id="services-container">
-                                                <!-- Services will be populated by JavaScript -->
-                                            </div>
-                                        </div>
-                                        <!-- Right Panel -->
-                                        <div class="col-lg-3 col-md-4">
-                                            <div class="info-panel">
-                                                <div class="panel-group">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="abcd-1024x260.png" alt="ABCDMedia Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client.html">Clients</a>
+                    </li>
+                    <li class="nav-item dropdown mega-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu mega-menu-content" aria-labelledby="servicesDropdown">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <!-- Services Section -->
+                                    <div class="col-lg-9 col-md-8">
+                                        <!-- TOP: Solutions & Expertise Section -->
+                                        <div class="solutions-expertise-panel">
+                                            <div class="row">
+                                                <div class="col-6">
                                                     <h6>Solutions</h6>
                                                     <div class="tag-list">
                                                         <a href="#">Salesforce</a>
@@ -1964,8 +2129,7 @@
                                                         <a href="#">Azure</a>
                                                     </div>
                                                 </div>
-
-                                                <div class="panel-group">
+                                                <div class="col-6">
                                                     <h6>Expertise</h6>
                                                     <div class="tag-list">
                                                         <a href="#">UX Design</a>
@@ -1978,38 +2142,58 @@
                                                         <a href="#" class="trending">Data Science</a>
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="panel-group">
-                                                    <h6>What's New?</h6>
-                                                    <div class="banner-content">
-                                                        <img src="https://picsum.photos/id/1018/200/120" alt="Webinar Thumbnail">
-                                                        <div class="banner-text">
-                                                            <h6>AI for Business Impact</h6>
-                                                            <p>Roadmap for SMEs & SMBs</p>
-                                                        </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- MIDDLE: Service Grid -->
+                                        <div class="service-grid" id="services-container">
+                                            <!-- Services will be populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    <!-- Right Panel -->
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="info-panel">
+                                            <!-- BOTTOM: What's New Banner -->
+                                            <div class="panel-group">
+                                                <h6>What's New?</h6>
+                                                <div class="banner-content">
+                                                    <img src="https://picsum.photos/id/1018/200/120" alt="Webinar Thumbnail">
+                                                    <div class="banner-text">
+                                                        <h6>AI for Business Impact</h6>
+                                                        <p>Roadmap for SMEs & SMBs</p>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Additional contact info -->
+                                            <div class="panel-group mt-3">
+                                                <h6>Quick Contact</h6>
+                                                <div class="contact-mini">
+                                                    <p><i class="bi bi-telephone"></i> +44 7380 594504</p>
+                                                    <p><i class="bi bi-envelope"></i> hello@abcdmedia.com</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="company.html">Company</a>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="#footer-section">Contact</a>
-                        </li>
-                        <li class="nav-item ms-lg-3">
-                            <button class="btn btn-purple">Get Quote</button>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company.html">Company</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer-section">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-purple">Get Quote</button>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <!-- Centered Hero Section -->
     <section class="hero-section">
@@ -3010,4 +3194,3 @@
     </script>
 </body>
 </html>
-
